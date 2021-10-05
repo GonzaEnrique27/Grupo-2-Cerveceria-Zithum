@@ -28,3 +28,18 @@ Actualmente estamos en pleno desarrollo de una tienda online que no solo ofrezca
 * **[Rupert-Rothschildvignerons](https://rupert-rothschildvignerons.com/wines/baroness-nadine/)** - *Excelentes animaciones e interfaz.*
 * **[CraftSociety](https://www.craftsociety.com.ar)** - *Elegida por la similitud de los productos y su facíl uso.*
 * **[KitKat Chocolatory](https://www.kitkatchocolatory.com.br/mini-world)** - *Uso de dinámicas 3d, UI/UX, dinámica lúdica e inmersiva.*
+
+## Requisitos
+- NodeJS
+
+## Instalación
+- Descargar el repositorio
+- Instalar [NodeJS](https://nodejs.org/es/download/) y ejecutar
+```shell
+npm install
+```
+para instalar los modulos **Express** y **Nodemon**
+- Ejecutar con Node el archivo **app.js** para abrir el servidor (que despliega en consola)
+```shell
+node app.js
+```

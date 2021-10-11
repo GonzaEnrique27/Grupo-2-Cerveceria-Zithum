@@ -18,7 +18,8 @@ Estamos en desarrollo de una tienda online que no solo ofrezca productos, sino t
 
 ## Tablero de trabajo
 
-[Grupo 2 - Zythum](https://trello.com/b/uubm3Cfu/pi-grupo-2-zythum)
+[Tablero de Trello](https://trello.com/b/uubm3Cfu/pi-grupo-2-zythum)
+[Retrospectiva de Primer Sprint](https://jamboard.google.com/d/1hSpLoTWL3FsyEfoPZZJm1-DueDRsuan7j3oAluI-wqw)
 
 
 ## Inspiraciones 

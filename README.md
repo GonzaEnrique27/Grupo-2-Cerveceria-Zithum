@@ -1,16 +1,12 @@
 # ZITHUM
 
-Actualmente estamos en pleno desarrollo de una tienda online que no solo ofrezca productos, sino también poder brindarles una experiencia a nuestros consumidores. Con esto, los servicios que ofrecemos son:
+Estamos en desarrollo de una tienda online que no solo ofrezca productos, sino también poder brindarles una experiencia a nuestros consumidores. Con esto, los servicios que ofrecemos son:
 
 - Venta de cervezas artesanales de distintos tipos (rubia, negra, roja, etc...).
-
-- Venta de procutos de bar como licores, aguardientes y demás.
-
-- Venta de productos de preparación de cada una de las cervezas ya mencionadas.
-
+- Venta de productos de bar como licores, aguardientes y demás.
 - Juegos Interactivos multijugador con una diversión asegurada con amigos.
-
-- Entre otras.
+- Venta de productos de preparación de cada una de las cervezas ya mencionadas. (Tentativo)
+- Y más...
 
 ## Autores ✒️
 
@@ -19,6 +15,11 @@ Actualmente estamos en pleno desarrollo de una tienda online que no solo ofrezca
 * **Lautaro** - *23 años, programador web full stack(Php) - Me gusta escuchar musica de cualquier tipo y jugar o leer durante disfruto de la musica.* Perfil Github: https://github.com/LautaroDR
 * **Gonzalo Enrique** - *27 Años, Tecnico en Electronica, Fisioterapeuta y Streamer.*
 * **Marco Antonio Aleman** - *26 años, amante de las plantas* - [MarcoAleman](https://github.com/MarcoAleman)
+
+## Tablero de trabajo
+
+[Grupo 2 - Zythum](https://trello.com/b/uubm3Cfu/pi-grupo-2-zythum)
+
 
 ## Inspiraciones 
 

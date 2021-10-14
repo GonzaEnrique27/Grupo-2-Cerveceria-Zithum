@@ -18,16 +18,22 @@
 </head>
 <body>
     <header>
-        <ul>
-            <li><a href="/"><img src="/img/logo-DH.png" alt="logo-DH" style="max-height: 26px;"></a></li>
-            <li><a href="/babbage">     Babbage</a></li>
-            <li><a href="/berners-lee"> Berners Lee</a></li>
-            <li><a href="/clarke">      Clarke</a></li>
-            <li><a href="/hamilton">    Hamilton</a></li>
-            <li><a href="/hopper">      Hopper</a></li>
-            <li><a href="/lovelace">    Lovelace</a></li>
-            <li><a href="/turing">       Turing</a></li>        
-        </ul>
+        <nav id="h-menu-bar">
+			<div id="h-menu" onclick="onClickMenu()">
+				<div id="h-bar1" class="bar"></div>
+				<div id="h-bar2" class="bar"></div>
+				<div id="h-bar3" class="bar"></div>
+			</div>
+			<ul class="nav" id="h-nav">
+				<li><a href="/">Home</a></li>
+				<li><a href="/login">Login</a></li>
+				<li><a href="/register">Register</a></li>
+				<li><a href="/productCart">Carrito</a></li>
+				<li><a href="/productDetail">Detalle</a></li>
+			</ul>
+		</nav>
+		<div class="menu-bg" id="h-menu-bg"></div>
+		<div class="menu-bg2"></div>
     </header>
     <main>
         <div>
@@ -39,5 +45,6 @@
     <footer>
         Ricardo Daniel Romero (Grupo 2) - Comisión 12
     </footer>
+    <script src="/js/header.js"></script>
 </body>
 </html>

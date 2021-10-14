@@ -1,0 +1,13 @@
+/*** GENERALES ***/
+*{
+    font-family: var(--typo);
+    box-sizing: content-box;
+}
+
+body{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}

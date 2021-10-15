@@ -1,7 +1,7 @@
 /* FOOTER */
 footer {
     display: flex;
-    flex-wrap:wrap;
+    flex-wrap:nowrap;
     background-color: #04485F;
     color: white;
     bottom: 0;
@@ -13,10 +13,11 @@ footer {
 footer p{
     font-size: 14px ;
     font-weight:bold ;
+    text-align: center;
 }
 
 footer frase{
-    opacity: 30%;
+    opacity: 35%;
 }
 
 main{

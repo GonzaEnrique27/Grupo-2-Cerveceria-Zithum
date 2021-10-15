@@ -1,0 +1,24 @@
+/* FOOTER */
+footer {
+    display: flex;
+    flex-wrap:wrap;
+    background-color: #04485F;
+    color: white;
+    bottom: 0;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+footer p{
+    font-size: 14px ;
+    font-weight:bold ;
+}
+
+footer frase{
+    opacity: 30%;
+}
+
+main{
+    display: flex;
+}

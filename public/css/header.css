@@ -1,10 +1,10 @@
 /*** HEADER ***/
-header, footer{
+header{
     display: flex;
     overflow: hidden;
     background-color: blanchedalmond;
     justify-content: space-around;
-    height: 5em;
+    height: 80px;
     align-items: center;
 }
 
@@ -100,13 +100,16 @@ header .change-bg{
 	height: 540px;
 	transform: translate(-60%,-30%);
 }
+/* NO LO TOMA, NO BORRAR ASI PREGUNTO A JONA
 header .change .bar{
 	background-color: white;
-}
+} */
 header .change #h-bar1{
+	background-color: white;
 	transform: translateY(4px) rotateZ(-45deg);
 }
 header .change #h-bar3{
+	background-color: white;
 	transform: translateY(-6px) rotate(45deg);
 }
 header .change #h-bar2{

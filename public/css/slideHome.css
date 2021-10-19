@@ -12,10 +12,7 @@
 	70% { transform: translateX(-300%); }
 
 	75% { transform: translateX(-400%); }
-	90% { transform: translateX(-400%); }
-
-	95% { transform: translateX(-500%); }
-	100% { transform: translateX(-500%); }
+	100% { transform: translateX(-400%); }
 }
 
 * { box-sizing: border-box; }
@@ -45,7 +42,7 @@ body {
 	width: 100vw;
 	flex-shrink: 0;
 	animation-name: slide;
-	animation-duration: 20s;
+	animation-duration: 15s;
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 }
@@ -113,7 +110,6 @@ body {
 	}
 
 	.caption {
-		font-size: 96px;
 		bottom: 96px;
 		right: 50px;
 	}

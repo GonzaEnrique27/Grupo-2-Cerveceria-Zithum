@@ -1,7 +1,7 @@
 /*** HEADER ***/
 header{
     display: flex;
-    overflow: hidden;
+    overflow: auto;
     background-color: #04485f;
     justify-content: space-around;
     height: 80px;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /*main{
     margin: 1rem;
@@ -5,27 +6,85 @@
     background-color: grey;
     padding: 1rem;
      flex-grow: 1;
+=======
+/**********************************/
+  /* SCROLL ITEMS HOME*/
+/**********************************/
+div.scrollmenu {
+>>>>>>> refs/remotes/origin/master
     display: flex;
-    flex-direction: column;
-    align-content: space-around;
+    background-color: #fefecc;
+    overflow: auto;
+    white-space: nowrap;
+    align-items: center
+  
+}
+  
+  div.scrollmenu a {
+    display: inline-block;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  div.scrollmenu a:hover {
+    background-color: #777;
+  }
+
+  .Promos {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 1200px;
+      align-items: center;
+  }
+/**********************************/
+  /* SLIDE HOME*/
+/**********************************/
+  @keyframes slide {
+	0% { transform: translateX(0); }
+	10% { transform: translateX(0); }
+
+	15% { transform: translateX(-100%); }
+	30% { transform: translateX(-100%); }
+
+	35% { transform: translateX(-200%); }
+	50% { transform: translateX(-200%); }
+
+	55% { transform: translateX(-300%); }
+	70% { transform: translateX(-300%); }
+
+	75% { transform: translateX(-400%); }
+	100% { transform: translateX(-400%); }
 }
 
-main div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+.wrapper {
+	display: flex;
+	flex-wrap: nowrap;
+	max-width: 1200px;
 }
 
-main img{
-    max-height: 20rem;
-    max-width: 80%;
+.slider {
+	position: relative;
 }
 
-h1{
-    color: red;
-    font-size:x-large;
-    margin-bottom: 1rem;
+.slides {
+	position: relative;
+	display: flex;
+	overflow: hidden;
 }
+
+.slide {
+	width: 100vw;
+	flex-shrink: 0;
+	animation-name: slide;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+<<<<<<< HEAD
 p{
     color: blanchedalmond;
     font-size: medium;
@@ -59,3 +118,65 @@ div.scrollmenu {
       height: 1200px;
       background-color: red;
   }
+=======
+
+.slides:hover .slide {
+	animation-play-state: paused;
+}
+
+.slide img {
+	width: 100%;
+	vertical-align: top;
+}
+
+.slide a {
+	width: 100%;
+	display: inline-block;
+	position: relative;
+}
+
+.caption {
+	color: white;
+	font-size: 8vw;
+	position: absolute;
+	bottom: 8vw;
+	right: 4vw;
+}
+
+.slide:target {
+	animation-name: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 50;
+}
+
+.slider-controler {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	padding: 5px;
+	z-index: 100;
+}
+
+.slider-controler li {
+	margin: 0 0.5rem;
+	display: inline-block;
+	vertical-align: top;
+}
+
+@media only screen and (min-width: 1200px) {
+	.slide {
+		width: 1200px;
+	}
+
+	.caption {
+		bottom: 96px;
+		right: 50px;
+	}
+}
+>>>>>>> refs/remotes/origin/master

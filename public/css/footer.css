@@ -2,7 +2,7 @@
 footer {
     display: flex;
     flex-wrap:nowrap;
-    background-color: #04485F;
+    background-color: #04485f;
     color: white;
     bottom: 0;
     width: 100%;
@@ -16,10 +16,10 @@ footer p{
     text-align: center;
 }
 
-.frase{
+footer.frase{
     opacity: 35%;
 }
 
-main{
+main .Home{
     display: flex;
 }

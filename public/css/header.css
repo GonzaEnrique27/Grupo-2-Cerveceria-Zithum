@@ -1,13 +1,18 @@
 /*** HEADER ***/
 header{
     display: flex;
-    overflow: hidden;
+    overflow: auto;
     background-color: #04485f;
     justify-content: space-around;
+<<<<<<< HEAD
     height: 80px;
     align-items: center;
 	position: block;
 	z-index: 5;
+=======
+    height: 70px;
+	box-sizing: border-box;
+>>>>>>> refs/remotes/origin/master
 }
 
 /* 

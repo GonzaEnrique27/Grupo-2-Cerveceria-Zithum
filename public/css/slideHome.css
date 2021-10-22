@@ -23,9 +23,6 @@ html { scroll-behavior: smooth; }
 	display: flex;
 	flex-wrap: nowrap;
 	max-width: 1200px;
-	/* ARREGLADO PROBLEMA DEL FLEX
-	padding-top: 75px; */
-	background-color: #04485f;
 }
 
 .slider {
@@ -94,14 +91,6 @@ html { scroll-behavior: smooth; }
 	margin: 0 0.5rem;
 	display: inline-block;
 	vertical-align: top;
-}
-
-.slider-controler a {
-	display: inline-block;
-	vertical-align: top;
-	text-decoration: none;
-	color: white;
-	font-size: 1.5rem;
 }
 
 @media only screen and (min-width: 1200px) {

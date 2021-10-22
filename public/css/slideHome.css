@@ -19,10 +19,6 @@
 
 html { scroll-behavior: smooth; }
 
-body {
-	font-family: sans-serif;
-}
-
 .wrapper {
 	display: flex;
 	flex-wrap: nowrap;

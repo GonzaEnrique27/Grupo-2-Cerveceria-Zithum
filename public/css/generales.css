@@ -8,6 +8,7 @@ body{
     background-color: #fefecc;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    /* ARREGLADO PROBLEMA DEL FLEX
+    height: 100vh; */
     justify-content: space-between;
 }

@@ -1,14 +1,12 @@
 /*** GENERALES ***/
 *{
     font-family: var(--typo);
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 body{
     background-color: #fefecc;
     display: flex;
     flex-direction: column;
-    /* ARREGLADO PROBLEMA DEL FLEX
-    height: 100vh; */
     justify-content: space-between;
 }

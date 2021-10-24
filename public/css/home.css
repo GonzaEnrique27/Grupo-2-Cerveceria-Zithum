@@ -14,19 +14,20 @@ div.scrollmenu {
     display: inline-block;
     padding: 14px;
     text-decoration: none;
-	box-shadow: 10px 5px 5px grey;
+	box-shadow: 10px 5px 5px #F3BDA1;
+	border-radius: 8%;
+    padding-left: 5%;
+	padding-top: 5%;
   }
-  
-  div.scrollmenu a:hover {
-    background-color: #777;
-  }
-
+/**********************************/
+  /* BANNER*/
+/**********************************/
   .Promos {
       display: flex;
       flex-wrap: nowrap;
       width: 1200px;
       align-items: center;
-	  box-shadow: 10px 5px 5px black;
+	  padding-top: 5%;
   }
 /**********************************/
   /* SLIDE HOME*/

@@ -15,26 +15,36 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
 <body>
-    <header>
-        <nav id="h-menu-bar">
-			<div id="h-menu" onclick="onClickMenu()">
-				<div id="h-bar1" class="bar"></div>
-				<div id="h-bar2" class="bar"></div>
-				<div id="h-bar3" class="bar"></div>
-			</div>
-			<ul class="nav" id="h-nav">
-				<li><a href="/">Home</a></li>
-				<li><a href="/login">Login</a></li>
-				<li><a href="/register">Register</a></li>
-				<li><a href="/productCart">Carrito</a></li>
-				<li><a href="/productDetail">Detalle</a></li>
-			</ul>
-		</nav>
-		<div class="menu-bg" id="h-menu-bg"></div>
-		<div class="menu-bg2"></div>
-    </header>
+  <header>
+    <nav id="h-menu-bar">
+  <div id="h-menu" onclick="onClickMenu()">
+    <div id="h-bar1" class="bar"></div>
+    <div id="h-bar2" class="bar"></div>
+    <div id="h-bar3" class="bar"></div>
+  </div>
+  <ul class="nav" id="h-nav">
+    <li><a href="/">Home</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/register">Register</a></li>
+    <li><a href="/productCart">Carrito</a></li>
+    <li><a href="/productDetail">Detalle</a></li>
+  </ul>
+</nav>
+<div class="menu-bg" id="h-menu-bg" onclick="onClickMenu()"></div>
+<div class="menu-bg2"id="h-menu-bg2" onclick="onClickMenu()"></div>
+        <form id="h-search-bar" action="">
+            <input type="text" placeholder="Buscar...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+        <div class="user">
+          <a href="#" class="chart"><i class="fas fa-shopping-cart"></i></a>
+          <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
+      </div>
+</header>
     <div class="wrapper">
         <div class="slider" id="slider">
           <ul class="slides">

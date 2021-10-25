@@ -7,3 +7,10 @@
 a{
     text-decoration: none;
 }
+
+body{
+    background-image: url('/img/fondo.png');
+    background-attachment: fixed;
+    overflow: scroll;
+    background-repeat: no-repeat;
+}

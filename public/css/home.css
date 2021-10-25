@@ -49,8 +49,6 @@ div.scrollmenu {
 	100% { transform: translateX(-400%); }
 }
 
-* { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 .wrapper {

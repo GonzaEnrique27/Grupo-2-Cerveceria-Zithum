@@ -1,0 +1,79 @@
+body .registro{
+    background-color: var(--c1);
+}
+
+.cajita {
+    background-color: var(--rosa);
+    width: 300px;
+    height: 500px;
+    border-radius: 2px;
+    border: solid 1px black;
+    margin: 0 auto;
+    margin-top: 40px;   
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.form-register {
+    list-style: none;
+    padding: 10px;
+}
+
+.form-register li + li {
+    margin-top: 20px;
+}
+
+form ul li .title-register {
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+form ul li input {
+    height: 47px;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: 10px;
+
+}
+
+.contraseña {
+    position:relative
+}
+
+.ver-contraseña {
+    position: absolute;
+    bottom: 7px;
+    right: 40px;
+    border: none;
+    background-color: white;
+}
+.img-visivility {
+    width: 25px;
+    font-size: 12px;
+}
+
+/* .checkbox-promotion {
+    
+} */
+
+.checkbox {
+    width: 18px;
+    height: 18px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.nueva-cuenta {
+    padding: 10px;
+    border: 1px black solid;
+    border-radius: 15px;
+    background-color: var(--c2);
+}
+
+.nueva-cuenta a {
+    color: white;
+    font-weight: 900;
+}

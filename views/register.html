@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
 </head>
-<body>
+<body class="registro">
     <header>
         <nav id="h-menu-bar">
 			<div id="h-menu" onclick="onClickMenu()">
@@ -36,11 +36,30 @@
 		<div class="menu-bg2"></div>
     </header>
     <main>
-        <div>
-            <img src="/img/logo-DH.png" alt="logo-DH">
+        <div class="cajita">
+            <form action="">
+                <ul class="form-register">
+                    <li><h3 class="title-register">crear cuenta</h3></li>
+                    <li><input type="text" placeholder=" Nombre" required></li>
+                    <li><input type="text" placeholder=" Apellido" required></li>
+                    <li><input type="email" placeholder=" Correo" required></li>
+                    <li class="contraseña">
+                        <input type="password" placeholder=" Contraseña" required>
+                        <button class="ver-contraseña">
+                            <img class="img-visivility" src="img/icons/visibility.png" alt="Mostrar Contraseña">
+                        </button>
+                    </li>
+                    <li class="checkbox-promotion">
+                        <input type="checkbox" class="checkbox">
+                        <span>Quiero recibir promociones</span>
+                    </li>
+                    <li><button class="nueva-cuenta"><a href="">CREAR CUENTA</a></button></li>
+                    <li>¿Ya tienes cuenta? <a href="">Iniciar Sesion</a></li>
+                </ul>
+            </form>
         </div>
-        <h1>DH Héroes</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, sapiente esse. Quia exercitationem nisi cupiditate libero alias deleniti debitis ab. Deserunt incidunt animi reiciendis officiis voluptatibus similique, assumenda delectus architecto!</p>
+
+
     </main>
     <footer> 
         <div>

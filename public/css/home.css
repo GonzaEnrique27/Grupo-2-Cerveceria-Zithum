@@ -27,7 +27,7 @@ div.scrollmenu {
   .Promos {
       display: flex;
       flex-wrap: nowrap;
-      width: 1200px;
+      width: 100%;
       align-items: center;
 	  padding-top: 5%;
   }
@@ -55,8 +55,7 @@ html { scroll-behavior: smooth; }
 
 .wrapper {
 	display: flex;
-	flex-wrap: nowrap;
-	max-width: 1200px;
+	flex-wrap: nowrap
 }
 
 .slider {
@@ -70,7 +69,7 @@ html { scroll-behavior: smooth; }
 }
 
 .slide {
-	width: 100vw;
+	width: 100%;
 	flex-shrink: 0;
 	animation-name: slide;
 	animation-duration: 15s;

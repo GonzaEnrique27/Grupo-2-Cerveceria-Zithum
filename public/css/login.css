@@ -1,0 +1,77 @@
+.login-container {
+    background-color: var(--rosa);
+    width: 300px;
+    
+    border-radius: 2px;
+    border: solid 1px black;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.redes-login {
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-bottom: black 5px solid;
+}
+
+.redes {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto 0;
+}
+.face-login {
+    background-color: white;
+}
+.face-login, .google-login {
+    width: 50px;
+    height: 50px;
+}
+
+.user-login {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.input-container .input-style {
+    height: 47px;
+    width: 230px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-bottom: 4px;
+}
+
+.input-container .error-message {
+    color: red;
+}
+
+.recover-pass {
+    display: flex;
+    justify-content: end;
+    margin-top: -4px;
+    margin-bottom: 10px;
+}
+
+.input-checkbox {
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.buttom-login2 {
+    padding: 10px;
+    border: 1px black solid;
+    border-radius: 15px;
+    background-color: var(--c2);
+    margin-bottom: 10px;
+}
+
+

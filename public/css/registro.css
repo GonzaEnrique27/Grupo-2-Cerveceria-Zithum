@@ -1,0 +1,30 @@
+body{
+    background-color: #fefecc;
+}
+
+/* CAJA REGISTRO */
+.caja-registro-escritorio{
+    display: flex;
+    justify-content: center;
+}
+.caja-form-registro{
+    width: 500px;
+    height: 600px;
+    background-color: #F3BDA1;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+/* FORMULARIO */
+
+
+.input-registro{
+    width: 350px;
+    height: 45px;
+    border-radius: 5px;
+    border:none;
+    margin:15px 0px;
+}
+.notificaciones{
+    margin:12px 0;
+}

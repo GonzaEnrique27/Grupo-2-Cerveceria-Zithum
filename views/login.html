@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TITULO -->
-    <title>Zithum</title>
-    <link rel="shortcut icon" href="/img/15668177831743.jpg">    <meta charset="UTF-8">
-    
+    <title>Zythum</title>
+    <link rel="shortcut icon" href="/img/15668177831743.jpg">
+    <meta charset="UTF-8">
+
     <!-- ESTILOS CSS -->
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" /> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <header>
+     <header>  
         <nav id="h-menu-bar">
 			<div id="h-menu" onclick="onClickMenu()">
 				<div id="h-bar1" class="bar"></div>
@@ -34,60 +38,45 @@
 				<li><a href="/productDetail">Detalle</a></li>
 			</ul>
 		</nav>
-		<div class="menu-bg" id="h-menu-bg" onclick="onClickMenu()"></div>
-		<div class="menu-bg2"id="h-menu-bg2" onclick="onClickMenu()"></div>
-            <form id="h-search-bar" action="">
-                <input type="text" placeholder="Buscar...">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-            <div class="user">
-                <a href="#" class="chart"><i class="fas fa-shopping-cart"></i></a>
-                <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
-            </div>
-    </header>
-    <main>
+		<div class="menu-bg" id="h-menu-bg"></div>
+		<div class="menu-bg2"></div>
     
-        <div class="login-container">
+    </header>
+    
+    <!-- ------------------------------------- FOOTER ------------------------------------- -->
 
-            <div class="redes-login">
-                <h3>Inicia Sesión con:</h3>
-                <div class="redes">
-                    <div class="face-login">
-                        <a href="https://facebook.com" target="blank"><img src="img/icons/facebook-icon.svg" alt=""></a>
-                    </div>
-                    <div class="google-login">
-                        <a href="https://www.google.com" target="blank"><img src="img/icons/google-icon.svg" alt=""></a>
-                    </div>
+    <div class="cuadro-centrado-login">
+        <div class="form-login-desktop">
+
+            <div class="mitad-1">
+                <p class="titulos-login">Iniciar sesion con</p>
+                <div class="iniciar-google" alt="Continuar con google">
+                   <a href="#"><img src="img/boton-google.png" alt="icono google"></a>
                 </div>
-                
+                <div class="iniciar-facebook">
+                    <a href="#"><img src="img/boton-facebook.png" alt="icono google"></a>
+                </div>
             </div>
 
-            <div class="user-login">  
-                <h3>Ingresa con tu email y contraseña</h3>  
-                <div class="input-container">
-                    <input class="input-style" type="email" name="email" placeholder="Ingrese su email">
-                    <span class="error-message">Debes ingresar tu email</span>
+            <div class="mitad-2">
+                <div class="formulario-login-mitad2">
+                    <form action="#" method="post">
+                        <p class="titulo-formulario-login">Ingresar con usuario y contraseña</p><br><br>
+                        <input type="email" name="email" placeholder="  Email" required> <br><br>
+                        <input type="password" name="password" placeholder="    Contraseña" required><br><br>
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                        <center><button type="submit">Ingresar</button></center> 
+                    </form>
                 </div>
-                <div class="input-container">
-                    <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña">
-                    <span class="error-message">Debes ingresar tu contraseña</span>
-                </div>
-                <span class="recover-pass"><a href="">¿Olvidaste tu contraseña?</a></span>
-                <div class="input-checkbox">
-                    <label for="recuerdame">
-                    <input type="checkbox" name="recuerdame" id="recuerdame"> Recuerdame
-                    </label>
-                </div>
-                <div class="buttom-login">
-                    <button class="buttom-login2">INICIAR SESIÓN</button>
-                </div>
-                <h3>¿Nuevo? <a href="/register">Creá tu cuenta</a></h3>
+            </div>
 
-
+            <div class="cent-nuevo-usuario">
+                <p>¿Nuevo? <a href="#">Crear cuenta</a></p>
             </div>
         </div>
+    </div>
 
-    </main>
+    <!--------------------------------------- FOOTER --------------------------------------
     <footer> 
         <div>
             <p class="pfooter">Redes Sociales</p>
@@ -100,7 +89,11 @@
         <div class="logo-central"> <img src="/img/logo de footer.png" alt="logoFooter" style="max-height: 60px;">
             <p class="frase">Copyright © 2021 Zythum SA.</p>
         </div>
-    </footer>
+    </footer>  
+    --> 
     <script src="/js/header.js"></script>
+      
+      <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
 </body>
+
 </html>

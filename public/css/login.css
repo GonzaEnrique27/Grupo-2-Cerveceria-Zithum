@@ -1,77 +1,109 @@
-.login-container {
-    background-color: var(--rosa);
-    width: 300px;
-    
-    border-radius: 2px;
-    border: solid 1px black;
-    margin: 30px auto;
+
+/* GLOBALES */
+body{
+    background-color: #fefecc;
+}
+/* FIN GLOBALES */
+.titulos-login{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
     text-align: center;
+    width: 320px;
+    margin-top:50px !important;
+    margin:0 auto;
+    text-decoration: none;
 }
-
-.redes-login {
-    height: 180px;
+.titulo-formulario-login{
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    width: 320px;
+}
+.cuadro-centrado-login{
     display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-bottom: black 5px solid;
+    justify-content: center;
+    position: relative;
 }
 
-.redes {
-    display: flex;
-    justify-content: space-evenly;
-    margin: auto 0;
-}
-.face-login {
-    background-color: white;
-}
-.face-login, .google-login {
-    width: 50px;
-    height: 50px;
-}
-
-.user-login {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.input-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 8px 0;
-}
-
-.input-container .input-style {
-    height: 47px;
-    width: 230px;
-    border: 1px solid black;
+.form-login-desktop{
+    max-width: 1200px;
+    min-width: 980px;
+    height: 470px;
     border-radius: 10px;
-    margin-bottom: 4px;
-}
-
-.input-container .error-message {
-    color: red;
-}
-
-.recover-pass {
+    background-color: #F3BDA1;
+    position: absolute;
+    top: 50%;
+    margin-top: 100px;
     display: flex;
-    justify-content: end;
-    margin-top: -4px;
-    margin-bottom: 10px;
+    justify-content: center;
+}
+/* -------------- MITAD UNO   ---------------- */
+.mitad-1{
+    width: 50%;
+    height: 100%;
+    border-right:solid rgba(48, 48, 48, 0.329) 2px;
+    text-align: center;
+    justify-content: center;
+}
+.iniciar-con{
+    font-size:50px;
 }
 
-.input-checkbox {
+/* Botones de Inciar con Google - Facebook */
+.iniciar-google,.iniciar-facebook{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin:60px 0;
+}
+
+
+
+
+/* -------------- MITAD DOS   ---------------- */
+
+.mitad-2{
     display: flex;
-    padding-bottom: 10px;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+.formulario-login-mitad2{
+    margin:0 auto;
+}
+.formulario-login-mitad2 form input{
+    width: 330px;
+    height: 60px;
+    border-radius: 5px;
+    border:solid 0px;
+}
+.formulario-login-mitad2 form a{
+    margin-left: 170px;
+}
+.formulario-login-mitad2 form button{
+    width: 170px;
+    height: 40px;
+    border-radius: 10px;
+    border:solid 0px;
+    font-size: 20px;
+    background-color: blue;
+    margin-top:20px;
+    color:white;
+    display: block;
+}
+.formulario-login-mitad2 form button:hover{
+    background-color: red;
+}
+/* -------------- NUEVO? CREAR CUENTA   ---------------- */
+
+.cent-nuevo-usuario{
+    position: absolute;
+    bottom: 10px;
+    z-index: 12;
+}
+.cent-nuevo-usuario p{
+    font-size: 20px;
 }
 
-.buttom-login2 {
-    padding: 10px;
-    border: 1px black solid;
-    border-radius: 15px;
-    background-color: var(--c2);
-    margin-bottom: 10px;
-}
 
 

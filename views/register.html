@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
+
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TITULO -->
-    <title>Zithum</title>
-    <link rel="shortcut icon" href="/img/15668177831743.jpg">    <meta charset="UTF-8">
-    
+    <title>Zythum</title>
+    <link rel="shortcut icon" href="/img/15668177831743.jpg">
+
     <!-- ESTILOS CSS -->
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/registro.css">
 
     <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" /> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
-<body class="registro">
+
+<body>
+    <!--
     <header>
         <nav id="h-menu-bar">
 			<div id="h-menu" onclick="onClickMenu()">
@@ -27,50 +30,45 @@
 				<div id="h-bar3" class="bar"></div>
 			</div>
 			<ul class="nav" id="h-nav">
-				<li><a href="/">Inicio</a></li>
-				<li><a href="/login">Iniciar Sesión</a></li>
-				<li><a href="/register">Registro</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="/login">Login</a></li>
+				<li><a href="/register">Register</a></li>
 				<li><a href="/productCart">Carrito</a></li>
 				<li><a href="/productDetail">Detalle</a></li>
 			</ul>
 		</nav>
-		<div class="menu-bg" id="h-menu-bg" onclick="onClickMenu()"></div>
-		<div class="menu-bg2"id="h-menu-bg2" onclick="onClickMenu()"></div>
-            <form id="h-search-bar" action="">
-                <input type="text" placeholder="Buscar...">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-            <div class="user">
-                <a href="#" class="chart"><i class="fas fa-shopping-cart"></i></a>
-                <a href="#" class="user-icon"><i class="fas fa-user"></i></a>
-            </div>
+		<div class="menu-bg" id="h-menu-bg"></div>
+		<div class="menu-bg2"></div>
     </header>
-    <main>
-        <div class="cajita">
-            <form action="">
-                <ul class="form-register">
-                    <li><h3 class="title-register">crear cuenta</h3></li>
-                    <li><input type="text" placeholder=" Nombre" required></li>
-                    <li><input type="text" placeholder=" Apellido" required></li>
-                    <li><input type="email" placeholder=" Correo" required></li>
-                    <li class="contraseña">
-                        <input type="password" placeholder=" Contraseña" required>
-                        <button class="ver-contraseña">
-                            <img class="img-visivility" src="img/icons/visibility.png" alt="Mostrar Contraseña">
-                        </button>
-                    </li>
-                    <li class="checkbox-promotion">
-                        <input type="checkbox" class="checkbox">
-                        <span>Quiero recibir promociones</span>
-                    </li>
-                    <li><button class="nueva-cuenta"><a href="">CREAR CUENTA</a></button></li>
-                    <li>¿Ya tienes cuenta? <a href="/login">Iniciar Sesión</a></li>
-                </ul>
-            </form>
+    -->
+
+
+    <div class="caja-registro-escritorio">
+        <div class="caja-form-registro">
+            <center>
+                <h2>Crear cuenta</h2>
+                <form action="#" method="post">
+                    <input type="text" class="input-registro" name="name" id="nombre" placeholder=" Nombre"
+                        required><br>
+                    <input type="text" class="input-registro" name="lastname" id="apellido" placeholder=" Apellido"
+                        required><br>
+                    <input type="email" class="input-registro" name="email" id="email" placeholder=" Email"
+                        required><br>
+                    <input type="password" class="input-registro" name="password" id="password"
+                        placeholder=" Contraseña" required><br>
+                    <input type="password" class="input-registro" name="confirm-password" id="confirm-password"
+                        placeholder=" Confirmar contraseña" required><br>
+                    <input type="checkbox" class="notificaciones" name="notificaciones" id="notificaciones"><label for="notificaciones">Recibir
+                        notificaciones</label><br>
+                    <button type="submit">CREAR CUENTA</button><br>
+                    <p>¿Ya tenes cuenta?<a href="#">Iniciar sesion</a> </p>
+                </form>
+            </center>
         </div>
+    </div>
 
 
-    </main>
+    <!--
     <footer> 
         <div>
             <p class="pfooter">Redes Sociales</p>
@@ -85,5 +83,7 @@
         </div>
     </footer>
     <script src="/js/header.js"></script>
+-->
 </body>
+
 </html>

@@ -11,6 +11,7 @@
     <!-- ESTILOS CSS -->
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
     <link rel="stylesheet" href="/css/registro.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +22,7 @@
 </head>
 
 <body>
-    <!--
+
     <header>
         <nav id="h-menu-bar">
 			<div id="h-menu" onclick="onClickMenu()">
@@ -40,17 +41,17 @@
 		<div class="menu-bg" id="h-menu-bg"></div>
 		<div class="menu-bg2"></div>
     </header>
-    -->
+
 
 
     <div class="caja-registro-escritorio">
         <div class="caja-form-registro">
             <center>
-                <h2>Crear cuenta</h2>
+                <h2 class="h2-registro">Crear cuenta</h2>
                 <form action="#" method="post">
-                    <input type="text" class="input-registro" name="name" id="nombre" placeholder=" Nombre"
+                    <input type="text" class="input-registro" name="name" id="nombre" placeholder="  Nombre"
                         required><br>
-                    <input type="text" class="input-registro" name="lastname" id="apellido" placeholder=" Apellido"
+                    <input type="text" class="input-registro" name="lastname" id="apellido" placeholder="  Apellido"
                         required><br>
                     <input type="email" class="input-registro" name="email" id="email" placeholder=" Email"
                         required><br>
@@ -60,7 +61,8 @@
                         placeholder=" Confirmar contraseña" required><br>
                     <input type="checkbox" class="notificaciones" name="notificaciones" id="notificaciones"><label for="notificaciones">Recibir
                         notificaciones</label><br>
-                    <button type="submit">CREAR CUENTA</button><br>
+                    <button type="submit" class="new-account">CREAR CUENTA</button><br>
+                    <hr class="hr-registro">
                     <p>¿Ya tenes cuenta?<a href="#">Iniciar sesion</a> </p>
                 </form>
             </center>
@@ -82,8 +84,9 @@
             <p class="frase">Copyright © 2021 Zythum SA.</p>
         </div>
     </footer>
+    -->
     <script src="/js/header.js"></script>
--->
+
 </body>
 
 </html>

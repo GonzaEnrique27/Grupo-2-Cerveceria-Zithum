@@ -1,5 +1,7 @@
 .caja-producto1{
     display: flex;
     background-color: white;
+    width: 50%;
+    height: 20%;
 
 }

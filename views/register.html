@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TITULO -->
-    <title>Zythum</title>
-    <link rel="shortcut icon" href="/img/15668177831743.jpg">
-
+    <title>Zithum</title>
+    <link rel="shortcut icon" href="/img/15668177831743.jpg">    <meta charset="UTF-8">
+    
     <!-- ESTILOS CSS -->
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
-    <link rel="stylesheet" href="/css/registro.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
 </head>
 
 <body>
@@ -33,13 +32,21 @@
 			<ul class="nav" id="h-nav">
 				<li><a href="/">Home</a></li>
 				<li><a href="/login">Login</a></li>
-				<li><a href="/register">Register</a></li>
+				<li><a href="/register">Registro</a></li>
 				<li><a href="/productCart">Carrito</a></li>
 				<li><a href="/productDetail">Detalle</a></li>
 			</ul>
 		</nav>
-		<div class="menu-bg" id="h-menu-bg"></div>
-		<div class="menu-bg2"></div>
+		<div class="menu-bg" id="h-menu-bg" onclick="onClickMenu()"></div>
+		<div class="menu-bg2"id="h-menu-bg2" onclick="onClickMenu()"></div>
+            <form id="h-search-bar" action="">
+                <input type="text" placeholder="Buscar...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+            <div class="user">
+                <a href="/productCar" class="chart"><i class="fas fa-shopping-cart"></i></a>
+                <a href="/login" class="user-icon"><i class="fas fa-user"></i></a>
+            </div>
     </header>
 
 
@@ -47,7 +54,7 @@
     <div class="caja-registro-escritorio">
         <div class="caja-form-registro">
             <center>
-                <h2 class="h2-registro">Crear cuenta</h2>
+                <h2 class="h2-registro">Crear Cuenta</h2>
                 <form action="#" method="post">
                     <input type="text" class="input-registro" name="name" id="nombre" placeholder="  Nombre"
                         required><br>
@@ -59,18 +66,17 @@
                         placeholder=" Contraseña" required><br>
                     <input type="password" class="input-registro" name="confirm-password" id="confirm-password"
                         placeholder=" Confirmar contraseña" required><br>
-                    <input type="checkbox" class="notificaciones" name="notificaciones" id="notificaciones"><label for="notificaciones">Recibir
+                    <input type="checkbox" class="notificaciones" name="notificaciones" id="notificaciones"><label for="notificaciones"> Recibir
                         notificaciones</label><br>
                     <button type="submit" class="new-account">CREAR CUENTA</button><br>
                     <hr class="hr-registro">
-                    <p>¿Ya tenes cuenta?<a href="#">Iniciar sesion</a> </p>
+                    <p>¿Ya tenes cuenta?<a href="/login"> Iniciar sesión</a> </p>
                 </form>
             </center>
         </div>
     </div>
 
 
-    <!--
     <footer> 
         <div>
             <p class="pfooter">Redes Sociales</p>
@@ -84,9 +90,6 @@
             <p class="frase">Copyright © 2021 Zythum SA.</p>
         </div>
     </footer>
-    -->
     <script src="/js/header.js"></script>
-
 </body>
-
 </html>

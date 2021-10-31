@@ -40,10 +40,13 @@ header ul li a:hover{
 } */
 
 #h-menu{
-	width: 35px;
-	height: 30px;
-	margin: 30px 0 20px 20px;
+	width: 55px;
+	height: 50px;
+	/* margin: 30px 0 20px 20px; */
 	cursor: pointer;
+	border: 2px var(--c1) solid;
+	padding: 15px 8px 2px 8px;
+	border-radius: 10px;
 }
 #h-menu .bar{
 	height: 5px;
@@ -77,21 +80,21 @@ header .nav{
 	display: none;
 }
 header .menu-bg, #h-menu-bar{
-	top: 0;
-	left: 0;
+	top: 10px;
+	left: 10px;
 	position: absolute;
 }
 header .menu-bg{
-	z-index: 1;
+	z-index: 61;
 	width: 0;
 	height: 0;
 	margin: 30px 0 20px 20px;
-	background: radial-gradient(circle,#04485f,#04485f);
+	background: radial-gradient(circle,var(--c2),var(--c2));
 	border-radius: 50%;
 	transition: 0.3s ease;
 }
 #h-menu-bar{
-	z-index: 2;	
+	z-index: 102;	
 }
 
 /* CAMBIOS DEL TOGGLE HAMBURGUESA */
@@ -100,6 +103,16 @@ header .change-bg{
 	height: 540px;
 	transform: translate(-60%,-30%);
 }
+
+header .change-bg2{
+	width: 100vw;
+	height: 100vh;
+	background: black;
+	position: absolute;
+	opacity: 0.3;
+	transition: 0.5s ease;
+}
+
 /* NO LO TOMA, NO BORRAR ASI PREGUNTO A JONA
 header .change .bar{
 	background-color: white;
@@ -117,4 +130,63 @@ header .change #h-bar2{
 }
 header .change{
 	display: block;
+	margin-bottom: 15px;
+	border: none !important;
+	/* transition: 0.5s ease; */
+}
+#h-menu .change{
+}
+
+
+/*/////////////////  SEARCH BAR  /////////////////////*/
+
+#h-search-bar{
+	display: flex;
+	align-self: center;
+	background-color: var(--c1);
+	padding: 4px;
+	margin-left: 80px;
+	height: 50px;
+	border-radius: 10px;
+	margin-right: 0px;
+	min-width: 130px;
+	flex-grow: 1;
+}
+
+#h-search-bar input{
+	background: none;
+	border: none;
+	height: 100%;
+	font-size: 20px;
+	width: 50%;
+	flex-grow: 1;
+	color: var(--c2);
+}
+
+#h-search-bar button{
+	background: none;
+	border: none;
+	font-size: x-large;
+	color: var(--c2);
+}
+
+/*/////////////////  USER ICONS  /////////////////////*/
+
+header .user {
+	display: flex;
+	font-size: x-large;
+	align-self: center;
+}
+header .user a{
+	font-size: xx-large;
+	padding: 5px;
+	align-self: center;
+	display: flex;
+	justify-content: space-between;
+	margin-left: 15px;
+	color: var(--c1);
+}
+
+header .user .user-icon{
+	margin-right: 15px;
 }

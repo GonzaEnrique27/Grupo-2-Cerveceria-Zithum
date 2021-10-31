@@ -6,7 +6,8 @@ div.scrollmenu {
     background-color: #fefecc;
     overflow: auto;
     white-space: nowrap;
-    align-items: center
+    align-items: center;
+
   
 }
   
@@ -14,17 +15,33 @@ div.scrollmenu {
     display: inline-block;
     padding: 14px;
     text-decoration: none;
-  }
-  
-  div.scrollmenu a:hover {
-    background-color: #777;
+	box-shadow: 10px 5px 5px  #F3BDA1;
+	border-radius: 8%;
+	margin-left: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
   }
 
-  .Promos {
+  .home{
+	  max-width: 1200px;
+  }
+/**********************************/
+  /* BANNER*/
+/**********************************/
+  .promos {
       display: flex;
       flex-wrap: nowrap;
-      width: 1200px;
+	  justify-content: center;
       align-items: center;
+	  background-color: #04485f;
+  }
+
+  .seccion{
+	display: flex;
+	align-items: center;
+	justify-content: center;  
+	background-color: #04485f;
+	  
   }
 /**********************************/
   /* SLIDE HOME*/
@@ -46,8 +63,6 @@ div.scrollmenu {
 	100% { transform: translateX(-400%); }
 }
 
-* { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
 
 .wrapper {
@@ -58,6 +73,7 @@ html { scroll-behavior: smooth; }
 
 .slider {
 	position: relative;
+	max-width: 1200px;
 }
 
 .slides {
@@ -67,12 +83,12 @@ html { scroll-behavior: smooth; }
 }
 
 .slide {
-	width: 100vw;
+	width: 100%;
 	flex-shrink: 0;
 	animation-name: slide;
 	animation-duration: 15s;
 	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+	animation-timing-function:linear;
 }
 
 .slides:hover .slide {
@@ -133,4 +149,15 @@ html { scroll-behavior: smooth; }
 		bottom: 96px;
 		right: 50px;
 	}
+.slide img{
+	width: 500px;
+}
+
+.slider{
+	width: 500px;
+}
+
+.wrapper{
+	margin-left:650px;
+}
 }

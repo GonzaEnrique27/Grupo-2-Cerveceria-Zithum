@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- TITULO -->
-    <title>Zithum</title>
-    <link rel="shortcut icon" href="/img/15668177831743.jpg">    <meta charset="UTF-8">
-    
+    <title>Zythum</title>
+    <link rel="shortcut icon" href="/img/15668177831743.jpg">
+    <meta charset="UTF-8">
+
     <!-- ESTILOS CSS -->
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <header>
+     <header>  
         <nav id="h-menu-bar">
 			<div id="h-menu" onclick="onClickMenu()">
 				<div id="h-bar1" class="bar"></div>
@@ -34,14 +40,43 @@
 		</nav>
 		<div class="menu-bg" id="h-menu-bg"></div>
 		<div class="menu-bg2"></div>
+    
     </header>
-    <main>
-        <div>
-            <img src="/img/logo-DH.png" alt="logo-DH">
+    
+    
+
+    <div class="cuadro-centrado-login">
+        <div class="form-login-desktop">
+
+            <div class="mitad-1">
+                <p class="titulos-login">Iniciar sesion con</p>
+                <div class="iniciar-google" alt="Continuar con google">
+                   <a href="#"><img src="img/boton-google.png" alt="icono google"></a>
+                </div>
+                <div class="iniciar-facebook">
+                    <a href="#"><img src="img/boton-facebook.png" alt="icono google"></a>
+                </div>
+            </div>
+
+            <div class="mitad-2">
+                <div class="formulario-login-mitad2">
+                    <form action="#" method="post">
+                        <p class="titulo-formulario-login">Ingresar con usuario y contraseña</p><br><br>
+                        <input type="email" name="email" placeholder="  Email" required> <br><br>
+                        <input type="password" name="password" placeholder="    Contraseña" required><br><br>
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                        <center><button type="submit">Ingresar</button></center> 
+                    </form>
+                </div>
+            </div>
+
+            <div class="cent-nuevo-usuario">
+                <p>¿Nuevo? <a href="#">Crear cuenta</a></p>
+            </div>
         </div>
-        <h1>DH Héroes</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, sapiente esse. Quia exercitationem nisi cupiditate libero alias deleniti debitis ab. Deserunt incidunt animi reiciendis officiis voluptatibus similique, assumenda delectus architecto!</p>
-    </main>
+    </div>
+
+    <!--------------------------------------- FOOTER --------------------------------------
     <footer> 
         <div>
             <p class="pfooter">Redes Sociales</p>
@@ -54,7 +89,11 @@
         <div class="logo-central"> <img src="/img/logo de footer.png" alt="logoFooter" style="max-height: 60px;">
             <p class="frase">Copyright © 2021 Zythum SA.</p>
         </div>
-    </footer>
+    </footer>  
+    --> 
     <script src="/js/header.js"></script>
+      
+      <script src="https://unpkg.com/boxicons@2.0.9/dist/boxicons.js"></script>
 </body>
+
 </html>

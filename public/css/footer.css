@@ -11,8 +11,8 @@ footer {
     align-items: center;
 }
 footer p{
-    font-size: 14px ;
-    font-weight:bold ;
+    font-size: 14px;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -20,6 +20,12 @@ footer.frase{
     opacity: 35%;
 }
 
-main .Home{
-    display: flex;
+
+@media only screen and (min-width: 1200px){
+    footer{
+    flex-direction: row;
+    }
+footer .contacto{
+    order: 1
+}
 }

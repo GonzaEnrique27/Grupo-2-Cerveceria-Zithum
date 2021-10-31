@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
+
 body{
-    background-color: #fefecc;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-image: url('/img/fondo.png');
+    background-attachment: fixed;
+    overflow: scroll;
+    background-repeat: no-repeat;
 }

@@ -15,7 +15,7 @@ div.scrollmenu {
     display: inline-block;
     padding: 14px;
     text-decoration: none;
-	box-shadow: 10px 5px 5px #F3BDA1;
+	box-shadow: 10px 5px 5px  #F3BDA1;
 	border-radius: 8%;
 	margin-left: 40px;
 	margin-top: 20px;
@@ -149,4 +149,15 @@ html { scroll-behavior: smooth; }
 		bottom: 96px;
 		right: 50px;
 	}
+.slide img{
+	width: 500px;
+}
+
+.slider{
+	width: 500px;
+}
+
+.wrapper{
+	margin-left:650px;
+}
 }

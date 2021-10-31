@@ -19,3 +19,13 @@ footer p{
 footer.frase{
     opacity: 35%;
 }
+
+
+@media only screen and (min-width: 1200px){
+    footer{
+    flex-direction: row;
+    }
+footer .contacto{
+    order: 1
+}
+}

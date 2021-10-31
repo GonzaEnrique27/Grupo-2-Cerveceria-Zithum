@@ -7,8 +7,7 @@ div.scrollmenu {
     overflow: auto;
     white-space: nowrap;
     align-items: center;
-	padding-top: 20px;
-	padding-bottom: 40px;
+
   
 }
   
@@ -18,8 +17,13 @@ div.scrollmenu {
     text-decoration: none;
 	box-shadow: 10px 5px 5px #F3BDA1;
 	border-radius: 8%;
-	margin-left: 25px;
-	margin-top: 15px;
+	margin-left: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+  }
+
+  .home{
+	  max-width: 1200px;
   }
 /**********************************/
   /* BANNER*/
@@ -64,10 +68,12 @@ html { scroll-behavior: smooth; }
 .wrapper {
 	display: flex;
 	flex-wrap: nowrap;
+	max-width: 1200px;
 }
 
 .slider {
 	position: relative;
+	max-width: 1200px;
 }
 
 .slides {
@@ -82,7 +88,7 @@ html { scroll-behavior: smooth; }
 	animation-name: slide;
 	animation-duration: 15s;
 	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+	animation-timing-function:linear;
 }
 
 .slides:hover .slide {

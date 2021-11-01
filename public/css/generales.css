@@ -1,4 +1,5 @@
 /*** GENERALES ***/
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@400;500;700;800&display=swap');
 *{
     font-family: var(--typo);
     box-sizing: border-box;
@@ -13,4 +14,86 @@ body{
     background-attachment: fixed;
     overflow: scroll;
     background-repeat: no-repeat;
+}
+
+.fsxs{
+    font-size: var(--fsxs);
+}
+.fss{
+    font-size: var(--fss);
+}
+.fsm{
+    font-size: var(--fsm);
+}
+.fsl{
+    font-size: var(--fsl);
+}
+.fsxl{
+    font-size: var(--fsxl);
+}
+.fsxxl{
+    font-size: var(--fsxxl);
+}
+.fwr{
+    font-weight: var(--fwr);
+}
+.fwm{
+    font-weight: var(--fwm);
+}
+.fwb{
+    font-weight: var(--fwb);
+}
+.fwxb{
+    font-weight: var(--fwxb);
+}
+.c1{
+    color: var(--c1);
+}
+.c2{
+    color: var(--c2);
+}
+.c3{
+    color: var(--c3);
+}
+.c4{
+    color: var(--c4);
+}
+.c5{
+    color: var(--c5);
+}
+.c6{
+    color: var(--c6);
+}
+.rosa{
+    color: var(--rosa);
+}
+.c1b{
+    background-color: var(--c1);
+}
+.c2b{
+    background-color: var(--c2);
+}
+.c3b{
+    background-color: var(--c3);
+}
+.c4b{
+    background-color: var(--c4);
+}
+.c5b{
+    background-color: var(--c5);
+}
+.c6b{
+    background-color: var(--c6);
+}
+.rosab{
+    background-color: var(--rosa);
+}
+.pos-re{
+    position: relative;
+}
+.pos-ab{
+    position: absolute;
+}
+.dib{
+    display: inline-block;
 }

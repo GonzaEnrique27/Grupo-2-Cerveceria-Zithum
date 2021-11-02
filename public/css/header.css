@@ -4,48 +4,21 @@ header{
     overflow: auto;
     background-color: #04485f;
     justify-content: space-around;
-    height: 70px;
+    height: 60px;
 	box-sizing: border-box;
 }
 
-/* 
-header ul {
-    display: flex;
-    font-size: 1.125em;
-    padding: 5px 15px;
-    list-style: none;
-    align-items: center;
+.header-logo{
+	display: none;
 }
-
-header ul li{
-    float:left;
-}
-
-header ul li a{
-    display: flex;
-    color: #333;
-    vertical-align:middle;
-    padding: 14px 10px;
-    text-decoration: none;
-}
-
-header ul li a img{
-    height: max-content;
-}
-
-header ul li a:hover{
-    transition-timing-function: ease;    
-    transition: 1.5s;
-    background-color: whitesmoke;
-} */
 
 #h-menu{
-	width: 55px;
-	height: 50px;
+	width: 50px;
+	height: 45px;
 	/* margin: 30px 0 20px 20px; */
 	cursor: pointer;
 	border: 2px var(--c1) solid;
-	padding: 15px 8px 2px 8px;
+	padding: 12px 8px 2px 8px;
 	border-radius: 10px;
 }
 #h-menu .bar{
@@ -80,8 +53,8 @@ header .nav{
 	display: none;
 }
 header .menu-bg, #h-menu-bar{
-	top: 10px;
-	left: 10px;
+	top: 8px;
+	left: 8px;
 	position: absolute;
 }
 header .menu-bg{
@@ -111,6 +84,7 @@ header .change-bg2{
 	position: absolute;
 	opacity: 0.3;
 	transition: 0.5s ease;
+	z-index: 1;
 }
 
 /* NO LO TOMA, NO BORRAR ASI PREGUNTO A JONA
@@ -145,12 +119,13 @@ header .change{
 	align-self: center;
 	background-color: var(--c1);
 	padding: 4px;
-	margin-left: 80px;
-	height: 50px;
+	margin-left: 70px;
+	height: 45px;
 	border-radius: 10px;
 	margin-right: 0px;
 	min-width: 130px;
 	flex-grow: 1;
+	/* max-width: 700px; */
 }
 
 #h-search-bar input{
@@ -179,14 +154,75 @@ header .user {
 }
 header .user a{
 	font-size: xx-large;
-	padding: 5px;
+	padding: 6px;
 	align-self: center;
 	display: flex;
 	justify-content: space-between;
-	margin-left: 15px;
+	margin-left: 6px;
 	color: var(--c1);
 }
 
 header .user .user-icon{
-	margin-right: 15px;
+	margin-right: 6px;
 }
+
+header .menu2{
+	align-self: flex-end;
+	margin-bottom: 8px;
+	width: 700px;
+}
+
+header .menu2 .nav{
+	display: none;
+}
+
+header .menu2 .nav li{
+	list-style: none;
+	padding: 16px 0;
+}
+
+
+/*DESKTOP*/
+
+@media (min-width: 999px) {
+	header {
+		height: 100px;
+	}
+
+	header .header-logo{
+		display: block;
+		top: 1px;
+		left: -6px;
+		position: absolute;
+		max-width: 75px;
+		padding: 6px;
+	}
+	
+	header .header-logo img{
+		width: 100%;
+	}
+
+
+    #h-menu-bar{
+		display: none;
+	}
+
+    #h-search-bar{
+		width: 700px;
+	}
+
+	#h-search-bar, 
+	header .user{
+		align-self: flex-start;
+		margin-top: 8px;
+	}
+
+	header .menu2 .nav{
+		display: flex;
+	}
+	header .menu2 .nav li{
+		padding: 8px 0;
+	}
+}
+
+

@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
 }
-@media (max-width: 576px){
 
     .caja-producto1{
         background-color: white;
@@ -13,6 +12,7 @@
         border-radius:5px;
         color:black !important;
         position: relative;
+        margin-bottom: 30px;
     }
     .cruz-carrito{
         top: 5px;
@@ -54,4 +54,12 @@
     .info-producto1 input{
         width: 40px;
     }
-}
+
+    @media only screen and (min-width: 414px){
+        .dosCajitas{
+            margin-left: 60px;
+            margin-top: 70px;
+
+        }
+        
+    }

@@ -155,7 +155,7 @@
 
 /*DESKTOP*/
 
-@media (min-width: 999px) {
+@media (min-width: 1200px) {
     .detail article .circ{
         top: -30%;    
         right: 10%;

@@ -21,32 +21,40 @@
 </head>
 <body>
     <header>
-        <nav id="h-menu-bar">
-			<div id="h-menu" onclick="onClickMenu()">
-				<div id="h-bar1" class="bar"></div>
-				<div id="h-bar2" class="bar"></div>
-				<div id="h-bar3" class="bar"></div>
-			</div>
-			<ul class="nav" id="h-nav">
-				<li><a href="/" class="fss c1">Home</a></li>
-				<li><a href="/login" class="fss c1">Login</a></li>
-				<li><a href="/register" class="fss c1">Register</a></li>
-				<li><a href="/productCart" class="fss c1">Carrito</a></li>
-				<li><a href="/productDetail" class="fss c1">Detalle</a></li>
-			</ul>
-		</nav>
-		<div class="menu-bg" id="h-menu-bg" onclick="onClickMenu()"></div>
-		<div class="menu-bg2"id="h-menu-bg2" onclick="onClickMenu()"></div>
-        <a href="/" class="header-logo"><img src="img/15668177831743.jpg" alt=""></a>
-            <form id="h-search-bar" action="">
-                <input type="text" placeholder="Buscar...">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-            <div class="user">
-                <a href="#" class="chart"><i class="fas fa-shopping-cart fsl"></i></a>
-                <a href="#" class="user-icon"><i class="fas fa-user fsl"></i></a>
-            </div>
-            <nav class="menu2">
+        <div class="menu1">
+            <nav id="h-menu-bar">
+                <div id="h-menu" onclick="onClickMenu()">
+                    <div id="h-bar1" class="bar"></div>
+                    <div id="h-bar2" class="bar"></div>
+                    <div id="h-bar3" class="bar"></div>
+                </div>
+                <ul class="nav" id="h-nav">
+                    <li><a href="/" class="fss c1">Home</a></li>
+                    <li><a href="/login" class="fss c1">Login</a></li>
+                    <li><a href="/register" class="fss c1">Register</a></li>
+                    <li><a href="/productCart" class="fss c1">Carrito</a></li>
+                    <li><a href="/productDetail" class="fss c1">Detalle</a></li>
+                </ul>
+            </nav>
+            <div class="menu-bg" id="h-menu-bg" onclick="onClickMenu()"></div>
+            <div class="menu-bg2"id="h-menu-bg2" onclick="onClickMenu()"></div>
+            <a href="/" class="header-logo"><img src="img/15668177831743.jpg" alt=""></a>
+                <form id="h-search-bar" action="">
+                    <input type="text" placeholder="Buscar...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                <div class="user">
+                    <a href="#" class="chart"><i class="fas fa-shopping-cart fsl"></i></a>
+                    <a href="#" class="user-icon"><i class="fas fa-user fsl"></i></a>
+                </div>
+        </div>
+        <div class="menu2">
+            <a href="https://www.google.com.ar/maps" class="ubicacion">
+                <i class="fas fa-map-marker-alt fsl rosa"></i>
+                <p class="fwr fsxs c1">Enviar a</p>
+                <p class="fwb fss c1">Lanús Papá</p>
+            </a>
+            <nav>
                 <ul class="nav">
                     <li><a href="/" class="fss c1">Home</a></li>
                     <li><a href="/login" class="fss c1">Login</a></li>
@@ -55,6 +63,8 @@
                     <li><a href="/productDetail" class="fss c1">Detalle</a></li>
                 </ul>
             </nav>
+            <div class="empty"></div>
+        </div>
     </header>
     <main class="detail pos-re">
        <article>

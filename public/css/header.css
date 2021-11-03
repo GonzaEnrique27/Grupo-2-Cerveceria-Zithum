@@ -6,6 +6,11 @@ header{
     justify-content: space-around;
     height: 60px;
 	box-sizing: border-box;
+	flex-direction: column;
+}
+
+header .menu1{
+display: flex;
 }
 
 .header-logo{
@@ -167,16 +172,36 @@ header .user .user-icon{
 }
 
 header .menu2{
-	align-self: flex-end;
 	margin-bottom: 8px;
-	width: 700px;
-}
-
-header .menu2 .nav{
+	align-self: center;
 	display: none;
+	width: 100%;
+}
+header .menu2 .ubicacion{
+	height: 34px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
-header .menu2 .nav li{
+header .menu2 .ubicacion i{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+}
+header .menu2 .ubicacion p{
+ margin-left: 30px;
+}
+
+header .menu2 nav .nav{
+	width: 700px;
+	justify-content: space-around;
+	margin: 0;
+}
+
+header .menu2 nav .nav li{
 	list-style: none;
 	padding: 16px 0;
 }
@@ -217,11 +242,19 @@ header .menu2 .nav li{
 		margin-top: 8px;
 	}
 
-	header .menu2 .nav{
+	header .menu2{
+		display: flex;
+		justify-content: space-between;
+	}
+	header .menu2 nav .nav{
 		display: flex;
 	}
-	header .menu2 .nav li{
+	header .menu2 nav .nav li{
 		padding: 8px 0;
+		display: inline-flex;
+	}
+	header .menu2 .empty{
+		width: 150px;
 	}
 }
 

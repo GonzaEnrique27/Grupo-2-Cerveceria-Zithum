@@ -1,5 +1,6 @@
 /* FOOTER */
 footer {
+    position: fixed;
     display: flex;
     flex-wrap:nowrap;
     background-color: #04485f;

@@ -180,7 +180,7 @@
 
 /*DESKTOP---------------------------------------*/
 
-@media (min-width: 900px) {
+@media (min-width: 1200px) {
 
     .form-login {
         max-width: 1200px;

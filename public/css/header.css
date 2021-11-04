@@ -1,4 +1,8 @@
 /*** HEADER ***/
+body {
+	padding-top: 60px;
+}
+
 header{
     display: flex;
     overflow: auto;
@@ -7,6 +11,11 @@ header{
     height: 60px;
 	box-sizing: border-box;
 	flex-direction: column;
+	position: fixed;
+	width: 100vw;
+	top: 0;
+	z-index: 1000;
+	overflow: initial;
 }
 
 header .menu1{
@@ -90,6 +99,7 @@ header .change-bg2{
 	opacity: 0.3;
 	transition: 0.5s ease;
 	z-index: 1;
+	top: 0;
 }
 
 /* NO LO TOMA, NO BORRAR ASI PREGUNTO A JONA
@@ -210,6 +220,10 @@ header .menu2 nav .nav li{
 /*DESKTOP*/
 
 @media (min-width: 999px) {
+	body{
+		padding-top: 100px;
+	}
+
 	header {
 		height: 100px;
 	}

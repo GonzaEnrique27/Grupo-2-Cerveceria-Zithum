@@ -1,70 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- TITULO -->
-    <title>Zithum</title>
-    <link rel="shortcut icon" href="/img/15668177831743.jpg">    <meta charset="UTF-8">
-    
-    <!-- ESTILOS CSS -->
-    <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
-    <link rel="stylesheet" href="/css/style.css">
 
-    <!-- FUENTES -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-</head>
+<%- include('./partials/head.ejs') %> 
+
 <body>
-  <header>
-    <div class="menu1">
-        <nav id="h-menu-bar">
-            <div id="h-menu" onclick="onClickMenu()">
-                <div id="h-bar1" class="bar"></div>
-                <div id="h-bar2" class="bar"></div>
-                <div id="h-bar3" class="bar"></div>
-            </div>
-            <ul class="nav" id="h-nav">
-                <li><a href="/" class="fss c1">Home</a></li>
-                <li><a href="/login" class="fss c1">Login</a></li>
-                <li><a href="/register" class="fss c1">Register</a></li>
-                <li><a href="/productCart" class="fss c1">Carrito</a></li>
-                <li><a href="/productDetail" class="fss c1">Detalle</a></li>
-            </ul>
-        </nav>
-        <div class="menu-bg" id="h-menu-bg" onclick="onClickMenu()"></div>
-        <div class="menu-bg2"id="h-menu-bg2" onclick="onClickMenu()"></div>
-        <a href="/" class="header-logo"><img src="img/15668177831743.jpg" alt=""></a>
-            <form id="h-search-bar" action="">
-                <input type="text" placeholder="Buscar...">
-                <button type="submit"><i class="fas fa-search"></i></button>
-            </form>
-            <div class="user">
-                <a href="#" class="chart"><i class="fas fa-shopping-cart fsl"></i></a>
-                <a href="#" class="user-icon"><i class="fas fa-user fsl"></i></a>
-            </div>
-    </div>
-    <div class="menu2">
-        <a href="https://www.google.com.ar/maps" class="ubicacion">
-            <i class="fas fa-map-marker-alt fsl rosa"></i>
-            <p class="fwr fsxs c1">Enviar a</p>
-            <p class="fwb fss c1">Lanús Papá</p>
-        </a>
-        <nav>
-            <ul class="nav">
-                <li><a href="/" class="fss c1">Home</a></li>
-                <li><a href="/login" class="fss c1">Login</a></li>
-                <li><a href="/register" class="fss c1">Register</a></li>
-                <li><a href="/productCart" class="fss c1">Carrito</a></li>
-                <li><a href="/productDetail" class="fss c1">Detalle</a></li>
-            </ul>
-        </nav>
-        <div class="empty"></div>
-    </div>
-</header>
+  
+  <%- include('./partials/header.ejs') %> 
+
     <div class="wrapper">
         <div class="slider" id="slider">
           <ul class="slides">
@@ -165,19 +107,9 @@
         <a href="/productCart"><img src="/img/producto 5.png" alt=""style="max-height: 220px;"></a>
       </div>  
     </main>
-    <footer> 
-        <div>
-            <p class="pfooter">Redes Sociales</p>
-            <p class="redes"><img src="/img/png redes.jpg" alt="redes" style="max-height: 50px;"></p>
-        </div>
-            <div class="contacto"><p class="pfooter">Contactanos</p>
-            <p class="email"><img src="/img/email icono.png" alt="email" style="max-height: 20px;"> zithum.2021@gmail.com</p>
-            <p class= "contacto"><img src="/img/wpp icono.png" alt="whatsapp" style="max-height: 20px"> +549-299-123</p>
-        </div>
-        <div class="logo-central"> <img src="/img/logo de footer.png" alt="logoFooter" style="max-height: 60px;">
-            <p class="frase">Copyright © 2021 Zythum SA.</p>
-        </div>
-    </footer>
-    <script src="/js/header.js"></script>
+    
+    <%- include('./partials/footer.ejs') %> 
+
+    <%- include('./partials/scripts.ejs') %> 
 </body>
-</html>
+</html> 

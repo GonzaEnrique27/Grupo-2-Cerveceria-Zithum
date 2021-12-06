@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head.ejs') %> 
+
+<body>
+  
+  <%- include('./partials/header.ejs') %> 
+
+<div class = "agregarProducto">
+    <br>
+    <br>
+    <h1>AGREGAR PRODUCTO</h1>
+    <br>
+<form action="/src/views/formulario.ejs" method="post">
+<Label for="producto">Nombre de producto:</Label>
+<input type="text" name="nombre" id="nombre">
+<br>
+<br>
+<textarea name="comentario" id="comentario" cols="30" rows="10">Detalle de Producto...</textarea>
+<br>
+    <label>Categoria:</label>
+    <select name="Categoria">
+        <option value="#FFFF00">Rubia</option>
+        <option value="#000000">Negra</option>
+        <option value="#FF0000">Roja</option>
+    </select>
+    <br>
+    <br>
+<label>Subcategoria:</label>
+    <select name="Subcategoria">
+        <option value="Unidad">Unidad</option>
+        <option value="PorMayor">Por Mayor</option>
+        <option value="Promos">Promos</option>
+    </select>
+    <br>
+<input type="hidden" name="TAM-MAX-ARCHIVO" value="4194304" />
+<input type="file"/>
+<br>
+<br>
+<br>
+<div>
+    <button class="botonAgregar">Agregar Producto</button>
+</div>
+
+</form>
+
+
+
+</div>
+    
+    <%- include('./partials/footer.ejs') %> 
+
+    <%- include('./partials/scripts.ejs') %> 
+</body>
+</html> 

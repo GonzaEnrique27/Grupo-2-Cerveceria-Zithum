@@ -1,34 +1,61 @@
-COSAS QUE DEBERIAMOS HACER PARA MEJORAR COMO GRUPO:
+# RETROSPECTIVA
 
-- Agregar fechas limites semanales para fomentar las partes que nos tocan trabajar.
+En este archivo se realizara un análisis sobre el trabajo realizado por el equipo durante el sprint.
 
-- Pedir opiniones a otras personas.
+## SPRINT 2
 
-- Hacer los trabajos de Playground como grupo.
+*COSAS QUE DEBERIAMOS HACER PARA MEJORAR COMO GRUPO:
 
+    - Agregar fechas limites semanales para fomentar las partes que nos tocan trabajar.
+    - Pedir opiniones a otras personas.
+    - Hacer los trabajos de Playground como grupo.
 
-HACER MAS COMO GRUPO:
+*HACER MAS COMO GRUPO:
+    - Invitar a Nico a las dailys para ayudarnos para saber como mejorar nuestra comunicacion y trabajo en grupo.
 
-- Invitar a Nico a las dailys para ayudarnos para saber como mejorar nuestra comunicacion y trabajo en grupo.
+*CONTINUAR HACIENDO:
+    - Fomentar la ayuda en equipo.
+    - Mantener el ritmo que llevamos.
 
+*HACER MENOS:
+    - Faltar a clases.
+    - Usar etiquetas con mismos nombres para evitar romper el codigo de mis compañeros.
 
-
-CONTINUAR HACIENDO:
-
-- Fomentar la ayuda en equipo.
-
-- Mantener el ritmo que llevamos.
-
-
-
-HACER MENOS:
-
-- Faltar a clases.
-
-- Usar etiquetas con mismos nombres para evitar romper el codigo de mis compañeros.
+*DEJAR DE HACER:
+    - Procrastinar
 
 
+## SPRINT 3
 
-DEJAR DE HACER:
+*COSAS QUE DEBERIAMOS HACER PARA MEJORAR COMO GRUPO:
 
-- Procrastinar
+    - Agregar fechas limites semanales.
+    - Pedir opiniones a otras personas.
+    - Hacer los trabajos de Playground como grupo.
+
+*HACER MAS COMO GRUPO:
+    - Invitar a Nico a las dailys para ayudarnos para saber como mejorar nuestra comunicacion y trabajo en grupo.
+
+*CONTINUAR HACIENDO:
+    - Fomentar la ayuda en equipo.
+    - Mantener el ritmo que llevamos.
+
+*HACER MENOS:
+    - Faltar a clases.
+    - No completar los ejercicios de Playground.
+
+*DEJAR DE HACER:
+    - Faltar a las Daily's.
+
+
+## SPRINT 4
+*COSAS QUE DEBERIAMOS HACER PARA MEJORAR COMO GRUPO:
+
+
+*HACER MAS COMO GRUPO:
+
+*CONTINUAR HACIENDO:
+
+*HACER MENOS:
+
+*DEJAR DE HACER:

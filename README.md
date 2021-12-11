@@ -45,3 +45,5 @@ para instalar los modulos **Express** y **Nodemon**
 ```shell
 node app.js
 ```
+## Retrospectiva
+- Restrospectiva : [retro.md](https://github.com/GonzaEnrique27/Grupo-2-Cerveceria-Zithum/blob/master/retro.md)

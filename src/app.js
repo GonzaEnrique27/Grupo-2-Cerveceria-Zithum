@@ -5,9 +5,19 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 //Enrutadores
+<<<<<<< HEAD
 var mainRouter = require('./routes/mainRouter');
 var usersRouter = require('./routes/usersRouter');
 var productsRouter = require('./routes/productsRouter');
+=======
+var indexRouter = require('./routes/indexRouter');
+var loginRouter = require('./routes/loginRouter');
+var productCartRouter = require('./routes/productCartRouter');
+var productDetailRouter = require('./routes/productDetailRouter');
+var registerRouter = require('./routes/registerRouter');
+var formularioRouter = require('./routes/formularioRouter');
+var quitarProductosRouter = require('./routes/quitarProductosRouter')
+>>>>>>> 83d55a4e0857f3d3a7bce931443794e4660ea975
 
 var app = express();
 
@@ -21,9 +31,19 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 
+<<<<<<< HEAD
 app.use('/', mainRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+=======
+app.use('/', indexRouter);
+app.use('/login', loginRouter);
+app.use('/productCart', productCartRouter);
+app.use('/productDetail', productDetailRouter);
+app.use('/register', registerRouter);
+app.use('/formulario', formularioRouter);
+app.use('/quitarProducto', quitarProductosRouter);
+>>>>>>> 83d55a4e0857f3d3a7bce931443794e4660ea975
 
 
 

@@ -1,7 +1,6 @@
 [
     {
         "idProduct": 1,
-<<<<<<< HEAD
         "Marca": "Stella Artois",
         "Tipo": "Lager",
         "Tamanio": 250,
@@ -19,19 +18,12 @@
         "tipo": "Natural Lager",
         "tamanio": 250,
         "alcohol": 8,
-=======
-        "marca": "Stella Artois",
-        "tipo": "Natural Lager",
-        "tamanio": 250,
-        "alcohol": 8.0,
->>>>>>> 83d55a4e0857f3d3a7bce931443794e4660ea975
         "densidad": 15,
         "sabor": "fuerte",
         "amperaje?": 25,
         "stock": 666,
         "descripcion": "La suma de las raíces cuadradas de dos lados de un triángulo isósceles es igual a la raíz cuadrada del lado restante",
         "imagen": "url"
-<<<<<<< HEAD
     },
     {
         "idProduct": 3,
@@ -79,7 +71,5 @@
         "detalle": "Detalle de Producto...",
         "categoria": "#FFFF00",
         "subcategoria": "PorMayor"
-=======
->>>>>>> 83d55a4e0857f3d3a7bce931443794e4660ea975
     }
 ]

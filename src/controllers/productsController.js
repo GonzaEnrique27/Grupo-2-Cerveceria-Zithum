@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const fs = require('fs');
 const path = require('path');
 
@@ -39,12 +38,6 @@ let controller = {
         res.render('formulario')
     }
 
-=======
-let controller = {
-    product: function(req,res){
-        res.render('productDetail')
-    }
->>>>>>> 83d55a4e0857f3d3a7bce931443794e4660ea975
 }
 
 module.exports = controller

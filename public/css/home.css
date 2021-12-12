@@ -2,13 +2,10 @@
   /* SCROLL ITEMS HOME*/
 /**********************************/
 div.scrollmenu {
-    display: flex;
-    background-color: #fefecc;
+    display: flex;   
     overflow: auto;
     white-space: nowrap;
     align-items: center;
-
-  
 }
   
   div.scrollmenu a {
@@ -20,6 +17,7 @@ div.scrollmenu {
 	margin-left: 40px;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	scroll-padding-bottom: 30px;
   }
 
   .home{

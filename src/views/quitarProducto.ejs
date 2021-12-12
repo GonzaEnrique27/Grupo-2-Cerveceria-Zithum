@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head.ejs') %> 
+
+<body>
+  
+  <%- include('./partials/header.ejs') %> 
+
+<div class = "quitarProducto">
+  <body>
+    <h1>Resultado de la búsqueda</h1>
+    
+    <table summary="Tabla con los datos de los resultados de la búsqueda">
+      <tr>
+        <th abbr="Imagen del producto" scope="col">Imagen</th>
+        <th abbr="Datos del producto" scope="col">Datos</th>
+      </tr>
+    
+      <tr>
+        <td>
+          <img src="/img/producto 1.png" alt="producto 1" style="max-height: 140px;"/>
+        </td>
+        <td>
+          <h4><a href="#" title="Ver más información sobre el producto">Stella Artoise 250ml</a></h4>
+          <p><a href="#" title="Editar producto">Editar:</a> <del>300 &dollar;</del> <strong>250 &dollar;</strong></p>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><img src="/img/producto 2.png" alt="producto 2" style="max-height: 140px;" /></td>
+        <td>
+          <h4><a href="#" title="Ver más información sobre el producto">Six Pack Stella Artois 320ml</a></h4>
+          <p><a href="#" title="Editar Producto">Editar:</a> <del>500 &dollar;</del> <strong>480 &dollar;</strong></p>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><img src="/img/producto 3.png" alt="producto 3" style="max-height: 140px;"/></td>
+        <td>
+          <h4><a href="#" title="Ver más información sobre el producto">Six Pack Chang 473ml</a></h4>
+          <p><a href="#" title="Editar Producto">Editar:</a> <del>580 &dollar;;</del> <strong>520 &dollar;</strong></p>
+        </td>
+      </tr>
+    
+      <tr>
+        <td><img src="/img/producto 5.png" alt="producto 4" style="max-height: 140px;"/></td>
+        <td>
+          <h4><a href="#" title="Ver más información sobre el producto">Six Pack Chang 354ml</a></h4>
+          <p><a href="#" title="Editar Producto">Editar:</a> <del>500 &dollar;</del> <strong>489 &dollar;</strong></p>
+        </td>
+      </tr>
+    </table>
+    </body>
+  
+  </table>
+<br>
+<br>
+<button class="botonEditar" type="submit">EDITAR</button>
+<br>
+<button class= "botonQuitar" type="submit">BORRAR</button>
+
+</div>
+    
+    <%- include('./partials/footer.ejs') %> 
+
+    <%- include('./partials/scripts.ejs') %> 
+</body>
+</html> 

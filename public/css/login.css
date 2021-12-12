@@ -80,7 +80,6 @@
     display: flex;
     padding-bottom: 10px;
 }
-
 .buttom-login2 {
     padding: 10px;
     border: 1px black solid;
@@ -96,13 +95,30 @@
 
 /* MEDIA QUERY*/
 
+@media (min-width: 1900px) {
+    .input-checkbox {
+        display: flex;
+        padding-bottom: 10px;
+        margin-top:-28px;
+        margin-left:68px;
+    }
+    }
+    @media (min-width: 1300px) {
+    .input-checkbox {
+        display: flex;
+        padding-bottom: 10px;
+        margin-top:-26px;
+        margin-left:67px;
+    }
+    }
+
 /*TABLET*/
 
 @media (min-width: 700px) {
 
     .form-login {
         display: flex;
-        width: 650px;
+        width: 750px;
         height: 400px;
         margin: 80px auto;
     }
@@ -168,6 +184,8 @@
 
     .input-checkbox {
         margin-bottom: 10px;
+        margin-left:27px;
+        margin-top:-26px;
     }
 
     .mitad-2 div form h3.crear-cuenta {

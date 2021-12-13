@@ -2,6 +2,31 @@
 
 En este archivo se realizara un análisis sobre el trabajo realizado por el equipo durante el sprint.
 
+## SPRINT 1
+* COSAS QUE DEBERIAMOS HACER PARA MEJORAR COMO GRUPO:
+
+    - Entregar a tiempo
+
+* HACER MAS COMO GRUPO:
+
+    - Avisar cambios.
+    - Evaluar la dificultad de las tareas.
+    - Trello.
+    - Organizar weekly.
+
+* CONTINUAR HACIENDO:
+
+    - Dailys cortas.
+    - Mantener la comunicación.
+    - Distribui las tareas durante la semana.
+
+* HACER MENOS:
+
+* DEJAR DE HACER:
+
+    - Entregar tarde.
+
+
 ## SPRINT 2
 
 * COSAS QUE DEBERIAMOS HACER PARA MEJORAR COMO GRUPO:

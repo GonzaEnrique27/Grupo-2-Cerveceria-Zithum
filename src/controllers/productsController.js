@@ -36,6 +36,44 @@ let controller = {
     },
     formulario: function(req,res){
         res.render('formulario')
+    },
+    edit: function(req, res) {
+        let idProduct = +req.params.id;
+
+        products.forEach((product, index) => {
+            if(product.id === idProduct) {
+
+                product.brand = req.body.brand,
+                product.category = req.body.category,
+                product.price = +req.body.price,
+                product.discount = req.body.discount,
+                product.tamanio = +req.body.tamanio,
+                product.alcohol = +req.body.alcohol,
+                product.sabor = req.body.sabor,
+                product.amargura = +req.body.amargura,
+                product.description = req.body.description,
+                product.stock = +req.body.stock,
+                product.img = req.body.img
+                //aca va una validacion de la imagen
+            }
+
+            let productsJSON= JSON.stringify(products)
+            fs.writeFileSync(productsFilePath,productsJSON,'utf-8')
+
+        })
+        res.redirect('/products')
+    },
+
+    destroy: function(req, res) {
+        let idProduct = +req.params.id;
+
+        products.forEach((product, index)=>{
+
+            if( product.id === idProduct) {
+                products.slice(index,1)
+            }
+        })
+        res.redirect('/products')
     }
 
 }

@@ -3,7 +3,7 @@ var router = express.Router();
 let controller = require('../controllers/productsController')
 
 /* GET HOME page. */
-router.get('/detail', controller.product)
+router.get('/detail/:id', controller.detail)
 
 //Crear y Eliminar producto
 router.get('/crear', controller.formulario);

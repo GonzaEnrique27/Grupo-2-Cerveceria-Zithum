@@ -1,12 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
+const productsFilePath = path.join(__dirname, '../data/products2.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 let controller = {
-    product: function(req,res){
-        res.render('productDetail')
+    // Detail - Detail from one product
+    detail: function(req,res){
+        let idProduct = +req.params.id;
+		let product = products.find(product => product.id === idProduct);
+
+        res.render('productDetail', {
+            product
+        })
     },
     create:function(req,res){
         let numId = 1

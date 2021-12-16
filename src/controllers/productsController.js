@@ -1,14 +1,12 @@
 const fs = require('fs');
-const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+let { getProducts, getUsers, writeJson } = require('../data/dataBase')
 
 let controller = {
     // Detail - Detail from one product
     detail: function(req,res){
         let idProduct = +req.params.id;
-		let product = products.find(product => product.id === idProduct);
+		let product = getProducts.find(product => product.id === idProduct);
 
         res.render('productDetail', {
             product
@@ -17,7 +15,7 @@ let controller = {
     create:function(req,res){
         let numId = 1
 
-        products.forEach(product => {
+        getProducts.forEach(product => {
             if(product.id <= numId){
                 numId++
             }
@@ -29,17 +27,16 @@ let controller = {
             categoria: req.body.categoria,
             subcategoria: req.body.subcategoria
         }
-        products.push(nuevoProducto)
-        let productsJSON= JSON.stringify(products)
-        fs.writeFileSync(productsFilePath,productsJSON,'utf-8')
+        getProducts.push(nuevoProducto)
+
+        writeJson(getProducts);
+
         res.redirect("/")
     },
     productCart: function(req,res){
         res.render('productCart')
     },
-    quitarProducto: function(req,res){
-        res.render('quitarProducto')
-    },
+    
     formulario: function(req,res){
         res.render('formulario')
     },
@@ -47,7 +44,7 @@ let controller = {
     edit: function(req,res) {
 
         let idProduct = +req.params.id;
-        let product = products.find(product => product.id === idProduct);
+        let product = getProducts.find(product => product.id === idProduct);
 
         res.render('./admin/crearProducto', {
             product
@@ -67,11 +64,10 @@ let controller = {
             price,
             discount,
             stock,
-            description,
-            image
+            description
         } = req.body
 
-        products.forEach((product) => {
+        getProducts.forEach((product) => {
             if(product.id === idProduct) {
 
                 product.brand = brand,
@@ -85,12 +81,20 @@ let controller = {
                 product.price = price,
                 product.discount = discount,
                 product.description = description
-                //product.img = req.body.img
-                //aca va una validacion de la imagen
+
+                if(req.file) {
+					if(fs.existsSync('./public/img/products/', product.image)) {
+						fs.unlinkSync(`./public/img/products/${product.image}`)
+					} else {
+						console.log('No encontre el archivo')
+					}
+					product.image = req.file.filename
+				} else {
+					product.image = product.image
+				} 
             }
 
-            let productsJSON= JSON.stringify(products)
-            fs.writeFileSync(productsFilePath,productsJSON,'utf-8')
+            writeJson(getProducts);
 
         })
         res.redirect(`/products/detail/${idProduct}`)
@@ -99,18 +103,22 @@ let controller = {
     destroy: function(req, res) {
         let idProduct = +req.params.id;
 
-        products.forEach((product, index)=>{
+        getProducts.forEach((product, index)=>{
 
             if( product.id === idProduct) {
-                products.splice(index,1)
+                if(fs.existsSync('./public/img/products/', product.image)) {
+					fs.unlinkSync(`./public/img/products/${product.image}`)
+				} else {
+					console.log('No encontre el archivo')
+				}
+                getProducts.splice(index,1)
             }
         })
 
-        let productsJSON= JSON.stringify(products)
-        fs.writeFileSync(productsFilePath,productsJSON,'utf-8')
+        writeJson(getProducts)
         res.redirect('/')
     }
 
 }
 
-module.exports = controller
+module.exports = controller;

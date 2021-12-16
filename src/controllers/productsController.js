@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../data/products2.json');
+const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 let controller = {
@@ -43,23 +43,49 @@ let controller = {
     formulario: function(req,res){
         res.render('formulario')
     },
-    edit: function(req, res) {
-        let idProduct = +req.params.id;
+    
+    edit: function(req,res) {
 
-        products.forEach((product, index) => {
+        let idProduct = +req.params.id;
+        let product = products.find(product => product.id === idProduct);
+
+        res.render('./admin/crearProducto', {
+            product
+        });
+    },
+
+    update: function(req, res) {
+        let idProduct = +req.params.id;
+        let {
+            brand,
+            category,
+            size,
+            alcohol,
+            density,
+            taste,
+            amargura,
+            price,
+            discount,
+            stock,
+            description,
+            image
+        } = req.body
+
+        products.forEach((product) => {
             if(product.id === idProduct) {
 
-                product.brand = req.body.brand,
-                product.category = req.body.category,
-                product.price = +req.body.price,
-                product.discount = req.body.discount,
-                product.tamanio = +req.body.tamanio,
-                product.alcohol = +req.body.alcohol,
-                product.sabor = req.body.sabor,
-                product.amargura = +req.body.amargura,
-                product.description = req.body.description,
-                product.stock = +req.body.stock,
-                product.img = req.body.img
+                product.brand = brand,
+                product.category = category,
+                product.size = size,
+                product.alcohol = alcohol,
+                product.density = density,
+                product.taste = taste,
+                product.amargura = amargura,
+                product.stock = stock,
+                product.price = price,
+                product.discount = discount,
+                product.description = description
+                //product.img = req.body.img
                 //aca va una validacion de la imagen
             }
 
@@ -67,7 +93,7 @@ let controller = {
             fs.writeFileSync(productsFilePath,productsJSON,'utf-8')
 
         })
-        res.redirect('/products')
+        res.redirect(`/products/detail/${idProduct}`)
     },
 
     destroy: function(req, res) {
@@ -76,10 +102,13 @@ let controller = {
         products.forEach((product, index)=>{
 
             if( product.id === idProduct) {
-                products.slice(index,1)
+                products.splice(index,1)
             }
         })
-        res.redirect('/products')
+
+        let productsJSON= JSON.stringify(products)
+        fs.writeFileSync(productsFilePath,productsJSON,'utf-8')
+        res.redirect('/')
     }
 
 }

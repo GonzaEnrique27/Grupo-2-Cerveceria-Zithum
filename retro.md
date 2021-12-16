@@ -82,13 +82,4 @@ En este archivo se realizara un análisis sobre el trabajo realizado por el equi
 
 
 ## SPRINT 4
-* COSAS QUE DEBERIAMOS HACER PARA MEJORAR COMO GRUPO:
-
-
-* HACER MAS COMO GRUPO:
-
-* CONTINUAR HACIENDO:
-
-* HACER MENOS:
-
-* DEJAR DE HACER:
+https://jamboard.google.com/d/11riNXIRpx4YbgQEVUSsKCBy26nVQ5ZpudBxqj7KdAbQ/viewer?f=0

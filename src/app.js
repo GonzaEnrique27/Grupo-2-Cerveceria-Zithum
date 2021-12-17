@@ -10,6 +10,7 @@ const methodOverride =  require('method-override'); // Pasar poder usar los mét
 var mainRouter = require('./routes/mainRouter');
 var usersRouter = require('./routes/usersRouter');
 var productsRouter = require('./routes/productsRouter');
+let adminRouter = require('./routes/adminRouter');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el 
 app.use('/', mainRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/admin', adminRouter);
 
 
 

@@ -14,9 +14,9 @@
 
   <%- include('../partials/headerAdmin')  %> 
 
-  <div class="container" style="width: 80%; margin: auto; background-color: pink; margin-top: 15px; padding: 20px;">
+  <div class="formulario" style="width: 80%; margin: auto; background-color: rgb(197, 212, 56); margin-top: 15px; padding: 20px;">
 
-    <form action="/admin/create" method="POST" enctype="multipart/form-data">
+    <form action="/admin/edit/<%- product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
       <!-- <button type="button" class="btn btn-primary btn-sm">Small button</button> -->
 
@@ -42,35 +42,35 @@
 
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Tamaño</span>
-        <input name="size" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="size" type="number" placeholder="<%- product.size %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Alcohol</span>
-        <input name="alcohol" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="alcohol" type="number" placeholder="<%- product.alcohol %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Densidad</span>
-        <input name="density" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="density" type="number" placeholder="<%- product.density %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Sabor</span>
-        <input name="taste" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="taste" type="text" placeholder="<%- product.taste %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Amargor</span>
-        <input name="amargor" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="amargor" type="number" placeholder="<%- product.amargor %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Stock</span>
-        <input name="stock" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="stock" type="number" placeholder="<%- product.stock %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Precio</span>
-        <input name="price" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="price" type="number" placeholder="<%- product.price %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Descuento</span>
-        <input name="discount" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="discount" type="number" placeholder="<%- product.discount %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       
       <div class="mb-3">
@@ -78,12 +78,12 @@
         <input class="form-control" type="file" id="formFile" name="image">
       </div>
       <div class="form-floating">
-        <textarea name="description" id="description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
-        style="height: 100px"></textarea>
+        <textarea name="description" id="description" class="form-control" id="floatingTextarea2"
+        style="height: 100px"><%= product.description %></textarea>
         <label for="floatingTextarea2">Descripción</label>
       </div>
       <br>
-      <button type="submit" class="btn btn-success btn-sm">Crear Producto</button>
+      <button type="submit" class="btn btn-success btn-sm">Editar producto</button>
     </form> <br>
     
     

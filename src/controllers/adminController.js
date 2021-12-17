@@ -29,7 +29,7 @@ let controller = {
             alcohol,
             density,
             taste,
-            amargura,
+            amargor,
             price,
             discount,
             stock,

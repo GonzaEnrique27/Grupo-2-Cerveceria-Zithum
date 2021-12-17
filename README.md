@@ -19,7 +19,7 @@ Estamos en desarrollo de una tienda online que no solo ofrezca productos, sino t
 ## Tablero de trabajo y Retrospectiva
 
 * [Tablero de Trello](https://trello.com/b/uubm3Cfu/pi-grupo-2-zythum)
-* [Retrospectiva de Primer Sprint](https://github.com/GonzaEnrique27/Grupo-2-Cerveceria-Zithum/blob/master/retro.md)
+* [Retrospectiva](https://github.com/GonzaEnrique27/Grupo-2-Cerveceria-Zithum/blob/master/retro.md)
 
 
 ## Inspiraciones 

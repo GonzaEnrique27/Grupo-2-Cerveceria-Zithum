@@ -102,7 +102,7 @@ let controller = {
                 product.description = description
 
                 if(req.file) {
-					if(fs.existsSync('./public/img/products/', product.image)) {
+					if(fs.existsSync(`./public/img/products/${product.image}`)) {
 						fs.unlinkSync(`./public/img/products/${product.image}`)
 					} else {
 						console.log('No encontre el archivo')

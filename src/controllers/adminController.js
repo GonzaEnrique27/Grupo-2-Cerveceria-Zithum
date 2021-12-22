@@ -125,7 +125,7 @@ let controller = {
         getProducts.forEach((product, index)=>{
 
             if( product.id === idProduct) {
-                if(fs.existsSync('./public/img/products/', product.image)) {
+                if(fs.existsSync(`./public/img/products/${product.image}`)) {
 					fs.unlinkSync(`./public/img/products/${product.image}`)
 				} else {
 					console.log('No encontre el archivo')

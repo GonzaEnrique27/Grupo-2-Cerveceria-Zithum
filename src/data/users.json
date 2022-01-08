@@ -7,7 +7,7 @@
     "password": "J0SXzhXg7g4",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 2,
     "firstName": "Budd",
     "lastName": "Inkpen",
@@ -16,7 +16,7 @@
     "password": "gqfB5yY",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 3,
     "firstName": "Bonnee",
     "lastName": "Aguirrezabala",
@@ -25,7 +25,7 @@
     "password": "T8ZsUi1Qe",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 4,
     "firstName": "Berthe",
     "lastName": "Slimm",
@@ -34,7 +34,7 @@
     "password": "NJcAV3O805",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 5,
     "firstName": "Lambert",
     "lastName": "Weymont",
@@ -43,7 +43,7 @@
     "password": "ArRKtkHy",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 6,
     "firstName": "Thibaut",
     "lastName": "Odda",
@@ -52,7 +52,7 @@
     "password": "1uZxVuub5O",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 7,
     "firstName": "Modesty",
     "lastName": "Porritt",
@@ -61,7 +61,7 @@
     "password": "GguvaSNlT",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 8,
     "firstName": "Jdavie",
     "lastName": "Elnaugh",
@@ -70,7 +70,7 @@
     "password": "8f4aM5ziF4R",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 9,
     "firstName": "Stacia",
     "lastName": "Winyard",
@@ -79,7 +79,7 @@
     "password": "49Zo7Hf",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 10,
     "firstName": "Alwin",
     "lastName": "Laurentino",
@@ -88,7 +88,7 @@
     "password": "0l9QzTW",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 11,
     "firstName": "Kent",
     "lastName": "Orbell",
@@ -97,7 +97,7 @@
     "password": "ckGYQ1Js9p",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 12,
     "firstName": "Gaby",
     "lastName": "Bentley",
@@ -106,7 +106,7 @@
     "password": "WhUd6ct",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 13,
     "firstName": "Alene",
     "lastName": "Crosseland",
@@ -115,7 +115,7 @@
     "password": "9SZFVTD",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 14,
     "firstName": "Lyndell",
     "lastName": "Rhodef",
@@ -124,7 +124,7 @@
     "password": "rmRirVO4x",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 15,
     "firstName": "Erminia",
     "lastName": "Weakley",
@@ -133,7 +133,7 @@
     "password": "YdtVP3LoH",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 16,
     "firstName": "Germayne",
     "lastName": "Matieu",
@@ -142,7 +142,7 @@
     "password": "cX0M8Sf1J",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 17,
     "firstName": "Cortney",
     "lastName": "Mahady",
@@ -151,7 +151,7 @@
     "password": "4UK65Tx",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 18,
     "firstName": "Nanci",
     "lastName": "Vondrys",
@@ -160,7 +160,7 @@
     "password": "aK2zF67hl",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 19,
     "firstName": "Ches",
     "lastName": "Fairlamb",
@@ -169,7 +169,7 @@
     "password": "dy9cvAd8",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 20,
     "firstName": "Dannye",
     "lastName": "Kewzick",
@@ -178,7 +178,7 @@
     "password": "1Uopb1",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 21,
     "firstName": "Breena",
     "lastName": "Worrill",
@@ -187,7 +187,7 @@
     "password": "16HtuGPf",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 22,
     "firstName": "Violet",
     "lastName": "Windrum",
@@ -196,7 +196,7 @@
     "password": "CXP6zNE",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 23,
     "firstName": "Lesli",
     "lastName": "Reely",
@@ -205,7 +205,7 @@
     "password": "ACn5IXxS02",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 24,
     "firstName": "Serena",
     "lastName": "Nutley",
@@ -214,7 +214,7 @@
     "password": "EuvWnguheWq",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 25,
     "firstName": "Linda",
     "lastName": "Genery",
@@ -223,7 +223,7 @@
     "password": "724SG0xAcQ",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 26,
     "firstName": "Evelyn",
     "lastName": "Beentjes",
@@ -232,7 +232,7 @@
     "password": "oGQfMWj",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 27,
     "firstName": "Camile",
     "lastName": "Bartels-Ellis",
@@ -241,7 +241,7 @@
     "password": "tUukVBg9xW",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 28,
     "firstName": "Jules",
     "lastName": "Teggart",
@@ -250,7 +250,7 @@
     "password": "rB4pL7Ht4",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 29,
     "firstName": "Trudy",
     "lastName": "Rospars",
@@ -259,7 +259,7 @@
     "password": "s4w8b8p",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 30,
     "firstName": "Wolf",
     "lastName": "Knightly",
@@ -268,7 +268,7 @@
     "password": "zhjtp1vO6b",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 31,
     "firstName": "Nettle",
     "lastName": "Elt",
@@ -277,7 +277,7 @@
     "password": "9NGPcHs",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 32,
     "firstName": "Claudianus",
     "lastName": "Piens",
@@ -286,7 +286,7 @@
     "password": "tbhlfIyVnov",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 33,
     "firstName": "Fletcher",
     "lastName": "Bromley",
@@ -295,7 +295,7 @@
     "password": "ClgL2H",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 34,
     "firstName": "Stanfield",
     "lastName": "Dimitriou",
@@ -304,7 +304,7 @@
     "password": "YzNgbQJs",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 35,
     "firstName": "Harley",
     "lastName": "Claybourne",
@@ -313,7 +313,7 @@
     "password": "fhfaIfevSy8H",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 36,
     "firstName": "Jedidiah",
     "lastName": "Float",
@@ -322,7 +322,7 @@
     "password": "fHzM2RG",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 37,
     "firstName": "Les",
     "lastName": "Schneidar",
@@ -331,7 +331,7 @@
     "password": "BOk8GyNet",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 38,
     "firstName": "Thekla",
     "lastName": "Berre",
@@ -340,7 +340,7 @@
     "password": "Y7sSgF0f",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 39,
     "firstName": "Ricca",
     "lastName": "Rubert",
@@ -349,7 +349,7 @@
     "password": "6KYZ8pc",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 40,
     "firstName": "Michele",
     "lastName": "De Blase",
@@ -358,7 +358,7 @@
     "password": "4UvH2K",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 41,
     "firstName": "Garret",
     "lastName": "Hubane",
@@ -367,7 +367,7 @@
     "password": "RN5fhuZCQ",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 42,
     "firstName": "Pierson",
     "lastName": "Burdis",
@@ -376,7 +376,7 @@
     "password": "PcbCXvxNC4",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 43,
     "firstName": "Tania",
     "lastName": "Shave",
@@ -385,7 +385,7 @@
     "password": "Wbp1nppyixBV",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 44,
     "firstName": "Bartholomeo",
     "lastName": "Caush",
@@ -394,7 +394,7 @@
     "password": "krY8zwV2",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 45,
     "firstName": "Wyatt",
     "lastName": "Mildenhall",
@@ -403,7 +403,7 @@
     "password": "nrCakvRTUge",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 46,
     "firstName": "Bertina",
     "lastName": "Jennings",
@@ -412,7 +412,7 @@
     "password": "8i619W",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 47,
     "firstName": "Ilaire",
     "lastName": "Southworth",
@@ -421,7 +421,7 @@
     "password": "Cdy5CcOsIrd",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 48,
     "firstName": "Ted",
     "lastName": "Neno",
@@ -430,7 +430,7 @@
     "password": "eIQkX3CYr",
     "category": "user",
     "avatar": "default-avatar.png"
-  }, {
+}, {
     "id": 49,
     "firstName": "Gabi",
     "lastName": "Emmott",
@@ -439,4 +439,12 @@
     "password": "F67qNFoIlFOb",
     "category": "user",
     "avatar": "default-avatar.png"
-  }]
+}, {
+    "id": 50,
+    "name": "Probando",
+    "lastname": "Registro",
+    "email": "conmulter@gmail.com",
+    "password": "$2a$10$PTLrfAh/7184OmeGSamHMe7nvCtHbtv8t6wRllGe4bR9s98wAlRVG",
+    "category": "user",
+    "avatar": "1641677830470_user-img.jpeg"
+}]

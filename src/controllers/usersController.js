@@ -11,19 +11,22 @@ let controller = {
         res.render('login')
     },
     logeo:function(req,res){
-        for(let i = 0; i < users.length; i++){
-            if(req.body.email == users[i].email){
-                if(req.body.password == users[i].password){
-                    let userLogeado = users[i]
-                    break;
+
+        let userLogeado = users.find(user => user.email === req.body.email);
+
+            if(userLogeado){
+                req.session.userLogeado = {
+                    id: userLogeado.id,
+                    name: userLogeado.name,
+                    lastname:userLogeado.lastName,
+                    email: userLogeado.email
                 }
-                
             }else{
                 res.redirect('/users/login')
             }
-            req.session.userLogeado = userLogeado
+
             res.send('Tas logeado')
-        }
+        
     }
 }
 

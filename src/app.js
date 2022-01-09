@@ -38,7 +38,7 @@ app.post('/register', [
   if (!errors.esEmpty()) {
     console.log(req.body)
     const validaciones = errors.array()
-    res.render ('index', {validaciones:validaciones, valores: valores})
+    res.render ('ndex', {valiidaciones:validaciones, valores: valores})
   } else{
     res.send('¡REGISTRO EXITOSO')
   }

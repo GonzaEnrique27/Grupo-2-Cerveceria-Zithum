@@ -31,7 +31,7 @@ let controller = {
 
         writeJsonUser(getUsers);
 
-        res.send('Registrado wachin'); //borrar una vez creada la vista de profile user
+        res.send('¡REGISTRO EXITOSO!'); //borrar una vez creada la vista de profile user
         res.redirect(`/users/${numId}`);
     },
     login: function(req,res){
@@ -54,4 +54,5 @@ let controller = {
 
         }
 }
+  
 module.exports = controller

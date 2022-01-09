@@ -11,5 +11,8 @@ module.exports = {
 
     writeJson: (database) =>{
         fs.writeFileSync(productsFilePath,JSON.stringify(database),'utf-8')
+    },
+    writeJsonUser: (database) =>{
+        fs.writeFileSync(usersFilePath,JSON.stringify(database),'utf-8')
     }
 }

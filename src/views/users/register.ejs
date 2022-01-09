@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('./partials/head.ejs') %> 
+<%- include('../partials/head.ejs') %> 
 
 <body>
 
-    <%- include('./partials/header.ejs') %> 
+    <%- include('../partials/header.ejs') %> 
 
 
     <div class="caja-registro-escritorio">
         <div class="caja-form-registro">
             <center>
                 <h2 class="h2-registro">Crear Cuenta</h2>
-                <form action="#" method="post">
+                <form action="/users/register" method="POST" enctype="multipart/form-data">
                     <input type="text" class="input-registro" name="name" id="nombre" placeholder="  Nombre"
                         required><br>
                     <input type="text" class="input-registro" name="lastname" id="apellido" placeholder="  Apellido"
@@ -23,20 +23,23 @@
                         placeholder=" Contraseña" required><br>
                     <input type="password" class="input-registro" name="confirm-password" id="confirm-password"
                         placeholder=" Confirmar contraseña" required><br>
+
+                    <input type="file" id="formFile" name="image"><br><br>
+    
                     <input type="checkbox" class="notificaciones" name="notificaciones" id="notificaciones"><label for="notificaciones"> Recibir
                         notificaciones</label><br>
                     <button type="submit" class="new-account">CREAR CUENTA</button><br>
                     <hr class="hr-registro">
-                    <p>¿Ya tenes cuenta?<a href="/login"> Iniciar sesión</a> </p>
+                    <p>¿Ya tenes cuenta?<a href="/users/login"> Iniciar sesión</a> </p>
                 </form>
             </center>
         </div>
     </div>
 
 
-    <%- include('./partials/footer.ejs') %> 
+    <%- include('../partials/footer.ejs') %> 
 
-    <%- include('./partials/scripts.ejs') %> 
+    <%- include('../partials/scripts.ejs') %> 
     
 </body>
 </html>

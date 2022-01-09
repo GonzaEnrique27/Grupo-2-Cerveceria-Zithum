@@ -7,43 +7,13 @@
     "password": "123456",
     "category": "user",
     "avatar": "default-avatar.png"
-  },
-  {
+},
+{
     "id": 2,
-    "name": "Pistacho",
-    "lastName": "Salsita",
-    "dateOfBirth": "06/10/1996",
-    "email": "pistacho@gmail.com",
-    "password": "123456",
+    "name": "Probando",
+    "lastname": "Registro",
+    "email": "conmulter@gmail.com",
+    "password": "$2a$10$PTLrfAh/7184OmeGSamHMe7nvCtHbtv8t6wRllGe4bR9s98wAlRVG",
     "category": "user",
-    "avatar": "default-avatar.png"
-  },
-  {
-    "id": 3,
-    "name": "Pistacho",
-    "lastName": "Salsita",
-    "dateOfBirth": "06/10/1996",
-    "email": "pistacho@gmail.com",
-    "password": "123456",
-    "category": "user",
-    "avatar": "default-avatar.png"
-  },
-  {
-    "id": 4,
-    "name": "Pistacho",
-    "lastName": "Salsita",
-    "dateOfBirth": "06/10/1996",
-    "email": "pistacho@gmail.com",
-    "password": "123456",
-    "category": "user",
-    "avatar": "default-avatar.png"
-  },{
-    "id": 5,
-    "name": "Pistacho",
-    "lastName": "Salsita",
-    "dateOfBirth": "06/10/1996",
-    "email": "pistacho@gmail.com",
-    "password": "123456",
-    "category": "user",
-    "avatar": "default-avatar.png"
-  }]
+    "avatar": "1641677830470_user-img.jpeg"
+}]

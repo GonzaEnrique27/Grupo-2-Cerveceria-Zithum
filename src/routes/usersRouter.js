@@ -10,6 +10,10 @@ let registerValidator = require('../validations/registerValidator');
 router.get('/login', controller.login);
 
 router.get('/register', controller.register);
-router.post('/register',uploadFile.single('image'), registerValidator, controller.processRegister);
+
+
+// POST
+router.post('/logeo',controller.logeo);
+router.post('/register',uploadFile.single('image'), registerValidator , controller.processRegister);
 
 module.exports = router;

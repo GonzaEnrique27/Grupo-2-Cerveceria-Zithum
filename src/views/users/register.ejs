@@ -2,7 +2,7 @@
 <html lang="es">
 
 <%- include('../partials/head.ejs') %> 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <body>
 
     <%- include('../partials/header.ejs') %> 
@@ -13,16 +13,20 @@
             <center>
                 <h2 class="h2-registro">Crear Cuenta</h2>
                 <form action="/users/register" method="POST" enctype="multipart/form-data">
-                    <input type="text" class="input-registro" name="name" id="nombre" placeholder="  Nombre"
-                        required><br>
+                    <input type="text" class="input-registro" name="name" id="nombre" placeholder="Nombre"
+                    value="<% if(typeof valores != 'undefined') { %><%= valores.name %><%}%>"><br>
+                    
                     <input type="text" class="input-registro" name="lastname" id="apellido" placeholder="  Apellido"
-                        required><br>
-                    <input type="email" class="input-registro" name="email" id="email" placeholder=" Email"
-                        required><br>
-                    <input type="password" class="input-registro" name="password" id="password"
-                        placeholder=" Contraseña" required><br>
-                    <input type="password" class="input-registro" name="password2" id="confirm-password"
-                        placeholder=" Confirmar contraseña" required><br>
+                    value="<% if(typeof valores != 'undefined') { %><%= valores.lastname %><%}%>"><br>
+                    
+                    <input type="text" class="input-registro" name="email" id="email" placeholder=" Email"
+                    value="<% if(typeof valores != 'undefined') { %><%= valores.email %><%}%>"><br>
+                    
+                    <input type="text" class="input-registro" name="password" id="password"
+                        placeholder=" Contraseña" value="<% if(typeof valores != 'undefined') { %><%= valores.password %><%}%>"><br>
+                    
+                        <input type="text" class="input-registro" name="confirm-password" id="confirm-password"
+                        placeholder=" Confirmar contraseña" value="<% if(typeof valores != 'undefined') { %><%= valores.confirm-password %><%}%>"><br>
 
                     <input type="file" id="formFile" name="image"><br><br>
     
@@ -31,6 +35,17 @@
                     <hr class="hr-registro">
                     <p>¿Ya tenes cuenta?<a href="/users/login"> Iniciar sesión</a> </p>
                 </form>
+                
+             <!--ALERTAS-->
+
+                <% if(typeof validaciones != 'undefined') { %>
+            <% validaciones.forEach( (validacion) => {  %> 
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong><%= validacion.msg %></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <% }) %>
+              <% } %>
             </center>
         </div>
     </div>

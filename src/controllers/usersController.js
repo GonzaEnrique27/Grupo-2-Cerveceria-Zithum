@@ -31,12 +31,28 @@ let controller = {
 
         writeJsonUser(getUsers);
 
-        res.send('Registrado wachin'); //borrar una vez creada la vista de profile user
+        res.send('¡REGISTRO EXITOSO!'); //borrar una vez creada la vista de profile user
         res.redirect(`/users/${numId}`);
     },
     login: function(req,res){
         res.render('./users/login')
-    }
-}
+    },
+    logeo:function(req,res){
 
+        let userLogeado = users.find(user => user.email === req.body.email);
+
+            if(userLogeado){
+                req.session.userLogeado = {
+                    id: userLogeado.id,
+                    name: userLogeado.name,
+                    lastname:userLogeado.lastName,
+                    email: userLogeado.email
+                }
+            }else{
+                res.redirect('/users/login')
+            }
+
+        }
+}
+  
 module.exports = controller

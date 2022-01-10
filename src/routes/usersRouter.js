@@ -16,4 +16,7 @@ router.get('/register', controller.register);
 router.post('/logeo',controller.logeo);
 router.post('/register',uploadFile.single('image'), registerValidator , controller.processRegister);
 
+
+
+
 module.exports = router;

@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator')
 let { getUsers, writeJsonUser} = require('../data/dataBase')
 let bcrypt = require('bcryptjs');
 
@@ -5,7 +6,8 @@ let controller = {
     register: function(req,res){
         res.render('./users/register')
     },
-    processRegister : (req,res) =>{
+    processRegister : 
+(req,res) =>{
         let numId = 1
 
         getUsers.forEach(user => {
@@ -31,8 +33,18 @@ let controller = {
 
         writeJsonUser(getUsers);
 
-        res.send('¡REGISTRO EXITOSO!'); //borrar una vez creada la vista de profile user
-        res.redirect(`/users/${numId}`);
+        /*(req,res)=> {
+            const errors = validationResult(req)
+            if (!errors.esEmpty()) {
+              console.log(req.body)
+              const validaciones = errors.array()
+              res.render ('index', {valiidaciones:validaciones, valores: valores})
+            } else{
+              res.send('¡REGISTRO EXITOSO')
+            }
+            };*/
+            res.send ("¡REGISTRO EXISTOSO!")
+            res.redirect(`/users/${numId}`);
     },
     login: function(req,res){
         res.render('./users/login')

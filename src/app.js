@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 var app = express();
-const { body, validationResult } = require('express-validator')
+
 
 
 //Enrutadores
@@ -14,35 +14,8 @@ var usersRouter = require('./routes/usersRouter');
 var productsRouter = require('./routes/productsRouter');
 let adminRouter = require('./routes/adminRouter');
 
-//Validaciones
 
-app.post('/register', [
-  body('name', 'Ingrese un Nombre')
-  .exists()
-  .isLength({min:4}),
-  body ('lastname','Ingrese un Apellido' )
-  .exists()
-  .isLength({min:4}),
-  body('email', 'Ingrese un Email valido')
-  .exists()
-  .isEmail(),
-  body('password','Se requiere una Contraseña')
-  .exists()
-  .isLength({min:8}),
-  body('confirm-password','Se requiere confirmacion de la Contraseña')
-  .exists()
-  .isLength({min:8}),
 
-], (req,res)=> {
-  const errors = validationResult(req)
-  if (!errors.esEmpty()) {
-    console.log(req.body)
-    const validaciones = errors.array()
-    res.render ('ndex', {valiidaciones:validaciones, valores: valores})
-  } else{
-    res.send('¡REGISTRO EXITOSO')
-  }
-  })
 
 
 

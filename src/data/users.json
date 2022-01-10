@@ -1,1 +1,26 @@
-[{"id":1,"name":"Lautaro","lastName":"Hastewell","dateOfBirth":"05/08/1996","email":"lau@lau.com","password":"123456","category":"user","avatar":"default-avatar.png"},{"id":2,"name":"Probando","lastname":"Registro","email":"conmulter@gmail.com","password":"$2a$10$PTLrfAh/7184OmeGSamHMe7nvCtHbtv8t6wRllGe4bR9s98wAlRVG","category":"user","avatar":"1641677830470_user-img.jpeg"},{"id":3,"name":"s","lastname":"","email":"","password":"$2a$10$iC3XLCtk8aksTLzUsGWCyeAkSHgi5W.7HFiP6Vjl6wlfzI0Z6SLzS","category":"user","avatar":"default-user-img.png"},{"id":4,"name":"","lastname":"","email":"","password":"$2a$10$NsSTwThvPPJ40orUsqcNQOAmxfg3oqsH6oIZ/X0DQ1b8ltxmdQjZ6","category":"user","avatar":"default-user-img.png"},{"id":5,"name":"","lastname":"","email":"","password":"$2a$10$/9uPNBfiURoJ9h7k3v6.meJgQPFd7Ca8USDvM6qHdgsvACu0iMHnu","category":"user","avatar":"default-user-img.png"},{"id":6,"name":"","lastname":"","email":"","password":"$2a$10$7x2injr7y4geczciC2M4JeGoF2r00I6PQZBGIQNX/9c/VgjcXVTmS","category":"user","avatar":"default-user-img.png"},{"id":7,"name":"asd","lastname":"asdasd","email":"asdasd","password":"$2a$10$sewlR.5x57EuNUNInHEc6u4iq2krZNpA1jQhxNGXC5OJ1Ivish1NC","category":"user","avatar":"default-user-img.png"},{"id":8,"name":"","lastname":"","email":"","password":"$2a$10$m8ziYrgW/PTqsqllqLqdSuOfm4A6ideWj3PtJm9TxE0Km3c4cjxXa","category":"user","avatar":"default-user-img.png"},{"id":9,"name":"","lastname":"","email":"","password":"$2a$10$gWCV3RbrhQVGTi8qtSvy/.vlBCyTcZ56EuPFmfhAHDfLp3O5ri6V.","category":"user","avatar":"default-user-img.png"},{"id":10,"name":"","lastname":"","email":"","password":"$2a$10$1cEAlk2274ItErbHARFlteHNTNBxqX3MJAXzh8s.CUq6GILkVmxqe","category":"user","avatar":"default-user-img.png"},{"id":11,"name":"","lastname":"","email":"","password":"$2a$10$Ki6N7.Vkn58O/YauXLdV5OF8auvAa7xS2UCDIVgyPt1zyylg38is.","category":"user","avatar":"default-user-img.png"},{"id":12,"name":"dasdsa","lastname":"","email":"","password":"$2a$10$FOx10kPEgP8wHyH8LpRYq.NgzRm1x5a.NamXhUP8VgBdCfDpPhWWa","category":"user","avatar":"default-user-img.png"},{"id":13,"name":"cascsa","lastname":"","email":"","password":"$2a$10$UAtvfElpuSExV3TpffQIyukgLdNbRK5ZrpxSF2MvPFSEhoOCbfTUq","category":"user","avatar":"default-user-img.png"},{"id":14,"name":"asdas","lastname":"asdasd","email":"asdasd","password":"$2a$10$DGM7n6NPLZ8fMeSNUOCgQOndg/hJAyNrtRAYZcjif6Y0mnwpXoJ/u","category":"user","avatar":"default-user-img.png"},{"id":15,"name":"asd","lastname":"","email":"","password":"$2a$10$3G71MIMW9r0i7GHDhaO1yu4vcSg6VpYHYYXHEkzIPsz0P5518oTLu","category":"user","avatar":"default-user-img.png"},{"id":16,"name":"","lastname":"","email":"","password":"$2a$10$3YIObqzPjRoA6kGx.yiOhu0CiL7si8XRr5A1byAQt03ZQYe.r1Sx6","category":"user","avatar":"default-user-img.png"},{"id":17,"name":"","lastname":"","email":"","password":"$2a$10$ViYXhSux/Q0NK31RynMA9OAgCf6G7oGUYaD4pjpcICqsZi/VY8XXS","category":"user","avatar":"default-user-img.png"},{"id":18,"name":"dfgadfqasdas","lastname":"","email":"","password":"$2a$10$ekXZkiCGAL3TpYnXn704AO/tPyF9Th5TjJui7O5rnORGwjhDsbKBm","category":"user","avatar":"default-user-img.png"},{"id":19,"name":"dfgadfqasdas","lastname":"asdasd","email":"","password":"$2a$10$4H1GHcXcyFK9aSV0pjFKg.Knh0/rZ5nWFrLYtk92Fy1P5I/vu9fk2","category":"user","avatar":"default-user-img.png"},{"id":20,"name":"dcvxzcvzxcvz","lastname":"zxczxczxc","email":"","password":"$2a$10$SDPamVhNlgEQY21LiRxo7.C/VGvQEhIPZ8lLc/g7cOsGGwS.sAfLi","category":"user","avatar":"default-user-img.png"},{"id":21,"name":"as","lastname":"","email":"","password":"$2a$10$Vm1EOYU5RakncjN/.RC1vuv9xKl8V9dgdjt3OQ.PaC4/LqeApyt8.","category":"user","avatar":"default-user-img.png"},{"id":22,"name":"","lastname":"","email":"","password":"$2a$10$7J1s99fmDknvX0ZKtwLkouneDKlUwKoPIDOFgzTd4bKy3zgJ9Tsty","category":"user","avatar":"default-user-img.png"},{"id":23,"name":"asdasd","lastname":"dasdasd","email":"asdasdasdasd","password":"$2a$10$Gj5ImC2q2KqYb17cyk6RR.KIw9gLoJIPVWQxx3SqpO48G.Cf0R46W","category":"user","avatar":"default-user-img.png"},{"id":24,"name":"asdasd","lastname":"","email":"","password":"$2a$10$EaPr6lS.IM0//DzlmcpaAO.dC13b4NMu2lBwMrSTYXaLh0/2Pxbce","category":"user","avatar":"default-user-img.png"}]
+[{
+    "id": 1,
+    "name": "Lautaro",
+    "lastName": "Hastewell",
+    "dateOfBirth": "05/08/1996",
+    "email": "lau@lau.com",
+    "password": "123456",
+    "category": "user",
+    "avatar": "default-avatar.png"
+}, {
+    "id": 2,
+    "name": "Probando",
+    "lastname": "Registro",
+    "email": "conmulter@gmail.com",
+    "password": "$2a$10$PTLrfAh/7184OmeGSamHMe7nvCtHbtv8t6wRllGe4bR9s98wAlRVG",
+    "category": "user",
+    "avatar": "1641677830470_user-img.jpeg"
+}, {
+    "id": 3,
+    "name": "Marco",
+    "lastname": "Aleman",
+    "email": "probando@validaciones.com",
+    "password": "$2a$10$2dp5raSj72XQnMQatrnqpO6OaWW9ur84xt8yI0XyVrX898a1nlvZG",
+    "category": "user",
+    "avatar": "default-user-img.png"
+}]

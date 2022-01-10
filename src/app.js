@@ -15,7 +15,7 @@ var productsRouter = require('./routes/productsRouter');
 let adminRouter = require('./routes/adminRouter');
 
 //Validaciones
-
+/* 
 app.post('/register', [
   body('name', 'Ingrese un Nombre')
   .exists()
@@ -43,7 +43,7 @@ app.post('/register', [
     res.send('¡REGISTRO EXITOSO')
   }
   })
-
+ */
 
 
 // view engine setup

@@ -18,13 +18,13 @@ module.exports = [
     .isEmail()
     .withMessage('Debes ingresar un e-mail válido'),
 
-    body('email').custom((value) => { //custom recibe como parámetro un collback, que recibe como parámetro el value 
+    body('email').custom((value) => { 
         let user = getUsers.find(user => {
-            return user.email == value //Si existe este usuario en nuestra base de datos
+            return user.email == value 
         })
 
         if(user){
-            return false //En el caso de que no esté el usuario en la base de datos tirará el mensaje de que ya está registrado el email
+            return false 
         }else{
             return true
         }
@@ -32,12 +32,18 @@ module.exports = [
 
     check('password')
     .notEmpty()
-    .withMessage()
+    .withMessage('Debe ingresar una contraseña')
+    .bail()
     .isLength({ 
         min: 6,
         max: 12
     })
     .withMessage('La contraseña debe tener entre 6 y 12 carácteres'),
+    
+    check('password2')
+    .notEmpty()
+    .withMessage('Debe confirmar su contraseña')
+    .bail(),
 
     body('password2').custom((value, {req}) => value !== req.body.password ? false : true) //Comparando contraseñas
     .withMessage('Las contraseñas no coinciden'),

@@ -1,4 +1,3 @@
-const { validationResult } = require('express-validator')
 let { getUsers, writeJsonUser} = require('../data/dataBase')
 let bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
@@ -42,11 +41,10 @@ let controller = {
         } else {
             res.render('users/register', {
                 errors: errors.mapped(),
-                session: req.session 
+                session: req.session,
+                old : req.body
             })
         }
-        
-
         
     },
     login: function(req,res){

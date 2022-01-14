@@ -23,17 +23,17 @@
                     <% if (locals.errors && errors.lastname) { %> 
                         <span class="error"><%= errors.lastname.msg %></span>
                     <% } %>
-                    <input type="email" class="input-registro" name="email" id="email" placeholder=" Email" value="<%= locals.old && old.email %>"
+                    <input type="text" class="input-registro" name="email" id="email" placeholder=" Email" value="<%= locals.old && old.email %>"
                     ><br>
                     <% if (locals.errors && errors.email) { %> 
                         <span class="error"><%= errors.email.msg %></span>
                     <% } %>
-                    <input type="password" class="input-registro" name="password" id="password"
+                    <input type="text" class="input-registro" name="password" id="password"
                         placeholder=" Contraseña"><br>
                     <% if (locals.errors && errors.password) { %> 
                         <span class="error"><%= errors.password.msg %></span>
                     <% } %>
-                    <input type="password" class="input-registro" name="password2" id="password2"
+                    <input type="text" class="input-registro" name="password2" id="password2"
                         placeholder=" Confirmar contraseña"><br>
                     <% if (locals.errors && errors.password2) { %> 
                         <span class="error"><%= errors.password2.msg %></span>

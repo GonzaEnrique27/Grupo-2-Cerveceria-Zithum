@@ -55,9 +55,6 @@ let controller = {
 
         if(errors.isEmpty()){
 
-        
-        
-
         let userLogeado = users.find(user => user.email === req.body.email);
 
             if(userLogeado){
@@ -82,7 +79,7 @@ let controller = {
                  req.session.usuarioLogueado = usuarioALoguearse                           //GUARDA EN SESSION EL USUARIO LOGEADO
                  }   
             }else{
-                res.redirect('/users/login', {errors: errors.errors})                      // REDIRECCIONA A LA PAGINA CON LOS ERRORES
+                res.render('/users/login', {errors: errors.errors})                      // REDIRECCIONA A LA PAGINA CON LOS ERRORES
             }   
 
         }

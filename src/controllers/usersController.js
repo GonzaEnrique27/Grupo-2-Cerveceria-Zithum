@@ -51,6 +51,12 @@ let controller = {
         res.render('./users/login')
     },
     logeo:function(req,res){
+        let errors= validationResult(req);
+
+        if(errors.isEmpty()){
+
+        
+        
 
         let userLogeado = users.find(user => user.email === req.body.email);
 
@@ -61,11 +67,25 @@ let controller = {
                     lastname:userLogeado.lastName,
                     email: userLogeado.email
                 }
+                 for (let i = 0; i< users.lenght; i++){                                    // BUSCA EN LOS USUARIOS UNO A UNO
+                     if (users[i].email == req.body.email){                               // VERIFICA EL EMAIL
+                         if (bcrypt.compareSync(req.body.password, users[i].password)){   //VERIFICA QUE LA CONTRASEÑA SEA CORRECTA
+                             let usuarioALoguearse = users[i]                             // COMPRUEBA QUE AMBOS EXISTEN
+                             break
+                         }
+                     }
+                 if (usuarioALoguearse == undefined){                                      // EN CASO DE NO EXISTIR...
+                     return res.render('login', {errors:[
+                         {msg: 'Credenciales Invalidas'}
+                     ]})
+                 }
+                 req.session.usuarioLogueado = usuarioALoguearse                           //GUARDA EN SESSION EL USUARIO LOGEADO
+                 }   
             }else{
-                res.redirect('/users/login')
-            }
+                res.redirect('/users/login', {errors: errors.errors})                      // REDIRECCIONA A LA PAGINA CON LOS ERRORES
+            }   
 
         }
+    }
 }
-  
 module.exports = controller

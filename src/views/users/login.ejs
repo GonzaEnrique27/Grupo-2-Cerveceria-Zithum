@@ -40,12 +40,16 @@
                         <h3>Ingresa con tu email y contraseña</h3><br>
 
                         <div class="input-container">
-                            <input class="input-style" type="email" name="email" placeholder="Ingrese su email" required>
-                            <span class="error-message">Debes ingresar tu email</span>
+                            <input class="input-style" type="text" name="email" placeholder="Ingrese su email" value="<%= locals.old && old.email %>" >
+                            <% if (locals.errors && errors.email) { %> 
+                                <span class="error"><%= errors.email.msg %></span>
+                            <% } %>
                         </div>
                         <div class="input-container">
-                            <input class="input-style" type="password" name="pass" placeholder="Ingrese su contraseña" required>
-                            <span class="error-message">Debes ingresar tu contraseña</span>
+                            <input class="input-style" type="text" name="pass" placeholder="Ingrese su contraseña">
+                            <% if (locals.errors && errors.password) { %> 
+                                <span class="error"><%= errors.password.msg %></span>
+                            <% } %>
                         </div>
                         <a class="recover-pass" href="">¿Olvidaste tu contraseña?</a>
 

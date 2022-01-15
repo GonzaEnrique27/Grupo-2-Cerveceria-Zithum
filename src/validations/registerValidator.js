@@ -13,8 +13,7 @@ module.exports = [
 
     check('email')
     .notEmpty()  
-    .withMessage('Debes ingresar un e-mail') 
-    .bail() 
+    .withMessage('Debes ingresar un e-mail').bail() 
     .isEmail()
     .withMessage('Debes ingresar un e-mail válido'),
 
@@ -42,8 +41,7 @@ module.exports = [
     
     check('password2')
     .notEmpty()
-    .withMessage('Debe confirmar su contraseña')
-    .bail(),
+    .withMessage('Debe confirmar su contraseña'),
 
     body('password2').custom((value, {req}) => value !== req.body.password ? false : true) //Comparando contraseñas
     .withMessage('Las contraseñas no coinciden'),

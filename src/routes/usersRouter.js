@@ -1,27 +1,23 @@
 var express = require('express');
 var router = express.Router();
-let controller = require('../controllers/usersController');
+let { login, logeo, register, processRegister} = require('../controllers/usersController');
 let uploadFile = require('../middlewares/uploadUserFile');
 let registerValidator = require('../validations/registerValidator');
-const { check } = require('express-validator');
+let loginValidator = require('../validations/loginValidator');
 
 /* GET home page. */
 /* router.get('/', controller.listUsers); */
 /* router.get('/:id', controller.profile); */
-router.get('/login', controller.login);
 
-router.get('/register', controller.register);
+//GET - Login
+router.get('/login', login);
+//POST - Login
+router.post('/login', loginValidator, logeo);
 
-
-// POST
-router.post('/login', [
-    check('email').isEmail().withMessage('Email Invalido'),
-    check('password').isLength({min:8}).withMessage('La contraseña debera tener minimo 8 caracteres')
-],controller.logeo);
-
-router.post('/register',uploadFile.single('image'), registerValidator , controller.processRegister);
-
-
+//GET- Register
+router.get('/register', register);
+// POST - Reister
+router.post('/register',uploadFile.single('image'), registerValidator , processRegister);
 
 
 module.exports = router;

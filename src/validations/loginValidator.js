@@ -11,9 +11,9 @@ module.exports = [
 
     check('pass')
     .notEmpty()
-    .withMessage('Debes ingresar tu contraseña')
+    .withMessage('Debes ingresar tu contraseña'),
 
-    /* body('custom')
+    body('custom')
         .custom((value, {req}) => {
             let user = getUsers.find(user => user.email == req.body.email);
 
@@ -27,5 +27,5 @@ module.exports = [
                 return false
             }
 
-        }).withMessage('Credenciales inválidas') */
+        }).withMessage('Credenciales inválidas')
 ]

@@ -9,12 +9,15 @@ let controller = {
 		let product = getProducts.find(product => product.id === idProduct);
 
         res.render('productDetail', {
-            product
+            product,
+            sesion: req.session
         })
     },
     
     productCart: function(req,res){
-        res.render('productCart')
+        res.render('productCart', {
+            sesion: req.session
+        })
     },
     
 

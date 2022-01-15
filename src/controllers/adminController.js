@@ -5,12 +5,15 @@ let controller = {
     //Muestra el dashboard
     index: function(req, res) {
         res.render('./admin/adminIndex', {
-            products : getProducts
+            products : getProducts,
+            sesion: req.session
         })
     },
     //Muestra la vista de edicion
     create: function(req, res) {
-        res.render('./admin/crearProducto');
+        res.render('./admin/crearProducto', {
+            sesion: req.session
+        });
     },
     //Crea el producto
     store: function(req,res){
@@ -66,7 +69,8 @@ let controller = {
         let product = getProducts.find(product => product.id === idProduct);
 
         res.render('./admin/editarProducto', {
-            product
+            product,
+            sesion: req.session
         });
     },
 

@@ -4,7 +4,9 @@ const { validationResult } = require('express-validator');
 
 let controller = {
     login: function(req,res){
-        res.render('./users/login')
+        res.render('./users/login', {
+            sesion: req.session //paso la session en todas las vistas, por si esta logueado
+        })
     },
     
     logeo:function(req,res){
@@ -14,23 +16,29 @@ let controller = {
     
             let userLogeado = getUsers.find(user => user.email === req.body.email);
     
-            if(userLogeado){
-                req.session.userLogeado = {
-                    id: userLogeado.id,
-                    name: userLogeado.name,
-                    lastname:userLogeado.lastName,
-                    email: userLogeado.email
-                }}
+            req.session.userLogeado = {
+                id: userLogeado.id,
+                name: userLogeado.name,
+                lastname:userLogeado.lastName,
+                email: userLogeado.email
+            }
+
+            res.locals.user = req.session.userLogeado; //guardo el usuario logeado en locals.
             res.redirect('/');
             
         }else{
-            res.render('./users/login', {errors: errors.mapped()});
+            res.render('./users/login', {
+                errors: errors.mapped(),
+                sesion: req.session
+            });
         }
             
     },  
 
     register: function(req,res){
-        res.render('./users/register')
+        res.render('./users/register', {
+            sesion: req.session
+        })
     },
 
     processRegister : (req,res) =>{

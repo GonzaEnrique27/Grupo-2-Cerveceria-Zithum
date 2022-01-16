@@ -42,6 +42,13 @@ let controller = {
             });
         }
             
+    },
+    logout: (req,res)=>{
+        req.session.destroy();
+        if(req.cookies.userZythum){
+            res.cookie('userZythum','', { maxAge: -1})
+        }
+        res.redirect('/')
     },  
 
     register: function(req,res){
@@ -92,5 +99,11 @@ let controller = {
         }
         
     },
+
+    profile: (req,res)=>{
+        let user = getUsers.find(user => user.id === req.session.user.id);
+
+        res.send('Aca pondria mi vista de perfil, si tan solo tuviera una!!');
+    }
 }
 module.exports = controller

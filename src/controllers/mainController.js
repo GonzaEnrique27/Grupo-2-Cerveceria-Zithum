@@ -1,7 +1,7 @@
 let controller = {
     home: function(req,res){
         res.render('index'), {
-            sesion: req.session
+            session: req.session
         }
     }
 }

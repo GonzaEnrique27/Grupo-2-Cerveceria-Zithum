@@ -23,4 +23,12 @@
     "password": "$2a$10$2dp5raSj72XQnMQatrnqpO6OaWW9ur84xt8yI0XyVrX898a1nlvZG",
     "category": "user",
     "avatar": "default-user-img.png"
+}, {
+    "id": 4,
+    "name": "Marco",
+    "lastname": "Aleman",
+    "email": "new@mail.com",
+    "password": "$2a$10$nQz4YF8cnmkYqDb0rYZTqegRVeVpKqFcA8YjzgzOSeVohEuWKutrG",
+    "category": "user",
+    "avatar": "default-user-img.png"
 }]

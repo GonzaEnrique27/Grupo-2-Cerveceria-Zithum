@@ -5,7 +5,7 @@ const { validationResult } = require('express-validator');
 let controller = {
     login: function(req,res){
         res.render('./users/login', {
-            sesion: req.session //paso la session en todas las vistas, por si esta logueado
+            session: req.session //paso la session en todas las vistas, por si esta logueado
         })
     },
     
@@ -16,20 +16,29 @@ let controller = {
     
             let userLogeado = getUsers.find(user => user.email === req.body.email);
     
-            req.session.userLogeado = {
+            req.session.user = {
                 id: userLogeado.id,
                 name: userLogeado.name,
                 lastname:userLogeado.lastName,
                 email: userLogeado.email
             }
 
-            res.locals.user = req.session.userLogeado; //guardo el usuario logeado en locals.
+            if(req.body.remember) { //si marco el check de recordar
+                const TIME_IN_MILISECONDS = 60000; //defino un tiempo en este caso 1 minuto
+                res.cookie('userZythum', req.session.user, { //creo la cookie poniendo el nombre de la misma y la info que quiero guardar
+                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                    httpOnly: true,
+                    secure: true
+                })
+            }
+
+            res.locals.user = req.session.user; //guardo el usuario logeado en locals.
             res.redirect('/');
             
         }else{
             res.render('./users/login', {
                 errors: errors.mapped(),
-                sesion: req.session
+                session: req.session
             });
         }
             
@@ -37,7 +46,7 @@ let controller = {
 
     register: function(req,res){
         res.render('./users/register', {
-            sesion: req.session
+            session: req.session
         })
     },
 

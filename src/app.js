@@ -5,7 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride =  require('method-override'); // Pasar poder usar los métodos PUT y DELETE
 var app = express();
-var session = require('express-session')
+var session = require('express-session');
+const cookieSession = require('./middlewares/cookieSession');
 
 
 
@@ -27,14 +28,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(methodOverride('_method')); // Pasar poder pisar el method="POST" en el formulario por PUT y DELETE
-
 //Codigo secreto de session
 app.use(session({
-  secret:'Soy un codigo ultra hiper secreto',
-  resave: false,
-  saveUninitialized:true,
-  cookie: {secure:true}
+  secret: "Zythum",
+    resave: false,
+    saveUninitialized: true
 }))
+app.use(cookieSession); //implemento la cookie se sesion a nivel aplicacion.
+
+
 
 
 app.use('/', mainRouter);
@@ -48,7 +50,7 @@ app.use('/admin', adminRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
+/* 
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -58,6 +60,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
+}); */
 
 module.exports = app;

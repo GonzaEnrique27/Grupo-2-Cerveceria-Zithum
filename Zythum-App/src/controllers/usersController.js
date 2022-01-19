@@ -20,7 +20,8 @@ let controller = {
                 id: userLogeado.id,
                 name: userLogeado.name,
                 lastname:userLogeado.lastName,
-                email: userLogeado.email
+                email: userLogeado.email,
+                rol: userLogeado.rol
             }
 
             if(req.body.remember) { //si marco el check de recordar
@@ -79,7 +80,12 @@ let controller = {
                 lastname,
                 email,
                 password : bcrypt.hashSync(password, 10),
-                category: 'user',
+                rol: 'user',
+                tel: "",
+                address: "",
+                pc: "",
+                city: "",
+                province: "",
                 avatar: req.file ? req.file.filename : 'default-user-img.png'
             }
 

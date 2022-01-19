@@ -19,16 +19,8 @@
     "id": 3,
     "name": "Marco",
     "lastname": "Aleman",
-    "email": "probando@validaciones.com",
-    "password": "$2a$10$2dp5raSj72XQnMQatrnqpO6OaWW9ur84xt8yI0XyVrX898a1nlvZG",
-    "category": "user",
-    "avatar": "default-user-img.png"
-}, {
-    "id": 4,
-    "name": "Marco",
-    "lastname": "Aleman",
-    "email": "new@mail.com",
-    "password": "$2a$10$nQz4YF8cnmkYqDb0rYZTqegRVeVpKqFcA8YjzgzOSeVohEuWKutrG",
-    "category": "user",
-    "avatar": "default-user-img.png"
+    "email": "marcoaleman18@gmail.com",
+    "password": "$2a$10$6maNNYGsYzdnv837TkOJP.fMdj58e8ARGXW0.AGZ1MvHLnXvTBQim",
+    "rol": "admin",
+    "avatar": "1642573913719_user-img.jpeg"
 }]

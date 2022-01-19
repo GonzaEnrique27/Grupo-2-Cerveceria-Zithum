@@ -1,4 +1,4 @@
-# ZITHUM
+# ZYTHUM
 
 Estamos en desarrollo de una tienda online que no solo ofrezca productos, sino también poder brindarles una experiencia a nuestros consumidores. Con esto, los servicios que ofrecemos son:
 

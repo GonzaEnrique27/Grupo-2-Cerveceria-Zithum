@@ -6,13 +6,13 @@ let controller = {
     index: function(req, res) {
         res.render('./admin/adminIndex', {
             products : getProducts,
-            sesion: req.session
+            session: req.session
         })
     },
     //Muestra la vista de edicion
     create: function(req, res) {
         res.render('./admin/crearProducto', {
-            sesion: req.session
+            session: req.session
         });
     },
     //Crea el producto
@@ -70,7 +70,7 @@ let controller = {
 
         res.render('./admin/editarProducto', {
             product,
-            sesion: req.session
+            session: req.session
         });
     },
 

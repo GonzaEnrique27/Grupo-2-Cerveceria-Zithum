@@ -43,6 +43,7 @@ let controller = {
         }
             
     },
+    
     logout: (req,res)=>{
         req.session.destroy();
         if(req.cookies.userZythum){
@@ -86,8 +87,6 @@ let controller = {
 
             writeJsonUser(getUsers);
 
-            /* res.send('¡REGISTRO EXITOSO!'); //borrar una vez creada la vista de profile user
-            res.redirect(`/users/${numId}`); */
             res.redirect('/users/login');
 
         } else {

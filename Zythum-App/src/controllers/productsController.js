@@ -10,13 +10,13 @@ let controller = {
 
         res.render('productDetail', {
             product,
-            sesion: req.session
+            session: req.session
         })
     },
     
     productCart: function(req,res){
         res.render('productCart', {
-            sesion: req.session
+            session: req.session
         })
     },
     

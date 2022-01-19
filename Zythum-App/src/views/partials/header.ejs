@@ -25,6 +25,9 @@
             <div class="user">
                 <a href="/products/cart" class="chart"><i class="fas fa-shopping-cart fsl"></i></a>
                 <a href="/users/login" class="user-icon"><i class="fas fa-user fsl"></i></a>
+                <% if (typeof session.user != "undefined") { %>
+                    <a href="/users/logout">Cerrar sesión</a>
+                <% } %>
             </div>
         </div>
         <div class="menu2">

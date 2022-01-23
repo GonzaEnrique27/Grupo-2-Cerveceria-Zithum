@@ -24,6 +24,7 @@ footer.frase{
 @media only screen and (min-width: 1200px){
     footer{
     flex-direction: row;
+    position: fixed;
     }
 footer .contacto{
     order: 1

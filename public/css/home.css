@@ -22,6 +22,7 @@ div.scrollmenu {
 
   .home{
 	  max-width: 1200px;
+	  overflow: auto;
   }
 /**********************************/
   /* BANNER*/
@@ -44,118 +45,109 @@ div.scrollmenu {
 /**********************************/
   /* SLIDE HOME*/
 /**********************************/
-  @keyframes slide {
-	0% { transform: translateX(0); }
-	10% { transform: translateX(0); }
 
-	15% { transform: translateX(-100%); }
-	30% { transform: translateX(-100%); }
+* {box-sizing:border-box}
 
-	35% { transform: translateX(-200%); }
-	50% { transform: translateX(-200%); }
-
-	55% { transform: translateX(-300%); }
-	70% { transform: translateX(-300%); }
-
-	75% { transform: translateX(-400%); }
-	100% { transform: translateX(-400%); }
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
-html { scroll-behavior: smooth; }
-
-.wrapper {
-	display: flex;
-	flex-wrap: nowrap;
-	max-width: 1200px;
+/* Hide the images by default */
+.mySlides {
+  display: none;
 }
 
-.slider {
-	position: relative;
-	max-width: 1200px;
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
-.slides {
-	position: relative;
-	display: flex;
-	overflow: hidden;
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-.slide {
-	width: 100%;
-	flex-shrink: 0;
-	animation-name: slide;
-	animation-duration: 15s;
-	animation-iteration-count: infinite;
-	animation-timing-function:linear;
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
 
-.slides:hover .slide {
-	animation-play-state: paused;
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
-.slide img {
-	width: 100%;
-	vertical-align: top;
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
 }
 
-.slide a {
-	width: 100%;
-	display: inline-block;
-	position: relative;
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
 }
 
-.caption {
-	color: white;
-	font-size: 8vw;
-	position: absolute;
-	bottom: 8vw;
-	right: 4vw;
+.active, .dot:hover {
+  background-color: #717171;
 }
 
-.slide:target {
-	animation-name: none;
-	position: absolute;
-	left: 0;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 50;
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
-.slider-controler {
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	text-align: center;
-	padding: 5px;
-	z-index: 100;
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
 
-.slider-controler li {
-	margin: 0 0.5rem;
-	display: inline-block;
-	vertical-align: top;
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }
+  
 
-@media only screen and (min-width: 1200px) {
-	.slide {
-		width: 1200px;
+@media only screen and (max-width: 320px) {
+	.promos{
+		padding-left: 150px;
 	}
+	.seccion{
+		padding-left: 75px;
 
-	.caption {
-		bottom: 96px;
-		right: 50px;
 	}
-.slide img{
-	width: 500px;
-}
-
-.slider{
-	width: 500px;
-}
-
-.wrapper{
-	margin-left:650px;
-}
 }

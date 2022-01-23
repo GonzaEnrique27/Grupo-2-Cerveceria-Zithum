@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %> 
+
+<body>
+
+    <%- include('../partials/header.ejs') %> 
+
+
+    <div class="caja-registro-escritorio">
+        <div class="caja-form-registro">
+            <center>
+                <h2 class="h2-registro">Crear Cuenta</h2>
+                <form action="/users/register" method="POST" enctype="multipart/form-data">
+                    <input type="text" class="input-registro" name="name" id="nombre" placeholder="  Nombre" value="<%= locals.old && old.name %>"><br>
+                    <% if (locals.errors && errors.name) { %> 
+                        <small class="error"><%= errors.name.msg %></small><br>
+                    <% } %>
+                    <input type="text" class="input-registro" name="lastname" id="apellido" placeholder="  Apellido" value="<%= locals.old && old.lastname %>"
+                    ><br>
+                    <% if (locals.errors && errors.lastname) { %> 
+                        <small class="error"><%= errors.lastname.msg %></small><br>
+                    <% } %>
+                    <input type="email" class="input-registro" name="email" id="email" placeholder=" Email" value="<%= locals.old && old.email %>"
+                    ><br>
+                    <% if (locals.errors && errors.email) { %> 
+                        <small class="error"><%= errors.email.msg %></small><br>
+                    <% } %>
+                    <input type="password" class="input-registro" name="password" id="password"
+                        placeholder=" Contraseña"><br>
+                    <% if (locals.errors && errors.password) { %> 
+                        <small class="error"><%= errors.password.msg %></small><br>
+                    <% } %>
+                    <input type="password" class="input-registro" name="password2" id="password2"
+                        placeholder=" Confirmar contraseña"><br>
+                    <% if (locals.errors && errors.password2) { %> 
+                        <small class="error"><%= errors.password2.msg %></small><br>
+                    <% } %>
+                    <input type="file" id="formFile" name="image"><br><br>
+    
+                    <input type="checkbox" class="notificaciones" name="terms" id="notificaciones"><label for="notificaciones"> Acepto los términos y condiciones</label><br>
+                    <% if (locals.errors && errors.terms) { %> 
+                        <small class="error"><%= errors.terms.msg %></small><br>
+                    <% } %>
+                    <button type="submit" class="new-account">CREAR CUENTA</button><br>
+                    <hr class="hr-registro">
+                    <p>¿Ya tenes cuenta?<a href="/users/login"> Iniciar sesión</a> </p>
+                </form>
+            </center>
+        </div>
+    </div>
+
+
+    <%- include('../partials/footer.ejs') %> 
+
+    <%- include('../partials/scripts.ejs') %> 
+    
+</body>
+</html>

@@ -42,7 +42,7 @@ CREATE TABLE `addresses` (
 
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
-INSERT INTO `addresses` VALUES (1,'efrgergver','','',NULL,12341234,17),(2,'efrgergver','','',NULL,12341234,17);
+INSERT INTO `addresses` VALUES (1,'','','',NULL,NULL,17),(2,'','','',NULL,NULL,17);
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,7 +68,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Escolar','cat_escolar.jpg'),(2,'Artística','cat_artistica.jpg'),(3,'Oficina','cat_oficina.jpg');
+INSERT INTO `categories` VALUES (1,'Rubia',''),(2,'Negra',''),(3,'Roja','');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,35 +165,8 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (70,'Acuarelas Alba',500,10,'Unas muy lindas acuarelas\r\n',5,'2021-10-23 23:26:11','2021-10-23 23:26:11',NULL),(71,'Oleos ',150,15,'Alto oleo',4,'2021-10-24 00:38:46','2021-10-24 00:38:46',NULL),(72,'Set acuarelas',5000,12,'Alto set',5,'2021-10-24 00:39:17','2021-10-24 00:39:17',NULL),(73,'Atril',6000,10,'Super atril',6,'2021-10-24 00:39:51','2021-10-24 00:39:51',NULL),(74,'Barniz',50,16,'Re barato',16,'2021-10-24 00:40:18','2021-10-24 00:40:18',NULL),(75,'Bastidor',6000,13,'No es un batidor\r\n',21,'2021-10-24 00:40:45','2021-10-24 00:40:45',NULL),(76,'Bibliorato',600,10,'Coso de oficina\r\n',8,'2021-10-24 00:41:23','2021-10-24 00:41:23',NULL),(77,'Caja archivadora',100,10,'Una simple y aburrida caja\r\n',20,'2021-10-24 00:42:01','2021-10-24 00:42:01',NULL),(78,'Carpeta',50,10,'Carpeta aburrida\r\n',20,'2021-10-24 00:42:51','2021-10-24 00:42:51',NULL),(79,'Carpeta Fornite',500,10,'Carpeta Gamer\r\n',11,'2021-10-24 00:44:34','2021-10-24 00:44:34',NULL),(80,'Cartuchera',150,10,'',2,'2021-10-24 00:45:29','2021-10-24 00:45:29',NULL),(81,'Cinta ',100,100,'',22,'2021-10-24 00:45:52','2021-10-24 00:45:52',NULL),(82,'Compas',600,10,'',31,'2021-10-24 00:47:04','2021-10-24 00:47:04',NULL),(83,'Cuaderno tapa dura',600,10,'',15,'2021-10-24 00:47:27','2021-10-24 00:47:27',NULL),(84,'Lápices de colores',400,10,'',3,'2021-10-24 00:48:08','2021-10-24 00:48:08',NULL),(85,'Marcadores Sharpie',5000,10,'Caritos los sharpies\r\n',10,'2021-10-24 00:48:40','2021-10-24 00:48:40',NULL),(86,'Marcadores',150,1,'',10,'2021-10-24 00:49:03','2021-10-24 00:49:03',NULL),(87,'Mochila spiderman',6000,10,'',1,'2021-10-24 00:49:36','2021-10-24 00:49:36',NULL),(95,'acsasedvc',12312,0,'',2,'2021-11-10 23:39:59','2021-11-10 23:39:59',NULL),(96,'1asd',123,0,'',5,'2021-11-10 23:44:52','2021-11-10 23:44:52',NULL);
+INSERT INTO `products` VALUES (71,'',150,NULL,'',4,'2021-10-24 00:38:46','2021-10-24 00:38:46',NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `products_images`
---
-
-DROP TABLE IF EXISTS `products_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image` varchar(100) NOT NULL,
-  `productId` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `products_images_FK` (`productId`),
-  CONSTRAINT `products_images_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products_images`
---
-
-LOCK TABLES `products_images` WRITE;
-/*!40000 ALTER TABLE `products_images` DISABLE KEYS */;
-INSERT INTO `products_images` VALUES (1,'1635031571585_img_.jpg',70),(2,'1635035926256_img_.jpg',71),(3,'1635035957988_img_.jpg',72),(4,'1635035991058_img_.jpg',73),(5,'1635036018721_img_.jpg',74),(6,'1635036045675_img_.jpg',75),(7,'1635036083342_img_.jpg',76),(8,'1635036121986_img_.jpg',77),(9,'1635036171515_img_.jpg',78),(10,'1635036274526_img_.jpg',79),(11,'1635036329078_img_.jpg',80),(12,'1635036352716_img_.jpg',81),(13,'1635036424206_img_.jpg',82),(14,'1635036447309_img_.jpg',83),(15,'1635036488384_img_.jpg',84),(16,'1635036520742_img_.jpg',85),(17,'1635036543104_img_.jpg',86),(18,'1635036576010_img_.jpg',87),(39,'default-image.png',95),(40,'default-image.png',96);
-/*!40000 ALTER TABLE `products_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -222,7 +195,7 @@ CREATE TABLE `subcategories` (
 
 LOCK TABLES `subcategories` WRITE;
 /*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
-INSERT INTO `subcategories` VALUES (1,'Mochilas',1,NULL,NULL),(2,'Cartucheras',1,NULL,NULL),(3,'Lápices',1,NULL,NULL),(4,'Oleos',2,NULL,NULL),(5,'Acuarelas',2,NULL,NULL),(6,'Atriles',2,NULL,NULL),(8,'Biblioratos',3,NULL,NULL),(9,'Abrochadoras',3,NULL,NULL),(10,'Marcadores',2,NULL,NULL),(11,'Carpetas',1,NULL,NULL),(12,'Acrí­licos',2,NULL,NULL),(13,'Pinceles',2,NULL,NULL),(14,'Compás',2,NULL,NULL),(15,'Cuadernos',1,NULL,NULL),(16,'Barniz',2,NULL,NULL),(17,'Tintas',2,NULL,NULL),(18,'Gomas',1,NULL,NULL),(19,'Tijeras',1,NULL,NULL),(20,'Cajas',3,NULL,NULL),(21,'Bastidores',2,NULL,NULL),(22,'Cintas Adhesivas',3,NULL,NULL),(23,'Pizarras',3,NULL,NULL),(24,'Perforadoras',3,NULL,NULL),(25,'Sobres',3,NULL,NULL),(26,'Caballetes y atriles',2,NULL,NULL),(27,'Repuestos',1,NULL,NULL),(31,'Compás',1,NULL,NULL);
+INSERT INTO `subcategories` VALUES (1,'',1,NULL,NULL),(2,'',1,NULL,NULL),(3,'',1,NULL,NULL),(4,'',2,NULL,NULL),(5,'',2,NULL,NULL),(6,'',2,NULL,NULL),(8,'',3,NULL,NULL),(9,'',3,NULL,NULL),(10,'',2,NULL,NULL),(11,'',1,NULL,NULL),(13,'',2,NULL,NULL),(14,'',2,NULL,NULL),(15,'',1,NULL,NULL),(16,'',2,NULL,NULL),(17,'',2,NULL,NULL),(18,'',1,NULL,NULL),(19,'',1,NULL,NULL),(20,'',3,NULL,NULL),(21,'',2,NULL,NULL),(22,'',3,NULL,NULL),(23,'',3,NULL,NULL),(24,'',3,NULL,NULL),(25,'',3,NULL,NULL),(26,'',2,NULL,NULL),(27,'',1,NULL,NULL),(31,'',1,NULL,NULL);
 /*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -255,7 +228,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (17,'Jona','Jona','admin@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','15151515',1,'2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg'),(18,'Jona','Cespedes','user@mail.com','$2a$10$7kyZVLMgCjjfx1k123cKtelWFTc0XgNoBBOLDPeePAnU8IXiXVF4e',NULL,1,'2021-11-10 22:35:54','2021-11-10 22:35:54','default-image.png');
+INSERT INTO `users` VALUES (17,'','','','','',1,'2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg'),(18,'','','','',NULL,1,NULL,NULL,'');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -272,4 +245,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-25 21:50:59
+-- Dump completed on 2022-01-25 23:24:51

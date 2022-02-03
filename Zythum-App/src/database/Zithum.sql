@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
--- Host: localhost    Database: zythum
+-- Host: localhost    Database: zithum
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.4.22-MariaDB
 
@@ -42,7 +42,7 @@ CREATE TABLE `addresses` (
 
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
-INSERT INTO `addresses` VALUES (1,'','','',NULL,NULL,17),(2,'','','',NULL,NULL,17);
+INSERT INTO `addresses` VALUES (1,'efrgergver','','',NULL,12341234,17),(2,'efrgergver','','',NULL,12341234,17);
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +92,7 @@ CREATE TABLE `order_items` (
   KEY `order_items_FK_1` (`orderId`),
   CONSTRAINT `order_items_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`),
   CONSTRAINT `order_items_FK_1` FOREIGN KEY (`orderId`) REFERENCES `orders` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +101,7 @@ CREATE TABLE `order_items` (
 
 LOCK TABLES `order_items` WRITE;
 /*!40000 ALTER TABLE `order_items` DISABLE KEYS */;
-INSERT INTO `order_items` VALUES (15,5,71,5,'2021-11-18','2021-11-18');
+INSERT INTO `order_items` VALUES (17,6,70,1,'2021-11-18','2021-11-18'),(29,8,71,4,'2021-11-18','2021-11-18'),(49,114,70,3,'2021-11-30','2021-11-30'),(50,114,71,1,'2021-11-30','2021-11-30'),(51,114,72,1,'2021-11-30','2021-11-30');
 /*!40000 ALTER TABLE `order_items` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +122,7 @@ CREATE TABLE `orders` (
   UNIQUE KEY `orders_un` (`id`),
   KEY `orders_FK` (`userId`),
   CONSTRAINT `orders_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +131,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,17,'PENDING','2021-11-17','2021-11-17'),(5,18,'PENDING','2021-11-18','2021-11-18');
+INSERT INTO `orders` VALUES (6,17,'PENDING','2021-11-18','2021-11-18'),(8,19,'PENDING','2021-11-18','2021-11-18'),(114,18,'PENDING','2021-11-30','2021-11-30');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -156,7 +156,7 @@ CREATE TABLE `products` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `subcategory_idx` (`subcategoryId`),
   CONSTRAINT `subcategory` FOREIGN KEY (`subcategoryId`) REFERENCES `subcategories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -165,8 +165,35 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (71,'',150,NULL,'',4,'2021-10-24 00:38:46','2021-10-24 00:38:46',NULL);
+INSERT INTO `products` VALUES (70,'Heineken',661,28,'Ligero',16,'2021-10-23 23:26:11','2021-10-23 23:26:11',NULL),(71,'Duft',400,15,'Intenso',2,'2021-10-24 00:38:46','2021-10-24 00:38:46',NULL),(72,'Andes',510,12,'Fuerte',1,'2021-10-24 00:39:17','2021-10-24 00:39:17',NULL),(73,'Duft',745,10,'Ligero',2,'2021-10-24 00:39:51','2021-10-24 00:39:51',NULL),(74,'Stella Artois',770,16,'Fuerte',4,'2021-10-24 00:40:18','2021-10-24 00:40:18',NULL),(75,'Brahma',940,13,'Suave',5,'2021-10-24 00:40:45','2021-10-24 00:40:45',NULL),(76,'Imperial',638,10,'Suave',6,'2021-10-24 00:41:23','2021-10-24 00:41:23',NULL),(77,'Quilmes',761,10,'Suave',5,'2021-10-24 00:42:01','2021-10-24 00:42:01',NULL),(78,'Quilmes',748,10,'Fuerte',13,'2021-10-24 00:42:51','2021-10-24 00:42:51',NULL),(79,'Imperial',849,10,'Intenso',10,'2021-10-24 00:44:34','2021-10-24 00:44:34',NULL),(80,'Stella Artois',849,10,'Suave',6,'2021-10-24 00:45:29','2021-10-24 00:45:29',NULL),(81,'Andes',790,28,'Ligero',3,'2021-10-24 00:45:52','2021-10-24 00:45:52',NULL),(82,'Imperial',790,10,'Ligero',1,'2021-10-24 00:47:04','2021-10-24 00:47:04',NULL),(83,'Heineken',675,10,'Fuerte',7,'2021-10-24 00:47:27','2021-10-24 00:47:27',NULL),(84,'Corona',208,10,'Suave',8,'2021-10-24 00:48:08','2021-10-24 00:48:08',NULL),(85,'Andes',208,10,'Suave',4,'2021-10-24 00:48:40','2021-10-24 00:48:40',NULL),(86,'Corona',971,1,'Intenso',11,'2021-10-24 00:49:03','2021-10-24 00:49:03',NULL),(87,'Budweiser',284,10,'Suave',12,'2021-10-24 00:49:36','2021-10-24 00:49:36',NULL),(95,'Isenbeck',123,0,'Suave',14,'2021-11-10 23:39:59','2021-11-10 23:39:59',NULL),(96,'Schneider',145,0,'Suave',15,'2021-11-10 23:44:52','2021-11-10 23:44:52',NULL),(97,'Miller',700,12,'Fuerte',7,NULL,NULL,NULL),(98,'Barba Roja',700,14,'Fuerte',9,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `products_images`
+--
+
+DROP TABLE IF EXISTS `products_images`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `products_images` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` varchar(100) NOT NULL,
+  `productId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `products_images_FK` (`productId`),
+  CONSTRAINT `products_images_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `products_images`
+--
+
+LOCK TABLES `products_images` WRITE;
+/*!40000 ALTER TABLE `products_images` DISABLE KEYS */;
+INSERT INTO `products_images` VALUES (1,'1635031571585_img_.jpg',70),(2,'1635035926256_img_.jpg',71),(3,'1635035957988_img_.jpg',72),(4,'1635035991058_img_.jpg',73),(5,'1635036018721_img_.jpg',74),(6,'1635036045675_img_.jpg',75),(7,'1635036083342_img_.jpg',76),(8,'1635036121986_img_.jpg',77),(9,'1635036171515_img_.jpg',78),(10,'1635036274526_img_.jpg',79),(11,'1635036329078_img_.jpg',80),(12,'1635036352716_img_.jpg',81),(13,'1635036424206_img_.jpg',82),(14,'1635036447309_img_.jpg',83),(15,'1635036488384_img_.jpg',84),(16,'1635036520742_img_.jpg',85),(17,'1635036543104_img_.jpg',86),(18,'1635036576010_img_.jpg',87),(39,'default-image.png',95),(40,'default-image.png',96);
+/*!40000 ALTER TABLE `products_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -195,7 +222,7 @@ CREATE TABLE `subcategories` (
 
 LOCK TABLES `subcategories` WRITE;
 /*!40000 ALTER TABLE `subcategories` DISABLE KEYS */;
-INSERT INTO `subcategories` VALUES (1,'',1,NULL,NULL),(2,'',1,NULL,NULL),(3,'',1,NULL,NULL),(4,'',2,NULL,NULL),(5,'',2,NULL,NULL),(6,'',2,NULL,NULL),(8,'',3,NULL,NULL),(9,'',3,NULL,NULL),(10,'',2,NULL,NULL),(11,'',1,NULL,NULL),(13,'',2,NULL,NULL),(14,'',2,NULL,NULL),(15,'',1,NULL,NULL),(16,'',2,NULL,NULL),(17,'',2,NULL,NULL),(18,'',1,NULL,NULL),(19,'',1,NULL,NULL),(20,'',3,NULL,NULL),(21,'',2,NULL,NULL),(22,'',3,NULL,NULL),(23,'',3,NULL,NULL),(24,'',3,NULL,NULL),(25,'',3,NULL,NULL),(26,'',2,NULL,NULL),(27,'',1,NULL,NULL),(31,'',1,NULL,NULL);
+INSERT INTO `subcategories` VALUES (1,'Natural Lager',1,NULL,NULL),(2,'Amber',1,NULL,NULL),(3,'Antares Scotch',3,NULL,NULL),(4,'IPA',1,NULL,NULL),(5,'Stout',2,NULL,NULL),(6,'Lager',1,NULL,NULL),(7,'Red Ale',3,NULL,NULL),(8,'Pilsner',1,NULL,NULL),(9,'Helles',1,NULL,NULL),(10,'Honey',1,NULL,NULL),(11,'Golden',1,NULL,NULL),(12,'Kolsch',1,NULL,NULL),(13,'Porter',2,NULL,NULL),(14,'Bock',2,NULL,NULL),(15,'Schwarzbier',2,NULL,NULL),(16,'Barba Roja Diabla',3,NULL,NULL),(17,'Tintas',2,NULL,NULL),(18,'Gomas',1,NULL,NULL),(19,'Tijeras',1,NULL,NULL),(20,'Cajas',3,NULL,NULL),(21,'Bastidores',2,NULL,NULL),(22,'Cintas Adhesivas',3,NULL,NULL),(23,'Pizarras',3,NULL,NULL),(24,'Perforadoras',3,NULL,NULL),(25,'Sobres',3,NULL,NULL),(26,'Caballetes y atriles',2,NULL,NULL),(27,'Repuestos',1,NULL,NULL),(31,'Compás',1,NULL,NULL);
 /*!40000 ALTER TABLE `subcategories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,7 +246,7 @@ CREATE TABLE `users` (
   `avatar` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -228,12 +255,12 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (17,'','','','','',1,'2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg'),(18,'','','','',NULL,1,NULL,NULL,'');
+INSERT INTO `users` VALUES (17,'Jona','Jona','admin@mail.com','$2a$10$g9YXAsgvDDsFzEkSsqi3Fes8e/9mvviTSUYTs13llZf/5/YwpVncO','15151515',1,'2021-09-24 02:05:57','2021-09-24 02:48:31','1632450586832_img_.jpg'),(18,'Jona','Cespedes','user@mail.com','$2a$10$7kyZVLMgCjjfx1k123cKtelWFTc0XgNoBBOLDPeePAnU8IXiXVF4e',NULL,1,'2021-11-10 22:35:54','2021-11-10 22:35:54','default-image.png'),(19,'Jona','Jona','kuramatattoo@gmail.com','$2a$10$.paaxq0EXHdo566rivX7COYLdh2rpzgwWb9DKvKGWdr4gMhfuJz2y',NULL,0,'2021-11-18 14:25:31','2021-11-18 14:25:31','default-image.png');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'zythum'
+-- Dumping routines for database 'zithum'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -245,4 +272,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-25 23:24:51
+-- Dump completed on 2022-02-03 20:59:19

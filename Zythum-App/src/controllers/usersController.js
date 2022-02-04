@@ -95,7 +95,7 @@ let controller = {
     },
     profile: (req, res) => {
         Users.findByPk(req.session.user.id, {
-            include: [{association: 'addresses'}]
+            /* include: [{association: 'addresses'}] */
         })
         .then((user) => {
             res.render('users/profile', {

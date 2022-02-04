@@ -20,7 +20,11 @@ let controller = {
         })
     },
     
-
+    search: (req,res) => {
+        res.render('searchResult', {
+            session: req.session
+        })
+    }
 }
 
 module.exports = controller;

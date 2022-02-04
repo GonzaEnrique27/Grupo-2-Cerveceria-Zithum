@@ -1,4 +1,4 @@
-let { getUsers, writeJsonUser} = require('../data/dataBase')
+let { getUsers, writeJsonUser} = require('../database/dataBase')
 let bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 

@@ -1,4 +1,4 @@
-let { getProducts, getUsers, writeJson} = require('../data/dataBase')
+let { getProducts, getUsers, writeJson} = require('../database/dataBase')
 const fs = require('fs');
 
 let controller = {

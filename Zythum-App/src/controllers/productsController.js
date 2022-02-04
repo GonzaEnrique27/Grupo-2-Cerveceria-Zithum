@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-let { getProducts } = require('../data/dataBase')
+let { getProducts } = require('../database/dataBase')
 
 let controller = {
     // Detail - Detail from one product

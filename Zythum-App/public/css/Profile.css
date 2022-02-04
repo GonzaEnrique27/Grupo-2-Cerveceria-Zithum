@@ -8,10 +8,23 @@
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-image: url(/public/img/users/banner.jpg.jpg);
+    background-image: url(https://distribucionsbonbeure.es/img/cms/banner4.jpg);
 }
 
 .user-name{
     font-size: 18px;
     margin-top: 14px;
 }
+
+.compras-hechas{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--rosa);
+    width: 280px;
+    height: 430px;
+    border-radius: 25px;
+    border: solid 1px black;
+    text-align: center;
+    margin:auto
+
+    }

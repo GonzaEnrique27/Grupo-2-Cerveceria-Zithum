@@ -1,0 +1,17 @@
+.content-profile{
+    text-align: center;
+    height:300px;
+    padding: 12px;
+}
+
+.avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url(/public/img/users/banner.jpg.jpg);
+}
+
+.user-name{
+    font-size: 18px;
+    margin-top: 14px;
+}

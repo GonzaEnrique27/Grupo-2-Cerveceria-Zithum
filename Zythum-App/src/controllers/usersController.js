@@ -1,6 +1,9 @@
-let { getUsers, writeJsonUser} = require('../database/dataBase')
 let bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const db = require('../database/models');
+const User = require('../database/models/User');
+
+const Users = db.User;
 
 let controller = {
     login: function(req,res){
@@ -13,36 +16,39 @@ let controller = {
         let errors= validationResult(req);
     
         if(errors.isEmpty()){
-    
-            let userLogeado = getUsers.find(user => user.email === req.body.email);
-    
-            req.session.user = {
-                id: userLogeado.id,
-                name: userLogeado.name,
-                lastname:userLogeado.lastName,
-                email: userLogeado.email,
-                rol: userLogeado.rol
-            }
+            Users.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+            .then(user =>{
+                req.session.user = {
+                    id: user.id,
+                    name: user.name,
+                    last_name: user.last_name,
+                    email: user.email,
+                    rol: user.rol,
+                    avatar: user.avatar
+                }
 
-            if(req.body.remember) { //si marco el check de recordar
-                const TIME_IN_MILISECONDS = 60000; //defino un tiempo en este caso 1 minuto
-                res.cookie('userZythum', req.session.user, { //creo la cookie poniendo el nombre de la misma y la info que quiero guardar
-                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
-                    httpOnly: true,
-                    secure: true
-                })
-            }
-
-            res.locals.user = req.session.user; //guardo el usuario logeado en locals.
-            res.redirect('/');
+                if(req.body.remember) { //si marco el check de recordar
+                    const TIME_IN_MILISECONDS = 60000; //defino un tiempo en este caso 1 minuto
+                    res.cookie("userZythum", req.session.user, { //creo la cookie poniendo el nombre de la misma y la info que quiero guardar
+                        expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                        httpOnly: true,
+                        secure: true
+                    })
+                }
+                res.locals.user = req.session.user; //guardo el usuario logeado en locals.
+                res.redirect('/');
+            })
             
         }else{
             res.render('./users/login', {
                 errors: errors.mapped(),
                 session: req.session
             });
-        }
-            
+        }        
     },
     
     logout: (req,res)=>{
@@ -64,36 +70,19 @@ let controller = {
         let errors= validationResult(req);
 
         if(errors.isEmpty()){
-            let numId = 1
-
-            getUsers.forEach(user => {
-                if(user.id <= numId){
-                    numId++
-                }
-            });
-
             let { name, lastname, email, password} = req.body
         
-            let newUser = {
-                id: +numId,
+            Users.create({
                 name,
-                lastname,
+                last_name: lastname,
                 email,
-                password : bcrypt.hashSync(password, 10),
-                rol: 'user',
-                tel: "",
-                address: "",
-                pc: "",
-                city: "",
-                province: "",
+                pass : bcrypt.hashSync(password, 10),
+                rol: 0,
                 avatar: req.file ? req.file.filename : 'default-user-img.png'
-            }
-
-            getUsers.push(newUser);
-
-            writeJsonUser(getUsers);
-
-            res.redirect('/users/login');
+            })
+            .then(() => {
+                res.redirect('/users/login');
+            })
 
         } else {
             res.render('users/register', {
@@ -104,11 +93,16 @@ let controller = {
         }
         
     },
-
-    profile: (req,res)=>{
-        let user = getUsers.find(user => user.id === req.session.user.id);
-
-        res.send('Aca pondria mi vista de perfil, si tan solo tuviera una!!');
+    profile: (req, res) => {
+        Users.findByPk(req.session.user.id, {
+            include: [{association: 'addresses'}]
+        })
+        .then((user) => {
+            res.render('users/profile', {
+                user, 
+                session: req.session
+            })
+        })
     }
 }
 module.exports = controller

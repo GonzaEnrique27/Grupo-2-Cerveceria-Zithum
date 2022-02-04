@@ -24,4 +24,6 @@ router.post('/register',uploadAvatar.single('image'), registerValidator , proces
 //GET - User Profile
 router.get('/profile', isUser, profile);
 
+//
+
 module.exports = router;

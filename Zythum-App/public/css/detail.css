@@ -82,7 +82,6 @@
 .detail article .product-body .details #details-info .detalle-principal{
     display: flex;
     flex-wrap: wrap;
-    flex-wrap: wrap;
     justify-content: space-between;
     width: 160px;
     align-self: center;

@@ -7,8 +7,28 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             allowNull: false 
         },
-        name: {
-            type: dataTypes.STRING(45),
+        brandId: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false
+        },
+        subcategoryId: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false
+        },
+        sizeId: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false
+        },
+        tasteId: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false
+        },
+        alcohol: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+        amargor: {
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         price: {
@@ -18,11 +38,14 @@ module.exports = (sequelize, dataTypes) => {
         discount: {
             type: dataTypes.INTEGER,
         },
-        description: {
-            type: dataTypes.STRING(800),
-        },
-        subcategoryId: {
+        stock: {
             type: dataTypes.INTEGER,
+        },
+        description: {
+            type: dataTypes.STRING(100),
+        },
+        image: {
+            type: dataTypes.STRING,
             allowNull: false
         }
         
@@ -35,18 +58,26 @@ module.exports = (sequelize, dataTypes) => {
     const Product = sequelize.define(alias, cols, config)
 
     Product.associate = models => {
+        Product.belongsTo(models.Brand, {
+            as:"brand",
+            foreignKey: "brandId"
+        })
         Product.belongsTo(models.Subcategory, {
-            as:"subcategories",
+            as:"subcategory",
             foreignKey: "subcategoryId"
         })
-        Product.hasMany(models.ProductImage, {
-            as: "productImages",
-            foreignKey: "productId"
+        Product.belongsTo(models.Size, {
+            as:"size",
+            foreignKey: "sizeId"
         })
-        /* Product.hasMany(models.Order_item, {
+        Product.belongsTo(models.Taste, {
+            as:"taste",
+            foreignKey: "tasteId"
+        })
+        Product.hasMany(models.Order_item, {
             as: "order_items",
             foreignKey: "productId"
-        }) */
+        })
     }
 
     return Product;

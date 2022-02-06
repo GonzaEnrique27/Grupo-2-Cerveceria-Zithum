@@ -49,10 +49,10 @@ module.exports = (sequelize, dataTypes) => {
             as: 'addresses',
             foreignKey: 'userId',
         })
-        /* User.hasOne(models.Order, {
+        User.hasOne(models.Order, {
             as: 'order',
             foreignKey: 'userId'
-        }) */
+        })
     }
 
     return User

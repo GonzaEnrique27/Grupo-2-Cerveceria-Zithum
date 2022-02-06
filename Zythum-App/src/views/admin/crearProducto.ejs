@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -12,7 +12,7 @@
 
 <body>
 
-  <%- include('../partials/headerAdmin')  %> 
+  <%- include('../partials/headerAdmin')%> 
 
   <div class="container" style="width: 80%; margin: auto; background-color: pink; margin-top: 15px; padding: 20px;">
 
@@ -23,27 +23,48 @@
       <div class="input-group mb-3 input-admin" >
         <label class="input-group-text" for="inputGroupSelect01">Marca</label>
         <select name="brand" class="form-select" id="inputGroupSelect01">
-          <option selected>Eligir...</option>
-          <option value="Brahma">Brahma</option>
-          <option value="Andes">Andes</option>
-          <option value="Quilmes">Quilmes</option>
+          <% for (let i = 0; i < brands.length; i++) { %>
+            <option value="<%= brands[i].id %>"><%= brands[i].name %> </option>
+          <% } %>
         </select>
       </div>
 
       <div class="input-group mb-3 input-admin">
-        <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
+        <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
         <select name="category" class="form-select" id="inputGroupSelect01">
-          <option selected>Elegir...</option>
-          <option value="Lager">Lager</option>
-          <option value="Rubia">Rubia</option>
-          <option value="Negra">Negra</option>
+          <% for (let i = 0; i < categories.length; i++) { %>
+            <option value="<%= categories[i].id %>"><%= categories[i].name %> </option>
+          <% } %>
+        </select>
+      </div>
+      
+      <div class="input-group mb-3 input-admin">
+        <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
+        <select name="subcategory" class="form-select" id="inputGroupSelect01">
+          <% for (let i = 0; i < subcategories.length; i++) { %>
+            <option value="<%= subcategories[i].id %>"><%= subcategories[i].name %> </option>
+          <% } %>
         </select>
       </div>
 
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Tamaño</span>
-        <input name="size" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      <div class="input-group mb-3 input-admin">
+        <label class="input-group-text" for="inputGroupSelect01">Tamaño</label>
+        <select name="size" class="form-select" id="inputGroupSelect01">
+          <% for (let i = 0; i < sizes.length; i++) { %>
+            <option value="<%= sizes[i].id %>"><%= sizes[i].measure %> </option>
+          <% } %>
+        </select>
       </div>
+
+      <div class="input-group mb-3 input-admin">
+        <label class="input-group-text" for="inputGroupSelect01">Sabor</label>
+        <select name="taste" class="form-select" id="inputGroupSelect01">
+          <% for (let i = 0; i < tastes.length; i++) { %>
+            <option value="<%= tastes[i].id %>"><%= tastes[i].name %> </option>
+          <% } %>
+        </select>
+      </div>
+
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Alcohol</span>
         <input name="alcohol" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
@@ -52,10 +73,7 @@
         <span class="input-group-text" id="inputGroup-sizing-default">Densidad</span>
         <input name="density" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Sabor</span>
-        <input name="taste" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-      </div>
+      
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Amargor</span>
         <input name="amargor" type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">

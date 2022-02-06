@@ -8,33 +8,45 @@ const db = require('../database/models');
 const Products = db.Product;
 const Categories = db.Category;
 const Subcategories = db.Subcategory;
-const ProductImages = db.ProductImage;
+const Brands = db.Brand;
+const Sizes = db.Size;
+const Tastes = db.Taste;
 
 let controller = {
-    //Muestra el dashboard
     index: (req, res)=> {
-        Products.findAll()
+        Products.findAll({
+            include: [
+                {association: 'brand'}, 
+                {association: 'size'}, 
+                {association: 'taste'}, 
+                {association: 'subcategory',
+                include: [{association: 'category'}]
+            }]
+        })
         .then(products => {
             res.render('./admin/adminIndex', {
                 products,
                 session: req.session
             })
         })
-        /* res.render('./admin/adminIndex', {
-            products : getProducts,
-            session: req.session
-        }) */
     },
     //Muestra la vista de edicion
     create: (req, res) => {
         let allCategories = Categories.findAll();
         let allSubcategories = Subcategories.findAll();
+        let allBrands = Brands.findAll();
+        let allSizes = Sizes.findAll();
+        let allTastes = Tastes.findAll();
 
-        Promise.all([allCategories, allSubcategories]) //esto de aca no lo entiendo
-        .then(([categories, subcategories]) => {
+
+        Promise.all([allCategories, allSubcategories, allBrands, allSizes, allTastes]) //esto de aca no lo entiendo
+        .then(([categories, subcategories, brands, sizes, tastes]) => {
             res.render('./admin/crearProducto', {
+                brands,
                 categories,
                 subcategories,
+                sizes,
+                tastes,
                 session: req.session
             });
         })

@@ -1,7 +1,6 @@
 let bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const db = require('../database/models');
-const User = require('../database/models/User');
 
 const Users = db.User;
 
@@ -95,7 +94,7 @@ let controller = {
     },
     profile: (req, res) => {
         Users.findByPk(req.session.user.id, {
-            /* include: [{association: 'addresses'}] */
+            include: [{association: 'addresses'}]
         })
         .then((user) => {
             res.render('users/profile', {

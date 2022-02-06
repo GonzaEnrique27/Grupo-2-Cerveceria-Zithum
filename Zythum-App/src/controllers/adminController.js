@@ -1,81 +1,132 @@
 let { getProducts, getUsers, writeJson} = require('../database/dataBase')
 const fs = require('fs');
+//Borrar lo de arriba
+//falta validaciones
+const { Op } = require('sequelize');
+const db = require('../database/models');
+
+const Products = db.Product;
+const Categories = db.Category;
+const Subcategories = db.Subcategory;
+const ProductImages = db.ProductImage;
 
 let controller = {
     //Muestra el dashboard
-    index: function(req, res) {
-        res.render('./admin/adminIndex', {
+    index: (req, res)=> {
+        Products.findAll()
+        .then(products => {
+            res.render('./admin/adminIndex', {
+                products,
+                session: req.session
+            })
+        })
+        /* res.render('./admin/adminIndex', {
             products : getProducts,
             session: req.session
+        }) */
+    },
+    //Muestra la vista de edicion
+    create: (req, res) => {
+        let allCategories = Categories.findAll();
+        let allSubcategories = Subcategories.findAll();
+
+        Promise.all([allCategories, allSubcategories]) //esto de aca no lo entiendo
+        .then(([categories, subcategories]) => {
+            res.render('./admin/crearProducto', {
+                categories,
+                subcategories,
+                session: req.session
+            });
         })
     },
-    //Muestra la vista de edicion
-    create: function(req, res) {
-        res.render('./admin/crearProducto', {
-            session: req.session
-        });
-    },
     //Crea el producto
-    store: function(req,res){
-        let numId = 1
-
-        getProducts.forEach(product => {
-            if(product.id <= numId){
-                numId++
-            }
-        });
-
-        let {
-            brand,
-            category,
-            size,
-            alcohol,
-            density,
-            taste,
-            amargor,
-            price,
-            discount,
-            stock,
-            description
-        } = req.body
-
-        
-        let nuevoProducto = {
-            id: +numId,
-            brand: brand,
-            category: category,
-            size: size,
-            alcohol: alcohol,
-            density: density,
-            taste: taste,
-            amargor: amargor,
-            price: price,
-            discount: discount,
-            stock: stock,
-            description: description,
-			image: req.file ? req.file.filename : 'default-img.png'
+    store: (req,res) => {
+        let arrayImages = [];
+        if(req.files){
+            req.files.forEach((image) => {
+                arrayImages.push(image.filename)
+            })
         }
 
-        getProducts.push(nuevoProducto)
+        let { brand, category, size, alcohol, density, taste, amargor, price, discount, stock, description } = req.body
 
-        writeJson(getProducts);
-
-        res.redirect(`/products/detail/${numId}`);
+        Products.create({
+            brand, 
+            subcategoryID: category, 
+            size, 
+            alcohol, 
+            density, 
+            taste, 
+            amargor, 
+            price, 
+            discount, 
+            stock, 
+            description
+        })
+        .then((product)=> {
+            if(arrayImages.length > 0){
+                let images = arrayImages.map((image) => {
+                    return {
+                        image: image,
+                        productId: product.id
+                    }
+                });
+                ProductImages.bulkCreate(images)
+                .then(() => res.redirect('/admin/products'))
+                .catch(error => console.log(error))
+            }else {
+                ProductImages.create({
+                    image: 'default-image.png',
+                    productId: product.id
+                })
+                .then(() => {res.redirect('/admin/products')})
+                .catch(error => console.log(error))
+            }
+        })
+        .catch(error => console.log(error))
     },
     //Muestra la vista de edicion
-    edit: function(req,res) {
-
-        let idProduct = +req.params.id;
-        let product = getProducts.find(product => product.id === idProduct);
-
-        res.render('./admin/editarProducto', {
-            product,
-            session: req.session
-        });
+    edit: (req, res) => {
+        let productId = Number(req.params.id);
+        const productPromise = Products.findByPk(productId);
+        const categoriesPromise = Categories.findAll();
+        const subcategoriesPromise = Subcategories.findAll();
+        Promise.all([productPromise, categoriesPromise, subcategoriesPromise])
+        .then(([product, categories, subcategories])=>{
+            res.render('./admin/editarProducto', {
+                product,
+                categories, 
+                subcategories,
+                session: req.session
+            })
+        })
+        .catch(error => console.log(error)) 
     },
 
-    update: function(req, res) {
-        let idProduct = +req.params.id;
+    update: (req, res)=> {
+        let { brand, category, size, alcohol, density, taste, amargor, price, discount, stock, description } = req.body
+
+        Products.update({
+            brand, 
+            subcategoryID: category, 
+            size, 
+            alcohol, 
+            density, 
+            taste, 
+            amargor, 
+            price, 
+            discount, 
+            stock, 
+            description
+        },{
+            where:{
+                id: req.params.id
+            }
+        })
+
+
+
+        /* let idProduct = +req.params.id;
         let {
             brand,
             category,
@@ -120,11 +171,42 @@ let controller = {
             writeJson(getProducts);
 
         })
-        res.redirect(`/products/detail/${idProduct}`)
+        res.redirect(`/products/detail/${idProduct}`) */
     },
 
     destroy: function(req, res) {
-        let idProduct = +req.params.id;
+        ProductImages.findAll({
+            where: {
+                productId: req.params.id
+            }
+        })
+        .then((images) => {
+            images.forEach((image) => {
+                if(fs.existsSync(`./public/img/products/${image.image}`)) {
+					fs.unlinkSync(`./public/img/products/${image.image}`)
+				} else {
+					console.log('No encontre el archivo');
+				}
+            })
+            ProductImages.destroy({
+                where: {
+                    productId: req.params.id
+                }
+            })
+            .then((result) => {
+                Products.destroy({
+                    where: {
+                        id: req.params.id
+                    }
+                })
+                .then(res.redirect('/admin'))
+                .catch(error => console.log(error))
+            })
+            .catch(error => console.log(error))
+        })
+        .catch(error => console.log(error))
+
+        /* let idProduct = +req.params.id;
 
         getProducts.forEach((product, index)=>{
 
@@ -139,7 +221,7 @@ let controller = {
         })
 
         writeJson(getProducts)
-        res.redirect('/admin')
+        res.redirect('/admin') */
     }
 }
 

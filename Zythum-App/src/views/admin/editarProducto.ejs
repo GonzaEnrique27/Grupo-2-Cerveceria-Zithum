@@ -23,54 +23,72 @@
       <div class="input-group mb-3 input-admin" >
         <label class="input-group-text" for="inputGroupSelect01">Marca</label>
         <select name="brand" class="form-select" id="inputGroupSelect01">
-          <option selected>Eligir...</option>
-          <option value="Brahma">Brahma</option>
-          <option value="Andes">Andes</option>
-          <option value="Quilmes">Quilmes</option>
+          <% for (let i = 0; i < brands.length; i++) { %>
+            <option value="<%= brands[i].id %>" <%= brands[i].id == product.brandId ? "selected" : "" %> ><%= brands[i].name %> </option>
+          <% } %>
         </select>
       </div>
 
       <div class="input-group mb-3 input-admin">
-        <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
+        <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
         <select name="category" class="form-select" id="inputGroupSelect01">
-          <option selected>Elegir...</option>
-          <option value="Lager">Lager</option>
-          <option value="Rubia">Rubia</option>
-          <option value="Negra">Negra</option>
+          <% for (let i = 0; i < categories.length; i++) { %>
+            <option value="<%= categories[i].id %>" <%= categories[i].id == product.subcategory.categoryId ? "selected" : "" %> ><%= categories[i].name %> </option>
+          <% } %>
+        </select>
+      </div>
+      
+      <div class="input-group mb-3 input-admin">
+        <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
+        <select name="subcategory" class="form-select" id="inputGroupSelect01">
+          <% for (let i = 0; i < subcategories.length; i++) { %>
+            <option value="<%= subcategories[i].id %>" <%= subcategories[i].id == product.subcategoryId ? "selected" : "" %>><%= subcategories[i].name %> </option>
+          <% } %>
+        </select>
+      </div>
+
+      <div class="input-group mb-3 input-admin">
+        <label class="input-group-text" for="inputGroupSelect01">Tamaño</label>
+        <select name="size" class="form-select" id="inputGroupSelect01">
+          <% for (let i = 0; i < sizes.length; i++) { %>
+            <option value="<%= sizes[i].id %>" <%= sizes[i].id == product.sizeId ? "selected" : "" %> ><%= sizes[i].measure %> </option>
+          <% } %>
+        </select>
+      </div>
+
+      <div class="input-group mb-3 input-admin">
+        <label class="input-group-text" for="inputGroupSelect01">Sabor</label>
+        <select name="taste" class="form-select" id="inputGroupSelect01">
+          <% for (let i = 0; i < tastes.length; i++) { %>
+            <option value="<%= tastes[i].id %>" <%= tastes[i].id == product.tasteId ? "selected" : "" %> ><%= tastes[i].name %> </option>
+          <% } %>
         </select>
       </div>
 
       <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Tamaño</span>
-        <input name="size" type="number" value="<%= product.size %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-      </div>
-      <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Alcohol</span>
-        <input name="alcohol" type="number" value="<%= product.alcohol %>" min="0" step="0.01" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="alcohol" type="number" value="<%= product.alcohol %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Densidad</span>
-        <input name="density" type="number" value="<%- product.density %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="density" type="number" value="<%= product.density %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="inputGroup-sizing-default">Sabor</span>
-        <input name="taste" type="text" value="<%- product.taste %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-      </div>
+      
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Amargor</span>
-        <input name="amargor" type="number" value="<%- product.amargor %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="amargor" type="number"  value="<%= product.amargor %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Stock</span>
-        <input name="stock" type="number" value="<%- product.stock %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="stock" type="number" value="<%= product.stock %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Precio</span>
-        <input name="price" type="number" value="<%- product.price %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="price" type="number" value="<%= product.price %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Descuento</span>
-        <input name="discount" type="number" value="<%- product.discount %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="discount" type="number" value="<%= product.discount %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
       </div>
       
       <div class="mb-3">
@@ -78,8 +96,8 @@
         <input class="form-control" type="file" id="formFile" name="image">
       </div>
       <div class="form-floating">
-        <textarea name="description" id="description" class="form-control" id="floatingTextarea2"
-        style="height: 100px"><%= product.description %></textarea>
+        <textarea name="description" id="description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+        style="height: 100px"><%= locals.old ? old.description : product.description %></textarea>
         <label for="floatingTextarea2">Descripción</label>
       </div>
       <br>

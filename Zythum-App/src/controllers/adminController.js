@@ -75,16 +75,27 @@ let controller = {
     },
     //Muestra la vista de edicion
     edit: (req, res) => {
-        let productId = Number(req.params.id);
-        const productPromise = Products.findByPk(productId);
+        const productId = +req.params.id;
+        const productPromise = Products.findByPk(productId, {
+            include: [{association: 'subcategory',
+                include: [{association: 'category'}]
+            }]
+        });
         const categoriesPromise = Categories.findAll();
         const subcategoriesPromise = Subcategories.findAll();
-        Promise.all([productPromise, categoriesPromise, subcategoriesPromise])
-        .then(([product, categories, subcategories])=>{
+        const brandsPromise = Brands.findAll();
+        const sizesPromise = Sizes.findAll();
+        const tastesPromise = Tastes.findAll();
+        
+        Promise.all([productPromise, categoriesPromise, subcategoriesPromise, brandsPromise, sizesPromise, tastesPromise])
+        .then(([product, categories, subcategories, brands, sizes, tastes])=>{
             res.render('./admin/editarProducto', {
                 product,
                 categories, 
                 subcategories,
+                brands,
+                sizes,
+                tastes,
                 session: req.session
             })
         })

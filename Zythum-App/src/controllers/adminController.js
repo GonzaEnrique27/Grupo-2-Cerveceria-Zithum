@@ -103,124 +103,64 @@ let controller = {
     },
 
     update: (req, res)=> {
-        let { brand, category, size, alcohol, density, taste, amargor, price, discount, stock, description } = req.body
+        const { brand, subcategory, size, alcohol, density, taste, amargor, price, discount, stock, description } = req.body
 
-        Products.update({
-            brand, 
-            subcategoryID: category, 
-            size, 
-            alcohol, 
-            density, 
-            taste, 
-            amargor, 
-            price, 
-            discount, 
-            stock, 
-            description
-        },{
-            where:{
-                id: req.params.id
+    Products.findByPk(req.params.id)
+    .then((product)=> {
+        if(req.file) {
+            if(product.image != 'default-img.png'){
+                if(fs.existsSync(`./public/img/products/${product.image}`)) {
+                    fs.unlinkSync(`./public/img/products/${product.image}`)
+                } else {
+                    console.log('No encontre el archivo');
+                }
             }
-        })
-
-
-
-        /* let idProduct = +req.params.id;
-        let {
-            brand,
-            category,
-            size,
-            alcohol,
-            density,
-            taste,
-            amargor,
-            price,
-            discount,
-            stock,
-            description,
-        } = req.body
-
-        getProducts.forEach((product) => {
-            if(product.id === idProduct) {
-
-                product.brand = brand,
-                product.category = category,
-                product.size = size,
-                product.alcohol = alcohol,
-                product.density = density,
-                product.taste = taste,
-                product.amargor = amargor,
-                product.stock = stock,
-                product.price = price,
-                product.discount = discount,
-                product.description = description
-
-                if(req.file) {
-					if(fs.existsSync(`./public/img/products/${product.image}`)) {
-						fs.unlinkSync(`./public/img/products/${product.image}`)
-					} else {
-						console.log('No encontre el archivo')
-					}
-					product.image = req.file.filename
-				} else {
-					product.image = product.image
-				} 
-            }
-
-            writeJson(getProducts);
-
-        })
-        res.redirect(`/products/detail/${idProduct}`) */
-    },
-
-    destroy: function(req, res) {
-        ProductImages.findAll({
-            where: {
-                productId: req.params.id
-            }
-        })
-        .then((images) => {
-            images.forEach((image) => {
-                if(fs.existsSync(`./public/img/products/${image.image}`)) {
-					fs.unlinkSync(`./public/img/products/${image.image}`)
-				} else {
-					console.log('No encontre el archivo');
-				}
-            })
-            ProductImages.destroy({
-                where: {
-                    productId: req.params.id
+            product.update({
+                brandId: brand, 
+                subcategoryId: subcategory, 
+                sizeId: size, 
+                tasteId: taste, 
+                alcohol, 
+                density, 
+                amargor, 
+                price, 
+                discount, 
+                stock, 
+                description,
+                image: req.file.filename
+            },{
+                where:{
+                    id: req.params.id
                 }
             })
-            .then((result) => {
-                Products.destroy({
-                    where: {
-                        id: req.params.id
-                    }
-                })
-                .then(res.redirect('/admin'))
-                .catch(error => console.log(error))
+        }
+        
+    })
+    .catch(error => console.log(error))
+        .then(() => {
+            res.redirect('/admin')
+        })
+    },
+
+    destroy: (req, res)=> {
+        Products.findByPk(req.params.id)
+        .then((product)=> {
+            if(product.image != 'default-img.png'){
+                if(fs.existsSync(`./public/img/products/${product.image}`)) {
+                    fs.unlinkSync(`./public/img/products/${product.image}`)
+                } else {
+                    console.log('No encontre el archivo');
+                }
+            }
+            Products.destroy({
+                where: {
+                    id: req.params.id
+                }
             })
+            .then(res.redirect('/admin'))
             .catch(error => console.log(error))
         })
         .catch(error => console.log(error))
-
-        /* let idProduct = +req.params.id;
-
-        getProducts.forEach((product, index)=>{
-
-            if( product.id === idProduct) {
-                if(fs.existsSync(`./public/img/products/${product.image}`)) {
-					fs.unlinkSync(`./public/img/products/${product.image}`)
-				} else {
-					console.log('No encontre el archivo')
-				}
-                getProducts.splice(index,1)
-            }
-        })
-
-        writeJson(getProducts)
-        res.redirect('/admin') */
     }
 }
 

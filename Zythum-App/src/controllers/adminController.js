@@ -39,7 +39,7 @@ let controller = {
         let allTastes = Tastes.findAll();
 
 
-        Promise.all([allCategories, allSubcategories, allBrands, allSizes, allTastes]) //esto de aca no lo entiendo
+        Promise.all([allCategories, allSubcategories, allBrands, allSizes, allTastes])
         .then(([categories, subcategories, brands, sizes, tastes]) => {
             res.render('./admin/crearProducto', {
                 brands,
@@ -53,49 +53,25 @@ let controller = {
     },
     //Crea el producto
     store: (req,res) => {
-        let arrayImages = [];
-        if(req.files){
-            req.files.forEach((image) => {
-                arrayImages.push(image.filename)
-            })
-        }
-
-        let { brand, category, size, alcohol, density, taste, amargor, price, discount, stock, description } = req.body
+        let { brand, category, subcategory, size, alcohol, density, taste, amargor, price, discount, stock, description } = req.body
 
         Products.create({
-            brand, 
-            subcategoryID: category, 
-            size, 
+            brandId: brand, 
+            subcategoryId: subcategory, 
+            sizeId: size, 
+            tasteId: taste, 
             alcohol, 
             density, 
-            taste, 
             amargor, 
             price, 
             discount, 
             stock, 
-            description
+            description,
+            image: req.file ? req.file.filename : 'default-img.png'
         })
-        .then((product)=> {
-            if(arrayImages.length > 0){
-                let images = arrayImages.map((image) => {
-                    return {
-                        image: image,
-                        productId: product.id
-                    }
-                });
-                ProductImages.bulkCreate(images)
-                .then(() => res.redirect('/admin/products'))
-                .catch(error => console.log(error))
-            }else {
-                ProductImages.create({
-                    image: 'default-image.png',
-                    productId: product.id
-                })
-                .then(() => {res.redirect('/admin/products')})
-                .catch(error => console.log(error))
-            }
-        })
+        .then(() => {res.redirect('/admin')})
         .catch(error => console.log(error))
+
     },
     //Muestra la vista de edicion
     edit: (req, res) => {

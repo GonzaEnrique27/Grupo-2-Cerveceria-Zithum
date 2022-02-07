@@ -31,6 +31,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.INTEGER,
             allowNull: false
         },
+        density: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
         price: {
             type: dataTypes.INTEGER,
             allowNull: false

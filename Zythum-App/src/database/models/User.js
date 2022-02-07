@@ -44,7 +44,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const User = sequelize.define(alias, cols, config)
 
-    /* User.associate = (models) => {
+    User.associate = (models) => {
         User.hasMany(models.Address, {
             as: 'addresses',
             foreignKey: 'userId',
@@ -53,7 +53,7 @@ module.exports = (sequelize, dataTypes) => {
             as: 'order',
             foreignKey: 'userId'
         })
-    } */
+    }
 
     return User
 }

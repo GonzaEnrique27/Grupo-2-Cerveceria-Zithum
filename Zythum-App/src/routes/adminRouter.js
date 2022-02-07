@@ -16,6 +16,6 @@ router.get('/edit/:id', isAdmin, controller.edit);
 router.put('/edit/:id', isAdmin, uploadFile.single('image') ,controller.update);
 
 //DELETE de producto
-router.delete('/delete/:id', isAdmin, controller.destroy);
+router.delete('/delete/:id', controller.destroy);
 
 module.exports = router;

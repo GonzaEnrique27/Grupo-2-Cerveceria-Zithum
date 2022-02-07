@@ -1,145 +1,166 @@
 let { getProducts, getUsers, writeJson} = require('../database/dataBase')
 const fs = require('fs');
+//Borrar lo de arriba
+//falta validaciones
+const { Op } = require('sequelize');
+const db = require('../database/models');
+
+const Products = db.Product;
+const Categories = db.Category;
+const Subcategories = db.Subcategory;
+const Brands = db.Brand;
+const Sizes = db.Size;
+const Tastes = db.Taste;
 
 let controller = {
-    //Muestra el dashboard
-    index: function(req, res) {
-        res.render('./admin/adminIndex', {
-            products : getProducts,
-            session: req.session
+    index: (req, res)=> {
+        Products.findAll({
+            include: [
+                {association: 'brand'}, 
+                {association: 'size'}, 
+                {association: 'taste'}, 
+                {association: 'subcategory',
+                include: [{association: 'category'}]
+            }]
+        })
+        .then(products => {
+            res.render('./admin/adminIndex', {
+                products,
+                session: req.session
+            })
         })
     },
     //Muestra la vista de edicion
-    create: function(req, res) {
-        res.render('./admin/crearProducto', {
-            session: req.session
-        });
+    create: (req, res) => {
+        let allCategories = Categories.findAll();
+        let allSubcategories = Subcategories.findAll();
+        let allBrands = Brands.findAll();
+        let allSizes = Sizes.findAll();
+        let allTastes = Tastes.findAll();
+
+
+        Promise.all([allCategories, allSubcategories, allBrands, allSizes, allTastes])
+        .then(([categories, subcategories, brands, sizes, tastes]) => {
+            res.render('./admin/crearProducto', {
+                brands,
+                categories,
+                subcategories,
+                sizes,
+                tastes,
+                session: req.session
+            });
+        })
     },
     //Crea el producto
-    store: function(req,res){
-        let numId = 1
+    store: (req,res) => {
+        let { brand, category, subcategory, size, alcohol, density, taste, amargor, price, discount, stock, description } = req.body
 
-        getProducts.forEach(product => {
-            if(product.id <= numId){
-                numId++
-            }
-        });
+        Products.create({
+            brandId: brand, 
+            subcategoryId: subcategory, 
+            sizeId: size, 
+            tasteId: taste, 
+            alcohol, 
+            density, 
+            amargor, 
+            price, 
+            discount, 
+            stock, 
+            description,
+            image: req.file ? req.file.filename : 'default-img.png'
+        })
+        .then(() => {res.redirect('/admin')})
+        .catch(error => console.log(error))
 
-        let {
-            brand,
-            category,
-            size,
-            alcohol,
-            density,
-            taste,
-            amargor,
-            price,
-            discount,
-            stock,
-            description
-        } = req.body
-
-        
-        let nuevoProducto = {
-            id: +numId,
-            brand: brand,
-            category: category,
-            size: size,
-            alcohol: alcohol,
-            density: density,
-            taste: taste,
-            amargor: amargor,
-            price: price,
-            discount: discount,
-            stock: stock,
-            description: description,
-			image: req.file ? req.file.filename : 'default-img.png'
-        }
-
-        getProducts.push(nuevoProducto)
-
-        writeJson(getProducts);
-
-        res.redirect(`/products/detail/${numId}`);
     },
     //Muestra la vista de edicion
-    edit: function(req,res) {
-
-        let idProduct = +req.params.id;
-        let product = getProducts.find(product => product.id === idProduct);
-
-        res.render('./admin/editarProducto', {
-            product,
-            session: req.session
+    edit: (req, res) => {
+        const productId = +req.params.id;
+        const productPromise = Products.findByPk(productId, {
+            include: [{association: 'subcategory',
+                include: [{association: 'category'}]
+            }]
         });
-    },
-
-    update: function(req, res) {
-        let idProduct = +req.params.id;
-        let {
-            brand,
-            category,
-            size,
-            alcohol,
-            density,
-            taste,
-            amargor,
-            price,
-            discount,
-            stock,
-            description,
-        } = req.body
-
-        getProducts.forEach((product) => {
-            if(product.id === idProduct) {
-
-                product.brand = brand,
-                product.category = category,
-                product.size = size,
-                product.alcohol = alcohol,
-                product.density = density,
-                product.taste = taste,
-                product.amargor = amargor,
-                product.stock = stock,
-                product.price = price,
-                product.discount = discount,
-                product.description = description
-
-                if(req.file) {
-					if(fs.existsSync(`./public/img/products/${product.image}`)) {
-						fs.unlinkSync(`./public/img/products/${product.image}`)
-					} else {
-						console.log('No encontre el archivo')
-					}
-					product.image = req.file.filename
-				} else {
-					product.image = product.image
-				} 
-            }
-
-            writeJson(getProducts);
-
+        const categoriesPromise = Categories.findAll();
+        const subcategoriesPromise = Subcategories.findAll();
+        const brandsPromise = Brands.findAll();
+        const sizesPromise = Sizes.findAll();
+        const tastesPromise = Tastes.findAll();
+        
+        Promise.all([productPromise, categoriesPromise, subcategoriesPromise, brandsPromise, sizesPromise, tastesPromise])
+        .then(([product, categories, subcategories, brands, sizes, tastes])=>{
+            res.render('./admin/editarProducto', {
+                product,
+                categories, 
+                subcategories,
+                brands,
+                sizes,
+                tastes,
+                session: req.session
+            })
         })
-        res.redirect(`/products/detail/${idProduct}`)
+        .catch(error => console.log(error)) 
     },
 
-    destroy: function(req, res) {
-        let idProduct = +req.params.id;
+    update: (req, res)=> {
+        const { brand, subcategory, size, alcohol, density, taste, amargor, price, discount, stock, description } = req.body
 
-        getProducts.forEach((product, index)=>{
-
-            if( product.id === idProduct) {
+    Products.findByPk(req.params.id)
+    .then((product)=> {
+        if(req.file) {
+            if(product.image != 'default-img.png'){
                 if(fs.existsSync(`./public/img/products/${product.image}`)) {
-					fs.unlinkSync(`./public/img/products/${product.image}`)
-				} else {
-					console.log('No encontre el archivo')
-				}
-                getProducts.splice(index,1)
+                    fs.unlinkSync(`./public/img/products/${product.image}`)
+                } else {
+                    console.log('No encontre el archivo');
+                }
             }
+            product.update({
+                brandId: brand, 
+                subcategoryId: subcategory, 
+                sizeId: size, 
+                tasteId: taste, 
+                alcohol, 
+                density, 
+                amargor, 
+                price, 
+                discount, 
+                stock, 
+                description,
+                image: req.file.filename
+            },{
+                where:{
+                    id: req.params.id
+                }
+            })
+        }
+        
+    })
+    .catch(error => console.log(error))
+        .then(() => {
+            res.redirect('/admin')
         })
+    },
 
-        writeJson(getProducts)
-        res.redirect('/admin')
+    destroy: (req, res)=> {
+        Products.findByPk(req.params.id)
+        .then((product)=> {
+            if(product.image != 'default-img.png'){
+                if(fs.existsSync(`./public/img/products/${product.image}`)) {
+                    fs.unlinkSync(`./public/img/products/${product.image}`)
+                } else {
+                    console.log('No encontre el archivo');
+                }
+            }
+            Products.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then(res.redirect('/admin'))
+            .catch(error => console.log(error))
+        })
+        .catch(error => console.log(error))
     }
 }
 

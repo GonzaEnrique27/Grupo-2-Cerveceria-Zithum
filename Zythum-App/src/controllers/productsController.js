@@ -1,4 +1,25 @@
-const fs = require('fs');
+/* const { Op } = require('sequelize');
+const db = require('../database/models');
+
+const Products = db.Product;
+
+let controller = {
+    detail: (req,res)=> {
+        Products.findOne({
+            where: {
+                id: req.params.id
+            }, */
+            /* include: [{association: 'productImages'}] */
+        /* })
+        .then((product)=> {
+            res.render('productDetail', {
+                product,
+                session: req.session
+            })
+        })
+    }, */
+
+    const fs = require('fs');
 
 let { getProducts } = require('../database/dataBase')
 

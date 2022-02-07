@@ -33,9 +33,9 @@
                 <% products.forEach(product => { %>
                     <tr>
                         <th scope="row"><%- product.id %></th>
-                        <th class="column-mobile"><%- product.brand %></th>
-                        <th class="column-mobile"><%- product.category %></th>
-                        <th class="column-mobile"><%- product.size %></th>
+                        <th class="column-mobile"><%- product.brand.name %></th>
+                        <th class="column-mobile"><%- product.subcategory.category.name %></th>
+                        <th class="column-mobile"><%- product.size.measure %></th>
                         <th class="column-mobile"><%- product.price %></th>
                         <td>
                             <a class="btn btn-success" href="/admin/edit/<%- product.id %>">

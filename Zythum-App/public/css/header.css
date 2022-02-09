@@ -183,6 +183,9 @@ header .user a{
 	margin-left: 6px;
 	color: var(--c1);
 }
+header .user a i:hover{
+	text-shadow: 3px 3px 20px rgb(37, 230, 193);
+}
 
 header .user .user-icon{
 	margin-right: 6px;

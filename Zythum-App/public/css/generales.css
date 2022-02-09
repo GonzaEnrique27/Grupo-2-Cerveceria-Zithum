@@ -11,6 +11,7 @@ a{
 
 body{
     background-image: url('/img/fondo.png');
+    background-size: cover;
     background-attachment: fixed;
     overflow: scroll;
     background-repeat: no-repeat;

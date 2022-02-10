@@ -24,81 +24,122 @@
         <label class="input-group-text" for="inputGroupSelect01">Marca</label>
         <select name="brand" class="form-select" id="inputGroupSelect01">
           <% for (let i = 0; i < brands.length; i++) { %>
-            <option value="<%= brands[i].id %>" <%= brands[i].id == product.brandId ? "selected" : "" %> ><%= brands[i].name %> </option>
+            <option value="<%= brands[i].id %>" <%= locals.old && old.brands == brands[i].id ? "selected" : brands[i].id == product.brandId ? "selected" : "" %> ><%= brands[i].name %> </option>
           <% } %>
         </select>
+        <% if (locals.errors && errors.brand) { %>
+          <small class="text-danger"><%= errors.brand.msg %> </small>
+        <% } %>
       </div>
 
       <div class="input-group mb-3 input-admin">
         <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
         <select name="category" class="form-select" id="inputGroupSelect01">
           <% for (let i = 0; i < categories.length; i++) { %>
-            <option value="<%= categories[i].id %>" <%= categories[i].id == product.subcategory.categoryId ? "selected" : "" %> ><%= categories[i].name %> </option>
+            <option value="<%= categories[i].id %>" <%= locals.old && old.categories == categories[i].id ? "selected" : categories[i].id == product.subcategory.categoryId ? "selected" : "" %> ><%= categories[i].name %> </option>
           <% } %>
         </select>
+        <% if (locals.errors && errors.category) { %>
+          <small class="text-danger"><%= errors.category.msg %> </small>
+        <% } %>
       </div>
       
       <div class="input-group mb-3 input-admin">
         <label class="input-group-text" for="inputGroupSelect01">Tipo</label>
         <select name="subcategory" class="form-select" id="inputGroupSelect01">
           <% for (let i = 0; i < subcategories.length; i++) { %>
-            <option value="<%= subcategories[i].id %>" <%= subcategories[i].id == product.subcategoryId ? "selected" : "" %>><%= subcategories[i].name %> </option>
+            <option value="<%= subcategories[i].id %>" <%= locals.old && old.subcategories == subcategories[i].id ? "selected" : subcategories[i].id == product.subcategoryId ? "selected" : "" %>><%= subcategories[i].name %> </option>
           <% } %>
         </select>
+        <% if (locals.errors && errors.subcategory) { %>
+          <small class="text-danger"><%= errors.subcategory.msg %> </small>
+        <% } %>
       </div>
 
       <div class="input-group mb-3 input-admin">
         <label class="input-group-text" for="inputGroupSelect01">Tamaño</label>
         <select name="size" class="form-select" id="inputGroupSelect01">
           <% for (let i = 0; i < sizes.length; i++) { %>
-            <option value="<%= sizes[i].id %>" <%= sizes[i].id == product.sizeId ? "selected" : "" %> ><%= sizes[i].measure %> </option>
+            <option value="<%= sizes[i].id %>" <%= locals.old && old.sizes == sizes[i].id ? "selected" : sizes[i].id == product.sizeId ? "selected" : "" %> ><%= sizes[i].measure %> </option>
           <% } %>
         </select>
+        <% if (locals.errors && errors.size) { %>
+          <small class="text-danger"><%= errors.size.msg %> </small>
+        <% } %>
       </div>
 
       <div class="input-group mb-3 input-admin">
         <label class="input-group-text" for="inputGroupSelect01">Sabor</label>
         <select name="taste" class="form-select" id="inputGroupSelect01">
           <% for (let i = 0; i < tastes.length; i++) { %>
-            <option value="<%= tastes[i].id %>" <%= tastes[i].id == product.tasteId ? "selected" : "" %> ><%= tastes[i].name %> </option>
+            <option value="<%= tastes[i].id %>" <%= locals.old && old.tastes == tastes[i].id ? "selected" : tastes[i].id == product.tasteId ? "selected" : "" %> ><%= tastes[i].name %> </option>
           <% } %>
         </select>
+        <% if (locals.errors && errors.taste) { %>
+          <small class="text-danger"><%= errors.taste.msg %> </small>
+        <% } %>
       </div>
 
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Alcohol</span>
-        <input name="alcohol" type="number" value="<%= product.alcohol %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="alcohol" type="number" value="<%= locals.old ? old.alcohol : product.alcohol %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <% if (locals.errors && errors.alcohol) { %>
+          <small class="text-danger"><%= errors.alcohol.msg %> </small>
+        <% } %>
       </div>
+
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Densidad</span>
-        <input name="density" type="number" value="<%= product.density %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="density" type="number" value="<%= locals.old ? old.density : product.density %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <% if (locals.errors && errors.density) { %>
+          <small class="text-danger"><%= errors.density.msg %> </small>
+        <% } %>
       </div>
       
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Amargor</span>
-        <input name="amargor" type="number"  value="<%= product.amargor %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="amargor" type="number" value="<%= locals.old ? old.amargor : product.amargor %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <% if (locals.errors && errors.amargor) { %>
+          <small class="text-danger"><%= errors.amargor.msg %> </small>
+        <% } %>
       </div>
+
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Stock</span>
-        <input name="stock" type="number" value="<%= product.stock %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="stock" type="number" value="<%= locals.old ? old.stock : product.stock %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <% if (locals.errors && errors.stock) { %>
+          <small class="text-danger"><%= errors.stock.msg %> </small>
+        <% } %>
       </div>
+
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Precio</span>
-        <input name="price" type="number" value="<%= product.price %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="price" type="number" value="<%= locals.old ? old.price : product.price %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <% if (locals.errors && errors.price) { %>
+          <small class="text-danger"><%= errors.price.msg %> </small>
+        <% } %>
       </div>
+
       <div class="input-group mb-3">
         <span class="input-group-text" id="inputGroup-sizing-default">Descuento</span>
-        <input name="discount" type="number" value="<%= product.discount %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input name="discount" type="number" value="<%= locals.old ? old.discount : product.discount ? product.discount : 0 %>" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <% if (locals.errors && errors.discount) { %>
+          <small class="text-danger"><%= errors.discount.msg %> </small>
+        <% } %>
       </div>
       
       <div class="mb-3">
         <label for="formFile" class="form-label">Seleccione la foto del producto</label>
         <input class="form-control" type="file" id="formFile" name="image">
       </div>
+
       <div class="form-floating">
         <textarea name="description" id="description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
         style="height: 100px"><%= locals.old ? old.description : product.description %></textarea>
         <label for="floatingTextarea2">Descripción</label>
+        <% if (locals.errors && errors.description) { %>
+          <small class="text-danger"><%= errors.description.msg %> </small>
+        <% } %>
       </div>
       <br>
       <button type="submit" class="btn btn-success btn-sm">Editar producto</button>

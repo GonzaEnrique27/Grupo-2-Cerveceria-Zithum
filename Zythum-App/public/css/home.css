@@ -15,6 +15,11 @@ div.scrollmenu {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	scroll-padding-bottom: 30px;
+
+  /* RICHI */
+  flex-direction: row;
+  display: flex;
+  flex-wrap: nowrap;
   }
 
   .home{
@@ -29,6 +34,8 @@ div.scrollmenu {
     background: var(--rosa);
     border-radius: 20px;
     overflow: hidden;
+    margin-right: 10px;
+    min-width: 250px;
   }
   
   .card::before {

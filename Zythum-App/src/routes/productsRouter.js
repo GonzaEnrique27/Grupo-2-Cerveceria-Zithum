@@ -13,7 +13,7 @@ router.get('/cart', controller.productCart);
 //router.get('/category/:id', controller.category)
 
 /* GET - List of product (Subcategories) */
- /*router.get('/subcategory/:subcategory/:categoryId', controller.subcategory)
+router.get('/subcategory/:subcategory/:categoryId', controller.subcategory)
 
 /* GET - Search products */
 router.get('/search', controller.search)

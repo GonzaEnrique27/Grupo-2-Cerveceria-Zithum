@@ -40,6 +40,29 @@ let controller = {
             session: req.session
         })
     },
+    subcategory: (req, res) => {
+        Subcategories.findByPk(req.params.subcategory, {
+            include: [{
+                association: 'products',
+                include: [{
+                    association: 'productImages'
+                }]
+            }]
+        })
+        .then((subcategory) => {
+            Categories.findByPk(req.params.categoryId, {
+                include: [{association: 'subcategories'}]
+            })
+            .then((category) => {
+                res.render('subcategory', {
+                    products: subcategory.products,
+                    category,
+                    subcategories: category.subcategories,
+                    session: req.session
+                })
+            })
+        })
+    },
     
     search: (req,res) => {
         res.render('searchResult', {

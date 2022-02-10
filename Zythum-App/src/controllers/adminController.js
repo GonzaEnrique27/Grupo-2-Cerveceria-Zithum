@@ -1,5 +1,3 @@
-//Borrar lo de arriba
-//falta validaciones
 let { validationResult } = require('express-validator')
 const fs = require('fs');
 const db = require('../database/models');

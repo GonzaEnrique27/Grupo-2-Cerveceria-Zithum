@@ -24,9 +24,12 @@
             </form>
             <div class="user">
                 <a href="/products/cart" class="chart"><i class="fas fa-shopping-cart fsl"></i></a>
-                <a href="/users/login" class="user-icon"><i class="fas fa-user fsl"></i></a>
+
                 <% if (typeof session.user != "undefined") { %>
+                    <a href="/users/profile" class="user-icon user-icon2"><img class = "avatar-mini" src="/img/users/perfil-generica.jpg" alt=""></a>
                     <a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
+                <% } else{%>
+                    <a href="/users/login" class="user-icon"><i class="fas fa-user fsl"></i></a>
                 <% } %>
             </div>
         </div>

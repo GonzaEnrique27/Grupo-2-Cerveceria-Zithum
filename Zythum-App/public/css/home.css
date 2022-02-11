@@ -35,7 +35,7 @@ div.scrollmenu {
     border-radius: 20px;
     overflow: hidden;
     margin-right: 10px;
-    min-width: 250px;
+    min-width: 280px;
   }
   
   .card::before {

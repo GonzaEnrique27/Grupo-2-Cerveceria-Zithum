@@ -130,7 +130,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    margin: 10px 30px;
+    margin: 10px 10px;
 }
 
 .detail .related #items div img{
@@ -149,6 +149,16 @@
 
     .detail article .product-body .details #details-info .description{
         width: 400;
+    }
+    .detail .related #items div{
+        width: 125px;
+        height: 125px;
+        border-radius: 10px;
+        border: 2px solid var(--c2);
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        margin: 10px 30px;
     }
 
 }

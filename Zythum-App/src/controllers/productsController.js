@@ -22,16 +22,52 @@ let controller = {
     const fs = require('fs');
 
 let { getProducts } = require('../database/dataBase')
+/////////////////////////////////////////////////////
+const db = require('../database/models');
+
+const Products = db.Product;
+const Categories = db.Category;
+const Subcategories = db.Subcategory;
+const Brands = db.Brand;
+const Sizes = db.Size;
+const Tastes = db.Taste;
+
 
 let controller = {
     // Detail - Detail from one product
     detail: function(req,res){
-        let idProduct = +req.params.id;
-		let product = getProducts.find(product => product.id === idProduct);
-
-        res.render('productDetail', {
-            product,
-            session: req.session
+        let productId = +req.params.id;
+        Products.findByPk(productId, {
+            include: [
+                {association: 'brand'}, 
+                {association: 'size'}, 
+                {association: 'taste'}, 
+                {association: 'subcategory',
+                include: [{association: 'category'}]
+            }]
+        })
+        .then(product => {
+            Products.findAll({
+                include: [
+                    {association: 'brand'}, 
+                    {association: 'size'}, 
+                    {association: 'taste'}, 
+                    {association: 'subcategory',
+                    include: [{association: 'category'}]
+                }],
+                where: {
+                    subcategoryId: product.subcategoryId
+                }
+            })
+            .then((relatedProducts) => {
+                res.render('productDetail', {
+                    product,
+                    /* sliderTitle: "Productos relacionados", */
+                    sliderProducts: relatedProducts,
+                    session: req.session
+                })
+            })
+            
         })
     },
     

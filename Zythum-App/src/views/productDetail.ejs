@@ -8,26 +8,26 @@
     <%- include('./partials/header.ejs') %> 
 
     <main class="detail pos-re">
-       <article>
-           <div class="circ rosab"></div>
-           <section class="product-header">
-               <div id="product-detail-title">
-                   <h2 class="fwxb fsxl c2 c1b"><%= product.brand  %></h2><br>
-                   <h3 class="fwr fss c2 c1b">(<%= product.size %>ml) - Unidad</h3>
-               </div>
-               <div id="detail-price" class="fwb fsxl c2 pos-re">
-                   <p class="dib">$<%= product.price %></p>
-                   <div class="c1b pos-ab sub-des"></div>
-               </div>
-           </section>
-           <section class="product-body">
+        <article>
+            <div class="circ rosab"></div>
+            <section class="product-header">
+                <div id="product-detail-title">
+                    <h2 class="fwxb fsxl c2 c1b"><%= product.brand.name  %></h2><br>
+                    <h3 class="fwr fss c2 c1b">(<%= product.size.measure %>ml) - Unidad</h3>
+                </div>
+                <div id="detail-price" class="fwb fsxl c2 pos-re">
+                    <p class="dib">$<%= product.price %></p>
+                    <div class="c1b pos-ab sub-des"></div>
+                </div>
+            </section>
+            <section class="product-body">
                 <div class="details">
                     <div class="detail-buttons">
                         <button id="comprar-producto" class="fwb fsm c1 c2b">Comprar</button> 
-                        <button id="detalle-producto" class="fwb fsm c1 rosab">Detalle</button> 
+                        <button id="detalle-producto" class="fwb fsm c1 rosab"><%= product.subcategory.category.name  %> </button> 
                     </div>
                     <div id="details-info">
-                        <h4 class="fwb fsm c2"><%= product.category %> </h4>
+                        <h4 class="fwb fsm c2"><%= product.subcategory.name %> </h4>
                         <section class="detalle-principal">
                             <div id="produc-alc">
                                 <p class="fwb fsxl c1"><%= product.alcohol %></p>
@@ -39,7 +39,7 @@
                                 
                             </div>
                             <div id="produc-sab">
-                                <p class="fwb fsxl c1"><%= (product.taste.charAt(0)).toUpperCase() %></p>
+                                <p class="fwb fsxl c1"><%= product.taste.name.charAt(0).toUpperCase() %></p>
                                 <p class="fwm fss c2">Sab.</p>
                                 
                             </div>
@@ -55,25 +55,25 @@
                     </div>
                 </div>
                 <div class="photo">
-                    <img src="/img/products/<%= product.image %>" alt="<%= product.brand %> ">
+                    <img src="/img/products/<%= product.image %>" alt="<%= product.brand.name %> ">
                 </div>
-           </section>
+            </section>
 
-       </article>
-       <article class="related">
-           <p class="fwb fsl c2">Productos similares</p>
-           <div id="items">
-               <div class="related-1 c1b">
-                   <img src="/img/ProductoDeCarrito 1.png" alt="">
-               </div>
-               <div class="related-2 c1b">
-                   <img src="/img/ProductoDeCarrito 2.png" alt="">
-               </div>
-               <div class="related-3 c1b">
-                   <img src="/img/barril.png" alt="">
-               </div>
-           </div>
-       </article>
+        </article>
+        <article class="related">
+            <p class="fwb fsl c2">Productos similares</p>
+            <div id="items">
+                <div class="related-1 c1b">
+                    <img src="/img/ProductoDeCarrito 1.png" alt="">
+                </div>
+                <div class="related-2 c1b">
+                    <img src="/img/ProductoDeCarrito 2.png" alt="">
+                </div>
+                <div class="related-3 c1b">
+                    <img src="/img/barril.png" alt="">
+                </div>
+            </div>
+        </article>
     </main>
     <br>
     

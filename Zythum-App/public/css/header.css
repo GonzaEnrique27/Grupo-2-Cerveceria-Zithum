@@ -183,13 +183,21 @@ header .user a{
 	margin-left: 6px;
 	color: var(--c1);
 }
-header .user a i:hover{
-	text-shadow: 3px 3px 20px rgb(37, 230, 193);
+header .user a:hover{
+	text-shadow: 3px 3px 45px rgb(37, 230, 193);
 }
 
 header .user .user-icon{
 	margin-right: 6px;
-}
+	}
+header .user .user-icon2{
+	padding: 0;
+	border: 3px solid antiquewhite;
+	border-radius: 50%;
+	overflow: hidden;
+	width: 35px;
+height: 35px;
+	}
 
 header .menu2{
 	margin-bottom: 8px;

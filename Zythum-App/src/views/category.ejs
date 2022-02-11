@@ -10,7 +10,7 @@
     <div class="dosCajitas">
         
         <% products.forEach(product => { %>
-            <div class="card mr-4">
+            <div class="card">
                 <a href="/products/detail/<%- product.id %>">
                 <div class="imgBox">
                     <img src= "/img/products/<%- product.image %> "style ="max-width: 25%" alt="cerveza">
@@ -18,13 +18,12 @@
                 </a>
                 <div class="contentBox">
                     <h3><%= product.brand.name %> <%= product.size.measure %>ml </h3>
-                    <h2 class="price">$<%= product.price %> <!-- <small>98</small> --></h2>
-                    <a href="#" class="buy">comprar ahora</a>
+                    <h2 class="price">$<%= product.price %></h2>
+                    <a href="/src/views/productCart.ejs" class="buy">comprar ahora</a>
                 </div>          
             </div>  
 
         <% }) %> 
-
     </div>
 
     <%- include('./partials/footer.ejs') %> 

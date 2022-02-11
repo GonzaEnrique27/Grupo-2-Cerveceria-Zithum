@@ -66,6 +66,9 @@
                                 <input type="checkbox" name="remember" id="recuerdame"> Recuérdame
                             </label>
                         </div>
+                        <% if (locals.errors && errors.custom) { %>
+                            <small class="text-danger" style="color: red;"> <%= errors.custom.msg %>  </small>
+                        <% } %>
                         <div class="buttom-login">
                             <button type="submit" class="buttom-login2">INICIAR SESIÓN</button>
                         </div>

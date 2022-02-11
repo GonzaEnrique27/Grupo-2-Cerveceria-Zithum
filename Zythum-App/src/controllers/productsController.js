@@ -24,6 +24,7 @@ let controller = {
 let { getProducts } = require('../database/dataBase')
 /////////////////////////////////////////////////////
 const db = require('../database/models');
+const { Op } = require('sequelize');
 
 const Products = db.Product;
 const Categories = db.Category;
@@ -135,7 +136,7 @@ let controller = {
     }, */
     
     search: (req, res) => {
-        Products.findAll({
+        /* Products.findAll({
             where: {
                 name: {
                     [Op.substring]: req.query.keywords
@@ -149,7 +150,9 @@ let controller = {
                 search: req.query.keywords,
                 session: req.session
             })
-        })
+        }) */
+        let products = [];
+
         Brands.findAll({
             where: {
                 name: {
@@ -167,24 +170,50 @@ let controller = {
                     }]
             }]
         })
-        .then((category) => {
-            let subcategories = category.subcategories;
-            let products = [];
-            subcategories.forEach((subcategory) => {
-                subcategory.products.forEach((product) => {
-                    products.push(product);
-                });
-            });
-            res.render('category', {
-                products,
-                category,
-                subcategories,
-                session: req.session
-            });
-        })
-        .catch(error => console.log(error))
+        .then((brands) => {
+            brands.forEach((brand)=>{
+                products.push(brand.products)
+            })
+            console.log(products.length)
+            
 
-        
+            Subcategories.findAll({
+                where: {
+                    name: {
+                        [Op.substring]: req.query.keywords
+                    }
+                },
+                include: [
+                    {association: 'category'},
+                    {association: 'products',
+                        include: [
+                            {association: 'brand'}, 
+                            {association: 'size'}, 
+                            {association: 'taste'},
+                            {association: 'subcategory',
+                                include: 
+                                    [{association: 'category'}]
+                            }
+                        ]
+                    }
+                ]
+            })
+            .then((subcategories)=> {
+                subcategories.forEach((subcategory)=>{
+                    products.push(subcategory.products)
+                })
+                console.log(products.length)
+                
+                /* let result = new Set(products)
+                let trueR = [...result]
+                console.log(trueR) */
+                res.send(products)
+            })
+        })
+        //.catch(error => console.log(error))
+
+
+
     }
 }
 

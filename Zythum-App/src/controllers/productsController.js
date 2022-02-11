@@ -20,6 +20,7 @@ let controller = {
     }, */
 
     const fs = require('fs');
+const dataBase = require('../database/dataBase');
 
 let { getProducts } = require('../database/dataBase')
 
@@ -60,6 +61,24 @@ let controller = {
                     subcategories: category.subcategories,
                     session: req.session
                 })
+            })
+        })
+    },
+
+    productHome: (req,res)=>{
+        Products.findAll({
+            include: [
+                {association: 'brand'}, 
+                {association: 'size'}, 
+                {association: 'taste'}, 
+                {association: 'subcategory',
+                include: [{association: 'category'}]
+            }]
+        })
+        .then(product => {
+            res.render('./index', {
+                product,
+                session: req.session
             })
         })
     },

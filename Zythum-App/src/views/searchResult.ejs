@@ -4,38 +4,38 @@
 <%- include('./partials/head.ejs') %> 
 
 <body>
-  
-  <%- include('./partials/header.ejs') %> 
+
+<%- include('./partials/header.ejs') %> 
 
  <!-- TARGETAS CON SCROLL HORIZONTAL -->
 
- <main class= "Home">
-    <p class="fwb fsl c2 pl-5">Resultados</p>
-    <p class="fwr fsm c2 text-center">Se han encontrado X resultados</p>
-    <div class="scrollmenu" style="display: flex; flex-wrap: nowrap; flex-direction: row;">
-        <div class="card mr-4">
-            <div class="imgBox">
-                <img src= "/img/imagenes-produtos/Botella-cerveza-sinfondo.png"style ="max-width: 25%" alt="cerveza">
-            </div>
-            <div class="contentBox">
-                <h3>Cerveza Zithum 354ml</h3>
-                <h2 class="price">$20,<small>98</small></h2>
-                <a href="#" class="buy">comprar ahora</a>
-            </div>          
-        </div>  
+<main class= "Home">
 
-        <div class="card mr-4">
-            <div class="imgBox">
-                <img src= "/img/imagenes-produtos/cerveza-lata-sinfondo.png"style ="max-width: 25%" alt="cerveza">
+        <% if (result.length > 0) {  %> 
+            <p class="fwb fsl c2 pl-5">Resultados de la búsqueda de "<%- search %>"</p>
+            <div class="dosCajitas">
+
+            <% result.forEach(product => { %>
+                <div class="card">
+                    <a href="/products/detail/<%- product.id %>">
+                    <div class="imgBox">
+                        <img src= "/img/products/<%- product.image %>"style ="max-width: 25%" alt="cerveza">
+                    </div>
+                    </a>
+                    <div class="contentBox">
+                        <h3><%= product.brand.name %> <%= product.size.measure %>ml </h3>
+                        <h2 class="price">$<%= product.price %></h2>
+                        <a href="/src/views/productCart.ejs" class="buy">Comprar Ahora</a>
+                    </div>          
+                </div>  
+            <% }) %>
             </div>
-            <div class="contentBox">
-                <h3>Cerveza Lata 457ml</h3>
-                <h2 class="price">$20,<small>98</small></h2>
-                <a href="#" class="buy">comprar ahora</a>
-            </div>
-        </div> 
-    </div>
-    <article class="related">
+        <% } else { %> 
+            <p class="fwb fsl c2 pl-5">No se han encontrado resultados.</p>
+        <% } %> 
+
+    
+   <!--  <article class="related">
         <p class="fwb fsl c2">Categorias</p>
         <div id="items">
         <a href="#">
@@ -54,11 +54,8 @@
             </div>
         </a>
         </div>
-    </article>
+    </article> -->
 </main>
-
-    
-     
     
     <%- include('./partials/footer.ejs') %> 
 

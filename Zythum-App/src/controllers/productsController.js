@@ -137,23 +137,6 @@ let controller = {
     }, */
     
     search: (req, res) => {
-        /* Products.findAll({
-            where: {
-                name: {
-                    [Op.substring]: req.query.keywords
-                }
-            },
-            include: [{association: 'productImages'}]
-        })
-        .then((result) => {
-            res.render('searchResult', {
-                result,
-                search: req.query.keywords,
-                session: req.session
-            })
-        }) */
-        let products = [];
-
         Brands.findAll({
             where: {
                 name: {
@@ -172,11 +155,13 @@ let controller = {
             }]
         })
         .then((brands) => {
-            brands.forEach((brand)=>{
-                products.push(brand.products)
+            let resultSearch = [];
+
+            brands.forEach((brand)=> {
+                brand.products.forEach((product)=> {
+                    resultSearch.push(product)
+                })
             })
-            console.log(products.length)
-            
 
             Subcategories.findAll({
                 where: {
@@ -185,7 +170,6 @@ let controller = {
                     }
                 },
                 include: [
-                    {association: 'category'},
                     {association: 'products',
                         include: [
                             {association: 'brand'}, 
@@ -199,22 +183,30 @@ let controller = {
                     }
                 ]
             })
-            .then((subcategories)=> {
+            .then((subcategories)=>{
                 subcategories.forEach((subcategory)=>{
-                    products.push(subcategory.products)
+                    subcategory.products.forEach((product)=>{
+                        resultSearch.push(product);
+                    })
                 })
-                console.log(products.length)
-                
-                /* let result = new Set(products)
-                let trueR = [...result]
-                console.log(trueR) */
-                res.send(products)
+
+                let hash = {};
+                let result = [];
+                result = resultSearch.filter(function(current) {
+                    let exists = !hash[current.id];
+                    hash[current.id] = true;
+                    return exists;
+                });
+                console.log(result.length)
+                res.render('searchResult', {
+                    result,
+                    search: req.query.keywords,
+                    session: req.session
+                })
             })
+            .catch(error => console.log(error))
         })
-        //.catch(error => console.log(error))
-
-
-
+        .catch(error => console.log(error))
     }
 }
 

@@ -4,15 +4,15 @@
 <%- include('../partials/head.ejs') %> 
 
 <body>
-   
+
     <%- include('../partials/header.ejs') %> 
     <br>
 <div class="bodyProfile">
-   
+
     <div class="content-profile">
     <div>
-     <img class = "avatar" src="/img/users/perfil-generica.jpg" alt="">
-     <h1 class="user-name">Gonzalo Enrique</h1>
+    <img class = "avatar" src="/img/users/<%= user.avatar %>" alt="">
+    <h1 class="user-name"><%= user.name %> <%= user.last_name %></h1>
 </div>
 
 <div>
@@ -23,8 +23,15 @@
 <br>
 <br>
 
-<div class="compras-hechas">
-    <h3> HISTORIAL DE COMPRAS</h3>
+<div class="compras-hechas" style="display: flex; flex-direction: column; justify-content: center; text-align: center;">
+    <br>
+    <h3>Nombre: <%= user.name %></h3><br>
+    <h3>Apellido: <%= user.last_name %></h3><br>
+    <h3>Email: <%= user.email %></h3><br>
+    <h3>Telefono: <%= user.phone ? user.phone : "------" %></h3><br><br>
+    <form action="/users/profile/edit/<%= user.id %>" method="GET">
+        <button class="new-account" style="width: 40%; align-self: center;">Editar Perfil</button>
+    </form>
 
 
 </div>

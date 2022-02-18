@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %> 
+
+<body>
+
+    <%- include('../partials/header.ejs') %> 
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="caja-registro-escritorio">
+        <div class="caja-form-registro">
+            <center>
+                <h2 class="h2-registro">Modificar Datos</h2>
+                <form action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" >
+                    <input type="text" class="input-registro" name="name" id="nombre" placeholder="  Nombre" value="<%= locals.old && old.name ? old.name : user.name%>"><br>
+                    <% if (locals.errors && errors.name) { %> 
+                        <small class="error"><%= errors.name.msg %></small><br>
+                    <% } %>
+                    <input type="text" class="input-registro" name="lastname" id="apellido" placeholder="  Apellido" value="<%= locals.old && old.lastname ? old.lastname : user.last_name %>"
+                    ><br>
+                    <% if (locals.errors && errors.lastname) { %> 
+                        <small class="error"><%= errors.lastname.msg %></small><br>
+                    <% } %>
+                    <input type="email" class="input-registro" name="email" id="email" placeholder=" Email" value="<%= locals.old && old.email ? old.email : user.email%>"
+                    ><br>
+                    <% if (locals.errors && errors.email) { %> 
+                        <small class="error"><%= errors.email.msg %></small><br>
+                    <% } %>
+                    <input type="text" class="input-registro" name="phone" id="phone" placeholder=" Telefono" value="<%= locals.old && old.phone ? old.phone : user.phone %>"
+                    ><br>
+                    <% if (locals.errors && errors.email) { %> 
+                        <small class="error"><%= errors.email.msg %></small><br>
+                    <% } %>
+                    
+                    <!-- <input type="file" id="formFile" name="image"><br><br> -->
+    
+                    
+                    <button type="submit" class="new-account">Guardar Cambios</button><br>
+                </form>
+            </center>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+   
+    <%- include('../partials/footer.ejs') %> 
+
+    <%- include('../partials/scripts.ejs') %> 
+    
+</body>
+</html>

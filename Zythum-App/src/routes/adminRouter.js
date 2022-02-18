@@ -10,7 +10,7 @@ router.get('/', isAdmin, controller.index);
 
 //GET & POST: creacion de producto
 router.get('/create', isAdmin, controller.create);
-router.post('/create', isAdmin, uploadFile.single('image'), productFormValidator, controller.store)//giane
+router.post('/create', isAdmin, uploadFile.single('image'), productFormValidator, controller.store)
 
 //GET & PUT: edicion de producto
 router.get('/edit/:id', isAdmin, controller.edit);

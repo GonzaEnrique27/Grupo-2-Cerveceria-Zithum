@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-let { login, logeo, logout, register, processRegister, profile} = require('../controllers/usersController');
+let { login, logeo, logout, register, processRegister, profile, editProfile, updateProfile} = require('../controllers/usersController');
 let uploadAvatar = require('../middlewares/uploadUserFile');
 let registerValidator = require('../validations/registerValidator');
 let loginValidator = require('../validations/loginValidator');
@@ -23,5 +23,9 @@ router.post('/register',uploadAvatar.single('image'), registerValidator , proces
 
 //GET - User Profile
 router.get('/profile', isUser, profile);
+
+router.get('/profile/edit/:id', isUser, editProfile);
+
+router.put('/profile/edit/:id', isUser, updateProfile);
 
 module.exports = router;

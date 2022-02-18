@@ -102,6 +102,37 @@ let controller = {
                 session: req.session
             })
         })
-    }
+    },
+    editProfile:(req,res) => {
+        Users.findByPk(req.session.user.id, {
+            include: [{association: 'addresses'}]
+        })
+        .then((user) => {
+            res.render('users/editProfile', {
+                user, 
+                session: req.session
+            })
+        })
+    },
+    //este esta incompleto
+    updateProfile:(req,res) => {
+        let {name, last_name, email, phone} = req.body
+        Users.findByPk(req.session.user.id)
+        .then((user)=>{
+            console.log(user)
+            user.update({
+                name: name,
+                last_name,
+                email,
+                phone,
+            },{
+                where: {
+                    id : req.session.user.id
+                }
+            })
+
+            res.redirect('/users/profile');
+        })
+        }
 }
 module.exports = controller

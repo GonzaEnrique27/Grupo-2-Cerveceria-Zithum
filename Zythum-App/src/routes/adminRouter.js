@@ -2,7 +2,7 @@ let express = require('express');
 let router = express.Router();
 let controller = require('../controllers/adminController');
 let uploadFile = require('../middlewares/uploadProductFiles');
-const isAdmin = require('../middlewares/adminCheck');
+const {isAdmin } = require('../middlewares/authUser');
 const productFormValidator = require('../validations/productFormValidator');
 
 //GET: dasboard ADMIN
@@ -17,6 +17,6 @@ router.get('/edit/:id', isAdmin, controller.edit);
 router.put('/edit/:id', isAdmin, uploadFile.single('image'), productFormValidator, controller.update);
 
 //DELETE de producto
-router.delete('/delete/:id', controller.destroy);
+router.delete('/delete/:id', isAdmin, controller.destroy);
 
 module.exports = router;

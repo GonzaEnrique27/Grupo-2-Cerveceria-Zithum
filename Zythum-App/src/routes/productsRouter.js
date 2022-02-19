@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 const { detail, allProducts, productCart, category, search} = require('../controllers/productsController');
-let uploadFile = require('../middlewares/uploadProductFiles');
+const { isUser } = require('../middlewares/authUser');
 
 /* GET - All products */
 router.get('/', allProducts);
@@ -19,6 +19,6 @@ router.get('/category/:id', category)
 router.get('/search', search)
 
 //carrito
-router.get('/cart', productCart);
+router.get('/cart', isUser, productCart);
 
 module.exports = router;

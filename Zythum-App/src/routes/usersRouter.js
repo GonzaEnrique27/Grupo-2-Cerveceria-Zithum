@@ -1,23 +1,20 @@
 var express = require('express');
 var router = express.Router();
 let { login, logeo, logout, register, processRegister, profile, editProfile, updateProfile} = require('../controllers/usersController');
+let { isGuest, isUser } = require('../middlewares/authUser');
 let uploadAvatar = require('../middlewares/uploadUserFile');
 let registerValidator = require('../validations/registerValidator');
 let loginValidator = require('../validations/loginValidator');
-let isUser = require('../middlewares/userCheck');
-
-/* GET home page. */
-/* router.get('/', controller.listUsers); */
 
 //GET - Login
-router.get('/login', login);
+router.get('/login', isGuest, login);
 //POST - Login
 router.post('/login', loginValidator, logeo);
 //GET - Logout
 router.get('/logout', logout);
 
 //GET- Register
-router.get('/register', register);
+router.get('/register', isGuest, register);
 // POST - Reister
 router.post('/register',uploadAvatar.single('image'), registerValidator , processRegister);
 

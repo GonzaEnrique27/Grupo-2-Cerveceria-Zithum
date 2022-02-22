@@ -10,7 +10,20 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes ingresar tu email').bail()
     .isEmail()
-    .withMessage('Debes ingresar un email válido'),
+    .withMessage('Debes ingresar un email válido')
+    .custom(function(value){
+        return Users.findOne({
+            where:{
+                email: value
+            }
+        })
+        .then(user => {
+            if(!user){
+                return Promise.reject("Email no registrado")
+            }
+
+        })
+    }),
 
     check('pass')
     .notEmpty()

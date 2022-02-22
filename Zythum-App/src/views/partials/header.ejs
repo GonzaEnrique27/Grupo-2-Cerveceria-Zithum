@@ -41,8 +41,8 @@
             <nav>
                 <ul class="nav">
                     <li><a href="/" class="fss c1">Home</a></li>
-                    <li><a href="/users/login" class="fss c1">Login</a></li>
-                    <li><a href="/users/register" class="fss c1">Register</a></li>
+                    <li><a href="/#categories" class="fss c1">Categorías</a></li>
+                    <li><a href="/products" class="fss c1">Productos</a></li>
                     <li><a href="/products/cart" class="fss c1">Carrito</a></li>
                     <li><a href="/products/detail/1" class="fss c1">Detalle</a></li>
                 </ul>
@@ -51,3 +51,22 @@
         </div>
     </div>
 </header>
+
+<!-- ADMIN COMO GUIA -->
+<!-- <div class="user-icons-desktop">
+    <div class="user">
+        <% if (typeof session.user != "undefined") { %>
+            <i class="fas fa-user"></i><span class="session"></span>
+            <div class="menu-user">
+                <a href="/users/profile">Mis datos</a>
+                <a href="/users/logout">Cerrar sesión</a>
+                <% if (session.user.rol === 1) { %>
+                    <a href="/admin/products">ADMIN</a>
+                <% } %>
+            </div>
+        <% } else {%>
+            <a href="/users/login"><i class="fas fa-user"></i></a>
+        <% } %>
+    </div>
+    <a href="/"><i class="fas fa-shopping-cart"></i></a>
+</div> -->

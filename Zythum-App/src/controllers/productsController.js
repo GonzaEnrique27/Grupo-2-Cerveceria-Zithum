@@ -1,29 +1,3 @@
-/* const { Op } = require('sequelize');
-const db = require('../database/models');
-
-const Products = db.Product;
-
-let controller = {
-    detail: (req,res)=> {
-        Products.findOne({
-            where: {
-                id: req.params.id
-            }, */
-            /* include: [{association: 'productImages'}] */
-        /* })
-        .then((product)=> {
-            res.render('productDetail', {
-                product,
-                session: req.session
-            })
-        })
-    }, */
-
-    const fs = require('fs');
-const dataBase = require('../database/dataBase');
-
-let { getProducts } = require('../database/dataBase')
-/////////////////////////////////////////////////////
 const db = require('../database/models');
 const { Op } = require('sequelize');
 
@@ -36,7 +10,7 @@ const Tastes = db.Taste;
 
 
 let controller = {
-    // Detail - Detail from one product
+    // Detail - Detail from one product, falta implementar los productos relacionados
     detail: function(req,res){
         let productId = +req.params.id;
         Products.findByPk(productId, {
@@ -62,7 +36,7 @@ let controller = {
                 }
             })
             .then((relatedProducts) => {
-                res.render('productDetail', {
+                res.render('./products/productDetail', {
                     product,
                     /* sliderTitle: "Productos relacionados", */
                     sliderProducts: relatedProducts,
@@ -71,6 +45,25 @@ let controller = {
             })
             
         })
+    },
+
+    allProducts: (req,res)=> {
+        Products.findAll({
+            include: [
+                {association: 'brand'}, 
+                {association: 'size'}, 
+                {association: 'taste'}, 
+                {association: 'subcategory',
+                include: [{association: 'category'}]
+            }]
+        })
+        .then(products => {
+                res.render('./products/allProducts', {
+                    products,
+                    /* sliderTitle: "Productos relacionados", */
+                    session: req.session
+                })
+            })
     },
 
     category: (req, res) => {
@@ -97,7 +90,7 @@ let controller = {
                     products.push(product);
                 });
             });
-            res.render('category', {
+            res.render('./products/category', {
                 products,
                 category,
                 subcategories,
@@ -106,35 +99,6 @@ let controller = {
         })
         .catch(error => console.log(error))
     },
-    
-    productCart: function(req,res){
-        res.render('productCart', {
-            session: req.session
-        })
-    },
-    /* subcategory: (req, res) => {
-        Subcategories.findByPk(req.params.subcategory, {
-            include: [{
-                association: 'products',
-                include: [{
-                    association: 'productImages'
-                }]
-            }]
-        })
-        .then((subcategory) => {
-            Categories.findByPk(req.params.categoryId, {
-                include: [{association: 'subcategories'}]
-            })
-            .then((category) => {
-                res.render('subcategory', {
-                    products: subcategory.products,
-                    category,
-                    subcategories: category.subcategories,
-                    session: req.session
-                })
-            })
-        })
-    }, */
     
     search: (req, res) => {
         Brands.findAll({
@@ -198,7 +162,7 @@ let controller = {
                     return exists;
                 });
                 console.log(result.length)
-                res.render('searchResult', {
+                res.render('./products/searchResult', {
                     result,
                     search: req.query.keywords,
                     session: req.session
@@ -207,7 +171,37 @@ let controller = {
             .catch(error => console.log(error))
         })
         .catch(error => console.log(error))
-    }
+    },
+
+    productCart: function(req,res){
+        res.render('productCart', {
+            session: req.session
+        })
+    },
+    
+    /* subcategory: (req, res) => {
+        Subcategories.findByPk(req.params.subcategory, {
+            include: [{
+                association: 'products',
+                include: [{
+                    association: 'productImages'
+                }]
+            }]
+        })
+        .then((subcategory) => {
+            Categories.findByPk(req.params.categoryId, {
+                include: [{association: 'subcategories'}]
+            })
+            .then((category) => {
+                res.render('subcategory', {
+                    products: subcategory.products,
+                    category,
+                    subcategories: category.subcategories,
+                    session: req.session
+                })
+            })
+        })
+    }, */
 }
 
 module.exports = controller;

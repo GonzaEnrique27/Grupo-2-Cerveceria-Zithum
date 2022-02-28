@@ -73,7 +73,6 @@ input.invalid{
   
   /* DISEÑO PARA MENSAJES DE ERROR */
   .error {
-    width : 100%;
     padding: 0;
   
     font-size: 80%;
@@ -87,6 +86,10 @@ input.invalid{
     padding: 0.3em;
   }
   /* diseño para los campos no válidos */
+  input.mail {
+    -webkit-appearance: none;
+  }
+  
 
   input.invalid{
     border-color: #900;

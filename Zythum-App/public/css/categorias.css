@@ -1,10 +1,6 @@
 div.category-id {
-margin-top: 20px;
-margin-bottom: 40px;
-flex-direction:row;
 display: flex;
-justify-content: space-evenly;
-flex-wrap: wrap;
+justify-content: center;
 }
 
   

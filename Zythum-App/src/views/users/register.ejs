@@ -19,6 +19,7 @@
             <center>
                 <h2 class="h2-registro">Crear Cuenta</h2>
                 <form action="/users/register" method="POST" enctype="multipart/form-data">
+                   
                     <input type="text" class="input-registro" name="name" id="nombre" placeholder="  Nombre" value="<%= locals.old && old.name %>"><br>
                     <% if (locals.errors && errors.name) { %> 
                         <small class="error"><%= errors.name.msg %></small><br>
@@ -28,11 +29,13 @@
                     <% if (locals.errors && errors.lastname) { %> 
                         <small class="error"><%= errors.lastname.msg %></small><br>
                     <% } %>
-                    <input type="email" class="input-registro" name="email" id="email" placeholder=" Email" value="<%= locals.old && old.email %>"
+                    <label for="mail">
+                    <input type="email" class="input-registro" name="email" id="email" placeholder=" email" value="<%= locals.old && old.email %>"
                     ><br>
                     <% if (locals.errors && errors.email) { %> 
-                        <small class="error"><%= errors.email.msg %></small><br>
+                        <small class="error" aria-live="polite"><%= errors.email.msg %></small><br>
                     <% } %>
+                    </label>
                     <input type="password" class="input-registro" name="password" id="password"
                         placeholder=" Contraseña"><br>
                     <% if (locals.errors && errors.password) { %> 

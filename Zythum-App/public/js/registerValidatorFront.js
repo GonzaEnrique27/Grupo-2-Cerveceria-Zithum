@@ -11,9 +11,7 @@ const campos = {
   nombre : false,
   lastname: false,
   email: false,
-  password:false,
-  password2:false
-
+  password:false
 }
 
 const validarFormulario = (e) => {
@@ -34,7 +32,7 @@ const validarFormulario = (e) => {
 
    case "password":
     validarCampo(expresiones.password, e.target, 'password')
-    validarPassword2
+    validarPassword2()
 
    break;
    
@@ -46,6 +44,8 @@ const validarFormulario = (e) => {
 
 }
 
+
+ //FUNCION PARA VALIDAR LOS CAMPOS//
 const validarCampo = (expresion, input, campo) => {
 	if(expresion.test(input.value)){
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
@@ -53,15 +53,20 @@ const validarCampo = (expresion, input, campo) => {
 		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
 		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
 		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
-	} else {
+	  campos[campo]= true
+  } else {
 		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
 		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
 		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
 		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
-	}
+    campos[campo]= false
+  }
 }
 
+
+
+//FUNCION PARA QUE LAS CONTRASEÑAS COINCIDAN//
 const validarPassword2 = () =>{
   const inputPassword1 = document.getElementById('password')
   const inputPassword2 = document.getElementById('password2')
@@ -71,14 +76,14 @@ const validarPassword2 = () =>{
 		document.querySelector(`#grupo__password2 i`).classList.add('fa-times-circle');
 		document.querySelector(`#grupo__password2 i`).classList.remove('fa-check-circle');
 		document.querySelector(`#grupo__password2 .formulario__input-error`).classList.add('formulario__input-error-activo');
-
+    campos['password']= false
   }else {
     document.getElementById(`grupo__password2`).classList.remove('formulario__grupo-incorrecto');
 		document.getElementById(`grupo__password2`).classList.add('formulario__grupo-correcto');
 		document.querySelector(`#grupo__password2 i`).classList.remove('fa-times-circle');
 		document.querySelector(`#grupo__password2 i`).classList.add('fa-check-circle');
 		document.querySelector(`#grupo__password2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
-
+    campos['password'] = true
 
   }
 
@@ -90,11 +95,18 @@ inputs.forEach((input)=>{
 })
 
 
-formulario.addEventListener('submit',(e) => {          //evento para el boton type:submit
-  e.preventDefault()   
-  if (nombre && lastname && email && password && password2){
+formulario.addEventListener('',(e) => {          //evento para el boton type:submit
+  e.preventDefault()                                  // para evitar mandar datos al tener los campos incompletos
+  
+  const terminos = document.getElementById ('notificaciones')
+  if (campos.nombre && campos.lastname && campos.email && campos.password && terminos.checked){
+    formulario.reset();
+
+    document.querySelectorAll('formulario__grupo-correcto').forEach((icono)=>{
+      icono.classList.remove('formulario__grupo-correcto')
+    })
     
-  }                                // para evitar mandar datos al tener los campos incompletos
+  }                                
 })
 
 

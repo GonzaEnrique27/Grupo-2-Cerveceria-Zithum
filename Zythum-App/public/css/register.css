@@ -73,6 +73,9 @@ input.invalid{
   
  /* ----- -----  Estilos para Validacion ----- ----- */
 
+ .formulario__validacion-estado{
+     display: none;
+ }
  .formulario__input-error {
 	font-size: 12px;
 	margin-bottom: 0;

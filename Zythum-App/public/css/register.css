@@ -71,34 +71,36 @@ input.invalid{
     outline: none;
   }
   
-  /* DISEÑO PARA MENSAJES DE ERROR */
-  .error {
-    padding: 0;
-  
-    font-size: 80%;
-    color: white;
-    background-color: #900;
-    border-radius: 0 0 5px 5px;
-    box-sizing: border-box;
-  }
-  
-  .error.active {
-    padding: 0.3em;
-  }
-  /* diseño para los campos no válidos */
-  input.mail {
-    -webkit-appearance: none;
-  }
-  
+ /* ----- -----  Estilos para Validacion ----- ----- */
 
-  input.invalid{
-    border-color: #900;
-    background-color: #FDD;
-  }
-  
-  input:focus.invalid {
-    outline: none;
-  }
+ .formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+.formulario__input-error-activo {
+	display: block;
+}
+ .formulario__mensaje-exito-activo {
+	display: block;
+}
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .input-registro {
+	border: 3px solid #bb2929;
+}
 
 /* MEDIA QUERYS*/
 

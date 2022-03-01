@@ -5,19 +5,22 @@ const Users = db.User;
 module.exports = [
     check('name')
     .notEmpty()
-    .withMessage('Debes ingresar tu nombre'),
+    .withMessage('Debes ingresar tu nombre').bail()
+    .isLength({min: 2})
+    .withMessage('Mínimo 2 caracteres'),
 
     check('lastname')
     .notEmpty()
-    .withMessage('Debes ingresar tu apellido'),
+    .withMessage('Debes ingresar tu apellido').bail()
+    .isLength({min: 2})
+    .withMessage('Mínimo 2 caracteres'),
 
     check('email')
     .notEmpty()  
     .withMessage('Debes ingresar un e-mail').bail() 
     .isEmail()
-    .withMessage('Debes ingresar un e-mail válido'),
-
-    body('email').custom((value) => { 
+    .withMessage('Debes ingresar un e-mail válido').bail()
+    .custom((value) => { 
         return Users.findOne({
             where: {
                 email: value,
@@ -35,16 +38,15 @@ module.exports = [
     .withMessage('Debe ingresar una contraseña')
     .bail()
     .isLength({ 
-        min: 6,
+        min: 8,
         max: 12
     })
-    .withMessage('La contraseña debe tener entre 6 y 12 carácteres'),
+    .withMessage('La contraseña debe tener entre 8 y 12 carácteres'),
     
     check('password2')
     .notEmpty()
-    .withMessage('Debe confirmar su contraseña'),
-
-    body('password2').custom((value, {req}) => value !== req.body.password ? false : true) //Comparando contraseñas
+    .withMessage('Debe confirmar su contraseña').bail()
+    .custom((value, {req}) => value !== req.body.password ? false : true) //Comparando contraseñas
     .withMessage('Las contraseñas no coinciden'),
 
     check('terms')

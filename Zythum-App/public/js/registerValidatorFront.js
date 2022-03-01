@@ -1,11 +1,16 @@
 const formulario = document.getElementById('formulario'); // Traemos el ID de formulario
 const inputs = document.querySelectorAll('#formulario input'); //  Seleccionamos todos los input que se encuentran dentro de la etiqueta form con su ID
 
-const expresiones = {
+// EXPRESIONES REGULARES //
+
+const expresiones = {               
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	password: /^.{6,12}$/, // 6 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 }
+
+
+//CUANDO LOS CAMPOS ESTEN VACIOS MOSTRAR FALSE//
 
 const campos = {
   nombre : false,
@@ -13,6 +18,8 @@ const campos = {
   email: false,
   password:false
 }
+
+// VALIDACION EN CADA UNO DE LOS CAMPOS //
 
 const validarFormulario = (e) => {
  switch (e.target.name) {
@@ -45,7 +52,8 @@ const validarFormulario = (e) => {
 }
 
 
- //FUNCION PARA VALIDAR LOS CAMPOS//
+ // FUNCION PARA VALIDAR LOS CAMPOS //
+
 const validarCampo = (expresion, input, campo) => {
 	if(expresion.test(input.value)){
 		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
@@ -66,7 +74,8 @@ const validarCampo = (expresion, input, campo) => {
 
 
 
-//FUNCION PARA QUE LAS CONTRASEÑAS COINCIDAN//
+// FUNCION PARA QUE LAS CONTRASEÑAS COINCIDAN //
+
 const validarPassword2 = () =>{
   const inputPassword1 = document.getElementById('password')
   const inputPassword2 = document.getElementById('password2')
@@ -89,15 +98,18 @@ const validarPassword2 = () =>{
 
 }
 
+// FUNCION AL LEVANTAR LA TECLA //
+
 inputs.forEach((input)=>{
   input.addEventListener('keyup', validarFormulario)
   input.addEventListener('blur', validarFormulario)
 })
 
 
-formulario.addEventListener('',(e) => {          //evento para el boton type:submit
-  e.preventDefault()                                  // para evitar mandar datos al tener los campos incompletos
-  
+// EVENTO EN EL BOTON SUBMIT //
+
+formulario.addEventListener('',(e) => {          
+  e.preventDefault()                                  
   const terminos = document.getElementById ('notificaciones')
   if (campos.nombre && campos.lastname && campos.email && campos.password && terminos.checked){
     formulario.reset();

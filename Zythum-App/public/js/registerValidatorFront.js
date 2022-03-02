@@ -24,8 +24,8 @@ const campos = {
 
 const validarFormulario = (e) => {
  switch (e.target.name) {
-   case "nombre":
-    validarCampo(expresiones.nombre, e.target, 'name')
+   case "name":
+    validarCampo(expresiones.name, e.target, 'name')
    break;
   
    case "lastname":
@@ -110,7 +110,7 @@ inputs.forEach((input)=>{
 formulario.addEventListener('',(e) => {          
                                     
   const terminos = document.getElementById ('notificaciones')
-  if (campos.nombre && campos.lastname && campos.email && campos.password && terminos.checked){
+  if (campos.name && campos.lastname && campos.email && campos.password && terminos.checked){
     formulario.reset();
 
     document.querySelectorAll('formulario__grupo-correcto').forEach((icono)=>{

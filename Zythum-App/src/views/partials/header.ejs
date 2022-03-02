@@ -19,7 +19,7 @@
             <div class="menu-bg2" id="h-menu-bg2" onclick="onClickMenu()"></div>
             <a href="/" class="header-logo"><img src="/img/favi.jpg" alt=""></a>
             <form id="h-search-bar" action="/products/search" method="GET">
-                <input type="search" name="keywords" placeholder="Buscar...">
+                <input type="search" name="keywords" id="input-search" placeholder="Buscar...">
                 <button type="submit"><i class="fas fa-search"></i></button>
             </form>
             <div class="user">
@@ -51,6 +51,7 @@
         </div>
     </div>
 </header>
+<script src="/js/searchValidator.js" defer></script>
 
 <!-- ADMIN COMO GUIA -->
 <!-- <div class="user-icons-desktop">

@@ -5,7 +5,7 @@ const inputs = document.querySelectorAll('#formulario input'); //  Seleccionamos
 
 const expresiones = {               
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
-	password: /^.{6,12}$/, // 6 a 12 digitos.
+	password: /^.{8,12}$/, // 8 a 12 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
 }
 
@@ -94,10 +94,6 @@ const validarPassword2 = () =>{
 		document.querySelector(`#grupo__password2 i`).classList.add('fa-check-circle');
 		document.querySelector(`#grupo__password2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
 		campos['password'] = true;
-}
-if (inputPassword2 === isEmpty){
-  campos['password'] = false
-}
 
 }
 

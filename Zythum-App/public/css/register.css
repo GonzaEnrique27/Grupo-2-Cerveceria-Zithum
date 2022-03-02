@@ -72,9 +72,18 @@ input.invalid{
   }
   
  /* ----- -----  Estilos para Validacion ----- ----- */
+ .formulario__validacion-estado {
+	
+	right: 10px;
+	bottom: 15px;
+	z-index: 100;
+	font-size: 16px;
+	opacity: 0;
+}
 
- .formulario__validacion-estado{
+ .formulario__grupo-input .i{
      display: none;
+     margin-top: 20px;
  }
  .formulario__input-error {
 	font-size: 12px;

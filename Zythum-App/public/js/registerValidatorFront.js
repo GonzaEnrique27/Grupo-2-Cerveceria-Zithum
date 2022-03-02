@@ -95,7 +95,7 @@ const validarPassword2 = () =>{
 		document.querySelector(`#grupo__password2 .formulario__input-error`).classList.remove('formulario__input-error-activo');
 		campos['password'] = true;
 
-}
+}}
 
 // EVENTO AL LEVANTAR LA TECLA //
 

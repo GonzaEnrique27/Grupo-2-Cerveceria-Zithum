@@ -3,7 +3,7 @@ const db = require('../database/models');
 const Users = db.User;
 
 module.exports = [
-    check('nombre')
+    check('name')
     .notEmpty()
     .withMessage('Debes ingresar tu nombre').bail()
     .isLength({min: 2})

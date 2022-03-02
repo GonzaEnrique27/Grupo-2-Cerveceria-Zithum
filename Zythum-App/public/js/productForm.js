@@ -240,8 +240,9 @@ window.addEventListener('load', ()=>{
 
     /* $image.addEventListener('change', ()=>{
         console.log($image.files);
+        console.log($image.value);
         console.log($image.files.name);
-            if($image.files.name != "" && !(/\.(jpg|jpeg|png|gif)$/).test($image.files.name)){
+            if($image.files.name != "" && !(/\.(jpg|jpeg|png|gif)$/i).test($image.files.name)){
                 $image.classList.add('is-invalid');
                 $imageErrors.innerHTML = 'Ingrese una imagen en formato jpg, jpeg, png o gif.'; 
             }
@@ -252,6 +253,40 @@ window.addEventListener('load', ()=>{
         }
     }) */
 
+    $image.addEventListener('change', () => {
+        console.log($image.files);
+        console.log($image.value);
+        console.log($image.files.name);
+        let filePath = $image.value;
+        let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+        if(!allowedExtensions.exec(filePath)){
+            $imageErrors.innerHTML = 'Ingrese una imagen en formato jpg, jpeg, png o gif'
+            $image.value = "";
+            $imgPreview.innerHTML = "";
+            return false;
+        }else{
+            if($image.files && $image.files[0]){
+                let reader = new FileReader();
+                reader.onload = (e) => {
+                    $imgPreview.innerHTML = `<img src="${e.target.result}" alt="">`
+                }
+                reader.readAsDataURL($image.files[0]);
+                $imageErrors.innerHTML = "";
+                $inputFile.classList.remove('is-invalid')
+            }
+        }
+    })
+    if (regExImage.exec($inputs[i].value)) {
+        const file = $inputs[i].files[0];
+        const imagen = URL.createObjectURL(file);
+        const img = document.querySelector('#imagen-previa');
+        img.src = imagen;
+        $smalls[i].innerHTML = '';
+    } else {
+        const img = document.querySelector('#imagen-previa');
+        img.src = "";
+        $smalls[i].innerHTML = 'Solo extensiones .jpg .jpeg .png .webp'
+    }
 /*     Falta validar para evitar el submit y se podria tirar un mensaje, aun no funka */
     /* $form.addEventListener('submit', (e)=>{
         if(validationsErrors){

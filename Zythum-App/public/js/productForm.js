@@ -4,7 +4,7 @@ function qs(e){
 
 window.addEventListener('load', ()=>{
     const $form = qs('#create-product');
-    const $formErrors = qs('#formErrros')
+    const $formErrors = qs('#formErrors')
     const $brand = qs('#brand');
     const $brandErrors = qs('#brandErrors');
     const $category = qs('#category');
@@ -33,6 +33,7 @@ window.addEventListener('load', ()=>{
     const $imageErrors = qs('#imageErrors');
     let validationsErrors = false;
     let regExpNum = /^([0-9])*$/;
+    let regExImage = /(.jpg|.jpeg|.png|.gif)$/i;
 
     $brand.addEventListener('blur', function(){
         if(!$brand.value.trim()){
@@ -164,13 +165,13 @@ window.addEventListener('load', ()=>{
 
     $stock.addEventListener('blur', function(){
         switch (true) {
-            case !$stock.value.trim():
-                $stockErrors.innerHTML = 'Campo requerido';
-                $stock.classList.add('is-invalid')
+            case !$stock.value.trim() || $stock.value == 0:
+                $stockErrors.innerHTML = 'Ingrese al menos una unidad.';
+                $stock.classList.add('is-invalid');
                 validationsErrors = true
                 break;
             case !regExpNum.test($stock.value):
-                $stockErrors.innerHTML = 'Ingrese solo números'
+                $stockErrors.innerHTML = 'Ingrese solo números';
                 $stock.classList.add('is-invalid');
                 validationsErrors = true;
                 break;
@@ -185,10 +186,10 @@ window.addEventListener('load', ()=>{
 
     $price.addEventListener('blur', function(){
         switch (true) {
-            case !$price.value.trim():
-                $priceErrors.innerHTML = 'Campo requerido';
+            case !$price.value.trim() || $stock.value == 0:
+                $priceErrors.innerHTML = 'Ingrese un valor mayor a 0';
                 $price.classList.add('is-invalid')
-                validationsErrors = true
+                validationsErrors = true;
                 break;
             case !regExpNum.test($price.value):
                 $priceErrors.innerHTML = 'Ingrese solo números'
@@ -207,12 +208,18 @@ window.addEventListener('load', ()=>{
     $discount.addEventListener('blur', function(){
         switch (true) {
             case !$discount.value.trim():
-                $discountErrors.innerHTML = 'Campo requerido';
-                $discount.classList.add('is-invalid')
-                validationsErrors = true
+                $discount.classList.remove('is-invalid');
+                $discount.classList.add('is-valid');
+                $discount.value = 0;
+                validationsErrors = false;
+                break;
+            case $discount.value >= 100:
+                $discountErrors.innerHTML = 'Ingrese un valor menor que 100';
+                $discount.classList.add('is-invalid');
+                validationsErrors = true;
                 break;
             case !regExpNum.test($discount.value):
-                $discountErrors.innerHTML = 'Ingrese solo números'
+                $discountErrors.innerHTML = 'Ingrese solo números';
                 $discount.classList.add('is-invalid');
                 validationsErrors = true;
                 break;
@@ -238,61 +245,37 @@ window.addEventListener('load', ()=>{
         }
     })
 
-    /* $image.addEventListener('change', ()=>{
-        console.log($image.files);
-        console.log($image.value);
-        console.log($image.files.name);
-            if($image.files.name != "" && !(/\.(jpg|jpeg|png|gif)$/i).test($image.files.name)){
-                $image.classList.add('is-invalid');
-                $imageErrors.innerHTML = 'Ingrese una imagen en formato jpg, jpeg, png o gif.'; 
-            }
-            else {
-                $imageErrors.classList.remove('is-invalid');
-                $imageErrors.classList.add('is-valid');
-                $imageErrors.innerHTML = '';
-        }
-    }) */
-
-    $image.addEventListener('change', () => {
-        console.log($image.files);
-        console.log($image.value);
-        console.log($image.files.name);
-        let filePath = $image.value;
-        let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-        if(!allowedExtensions.exec(filePath)){
-            $imageErrors.innerHTML = 'Ingrese una imagen en formato jpg, jpeg, png o gif'
-            $image.value = "";
-            $imgPreview.innerHTML = "";
-            return false;
-        }else{
-            if($image.files && $image.files[0]){
-                let reader = new FileReader();
-                reader.onload = (e) => {
-                    $imgPreview.innerHTML = `<img src="${e.target.result}" alt="">`
-                }
-                reader.readAsDataURL($image.files[0]);
-                $imageErrors.innerHTML = "";
-                $inputFile.classList.remove('is-invalid')
-            }
+    $image.addEventListener('change', ()=>{
+        if (regExImage.exec($image.value)) {
+            const file = $image.files[0];
+            const imagen = URL.createObjectURL(file);
+            /* const $imgPreview = document.querySelector('#imagen-previa');
+            $imgPreview.src = imagen; */
+            $image.classList.remove('is-invalid');
+            $image.classList.add('is-valid');
+            $imageErrors.innerHTML = '';
+            validationsErrors = false;
+        } else {
+            /* const $imgPreview = document.querySelector('#imagen-previa');
+            $imgPreview.src = ""; */
+            $image.classList.add('is-invalid');
+            $imageErrors.innerHTML = 'Solo extensiones .jpg .jpeg .png .gif'
         }
     })
-    if (regExImage.exec($inputs[i].value)) {
-        const file = $inputs[i].files[0];
-        const imagen = URL.createObjectURL(file);
-        const img = document.querySelector('#imagen-previa');
-        img.src = imagen;
-        $smalls[i].innerHTML = '';
-    } else {
-        const img = document.querySelector('#imagen-previa');
-        img.src = "";
-        $smalls[i].innerHTML = 'Solo extensiones .jpg .jpeg .png .webp'
-    }
-/*     Falta validar para evitar el submit y se podria tirar un mensaje, aun no funka */
-    /* $form.addEventListener('submit', (e)=>{
-        if(validationsErrors){
-            $formErrors.innerHTML = 'Complete el formulario correctamente'; 
-            e.preventDefault();
-        }
 
-    }) */
+    $form.addEventListener('submit', function(e) {
+        e.preventDefault()
+        let error = false;
+        let elementsForm = this.elements;
+        for (let i = 0; i < elementsForm.length - 1; i++) {
+            if(elementsForm[i].name != 'discount' && elementsForm[i].value == '' && elementsForm[i].type !== 'file'){
+                elementsForm[i].classList.add('is-invalid');
+                $formErrors.innerHTML = 'Los campos indicados son obligatorios';
+                error = true;
+            }
+        }
+        if(!error && !validationsErrors) {
+            $form.submit()
+        }
+    })
 })

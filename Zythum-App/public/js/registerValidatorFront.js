@@ -13,7 +13,7 @@ const expresiones = {
 //CUANDO LOS CAMPOS ESTEN VACIOS MOSTRAR FALSE//
 
 const campos = {
-  nombre:false,
+  name:false,
   lastname: false,
   email: false,
   password: false,
@@ -24,8 +24,8 @@ const campos = {
 
 const validarFormulario = (e) => {
  switch (e.target.name) {
-   case "nombre":
-    validarCampo(expresiones.name, e.target, 'name')
+   case "name":
+    validarCampo(expresiones.nombre, e.target, 'name')
    break;
   
    case "lastname":
@@ -112,7 +112,7 @@ inputs.forEach((input)=>{
 formulario.addEventListener('submit', (e) => {
   e.preventDefault()
                                              
-  const terminos = document.getElementById ('notificaciones')
+  const terminos = document.getElementById('notificaciones')
   if (campos.name && campos.lastname && campos.email && campos.password && terminos.checked){
     formulario.reset();
 
@@ -121,5 +121,5 @@ formulario.addEventListener('submit', (e) => {
      })
      
    }         
-   console.log(campos.nombre, campos.lastname, campos.email, campos.password, terminos.checked)                 
+                
 })

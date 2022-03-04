@@ -115,12 +115,8 @@ formulario.addEventListener('submit', (e) => {
                                              
   const terminos = document.getElementById('notificaciones')
   if (campos.name && campos.lastname && campos.email && campos.password && terminos.checked){
-<<<<<<< HEAD
     console.log(campos.name)
     formulario.reset();
-=======
-    formulario.submit();
->>>>>>> 21a6fed3f9b5bedd3a4c1f4b38257941e01f74c4
 
     document.querySelectorAll('formulario__grupo-correcto').forEach((icono)=>{
        icono.classList.remove('formulario__grupo-correcto')

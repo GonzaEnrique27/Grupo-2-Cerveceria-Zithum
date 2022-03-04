@@ -102,7 +102,7 @@ const validarPassword2 = () =>{
 // EVENTO AL LEVANTAR LA TECLA //
 
 inputs.forEach((input)=>{
-  //input.addEventListener('keyup', validarFormulario)
+  input.addEventListener('keyup', validarFormulario)
   input.addEventListener('blur', validarFormulario)
 })
 
@@ -114,6 +114,7 @@ formulario.addEventListener('submit', (e) => {
                                              
   const terminos = document.getElementById('notificaciones')
   if (campos.name && campos.lastname && campos.email && campos.password && terminos.checked){
+    console.log(campos.name)
     formulario.reset();
 
     document.querySelectorAll('formulario__grupo-correcto').forEach((icono)=>{

@@ -13,7 +13,7 @@
 
  const camposLogin = {
      email: false,
-     password: false
+     pass: false
    }
 
    // VALIDACION EN CADA UNO DE LOS CAMPOS //
@@ -25,7 +25,7 @@
 
     break;
 
-    case "password":
+    case "pass":
      validarCampoLogin(expresionesLogin.password, e.target, 'pass')
 
      break;
@@ -58,17 +58,17 @@
      input.addEventListener('keyup', validarFormularioLogin)
      input.addEventListener('blur', validarFormularioLogin)
 
+    })
    // EVENTO EN EL BOTON SUBMIT //
 
 formularioLogin.addEventListener('submit', (e) => {
      e.preventDefault()          
-     if (camposLogin.email && camposLogin.password){
-       formularioLogin.reset();
+     if (camposLogin.email && camposLogin.pass){
+       formularioLogin.submit();
   
-       document.querySelectorAll('formulario__grupo-correcto').forEach((icono)=>{
+       /* document.querySelectorAll('formulario__grupo-correcto').forEach((icono)=>{
          icono.classList.remove('formulario__grupo-correcto')
-       })
+       }) */
       
     }                                
    })
-})

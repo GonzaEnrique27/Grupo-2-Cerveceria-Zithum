@@ -108,3 +108,25 @@ https://jamboard.google.com/d/11riNXIRpx4YbgQEVUSsKCBy26nVQ5ZpudBxqj7KdAbQ/viewe
 
     - Faltar a las Daily's.
     - Dejar abandonado el proyecto.
+
+## SPRINT 6
+
+* COSAS QUE DEBERIAMOS HACER PARA MEJORAR COMO GRUPO:
+
+    - Agregar fechas limites semanales. 
+
+* HACER MAS COMO GRUPO:
+
+    - Reunirse más y coordinar mejor las tareas.
+
+* CONTINUAR HACIENDO:
+    - Seguir trabajando en conjunto.
+
+* HACER MENOS:
+
+    - Faltar a clases.
+    - No completar los ejercicios de Playground.
+
+* DEJAR DE HACER:
+
+    - Conformase con las tareas asignadas.

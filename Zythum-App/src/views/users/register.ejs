@@ -4,116 +4,90 @@
 <%- include('../partials/head.ejs') %> 
 
 <body>
-
     <%- include('../partials/header.ejs') %> 
 
+    <div class="form-container">
+        <div class="form-register">
+            <form action="/users/register" method="POST" enctype="multipart/form-data" id="formulario">
+                <div class="form">
+                    <h1>Crear Cuenta</h1>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div class="caja-registro-escritorio">
-        <div class="caja-form-registro">
-            <center>
-                <h2 class="h2-registro">Crear Cuenta</h2>
-                <form action="/users/register" method="POST" enctype="multipart/form-data" id="formulario">
-
-
-                   <div class="formulario__grupo" id="grupo__name">
-                       <label for="nombre" class="formulario__label"></label>
-
-                       <div class="formulario__grupo-input">
-
-                    <input type="text" class="input-registro" name="name" id="nombre" placeholder="Nombre" value="<%= locals.old && old.name %>">
-                    <i class="formulario__validacion-estado fas fa-times-circle"></i><br>
-                    <% if (locals.errors && errors.name) { %> 
-                        <small class="error"><%= errors.name.msg %></small><br>
-                    <% } %>
-                
-                </div>
-                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
-                </div> 
-
-                <div class="formulario__grupo" id="grupo__lastname">
-                    <label for="lastname" class="formulario__label"></label>
-                    <div class="formulario__grupo-input">
-                    <input type="text" class="input-registro" name="lastname" id="apellido" placeholder="  Apellido" value="<%= locals.old && old.lastname %>"
-                    > <i class="formulario__validacion-estado fas fa-times-circle"></i><br>
-                    <% if (locals.errors && errors.lastname) { %> 
-                        <small class="error"><%= errors.lastname.msg %></small><br>
-                    <% } %>
-                </div>
-                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 dígitos y solo puede contener numeros, letras y guion bajo.</p>
-                </div>
-                
-                <div class="formulario__grupo" id="grupo__email">
-                    <label for="email" class="formulario__label"></label>
-                    <div class="formulario__grupo-input">
+                    <div class="input-form" id="grupo__name">
+                        <div class="input-container" >
+                            <input type="text" name="name" id="name" value="<%= locals.old && old.name %>" required><span class="barra"></span>
+                            <label class="label-input" for="">Nombre</label>
+                            <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                        </div>
+                        <small class="error"><%= locals.errors && errors.name ? errors.name.msg  : "" %> </small>
+                    </div>
                     
-                    <input type="email" class="input-registro" name="email" id="email" placeholder=" Email" value="<%= locals.old && old.email %>"
-                    ><i class="formulario__validacion-estado fas fa-times-circle"></i><br>
-                    <% if (locals.errors && errors.email) { %> 
-                        <small class="error" aria-live="polite"><%= errors.email.msg %></small><br>
-                    <% } %>
-                </div>
-                <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
-                   </div>
+                    <div class="input-form" id="grupo__lastname">
+                        <div class="input-container" >
+                            <input type="text" name="lastname" id="lastname" value="<%= locals.old && old.lastname %>" required><span class="barra"></span>
+                            <label class="label-input" for="">Apellido</label>
+                            <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                        </div>
+                        <small class="error"><%= locals.errors && errors.lastname ? errors.lastname.msg  : "" %> </small>
+                    </div>
 
-                    <div class="formulario__grupo" id="grupo__password">
-                    <label for="password" class="formulario__label"></label>
-                    <div class="formulario__grupo-input">
-                    <input type="password" class="input-registro" name="password" id="password"
-                        placeholder=" Contraseña"><i class="formulario__validacion-estado fas fa-times-circle"></i><br>
-                    <% if (locals.errors && errors.password) { %> 
-                        <small class="error"><%= errors.password.msg %></small><br>
-                    <% } %>
-                </div>
-                <p class="formulario__input-error">La contraseña tiene que ser de 8 a 12 dígitos.</p>
+                    <div class="input-form" id="grupo__email">
+                        <div class="input-container" >
+                            <input type="text" lastname="email" id="email" value="<%= locals.old && old.email %>" required><span class="barra"></span>
+                            <label class="label-input" for="">Email</label>
+                            <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                        </div>
+                        <small class="error"><%= locals.errors && errors.email ? errors.email.msg  : "" %> </small>
+                    </div>
+
+                    <div class="input-form" id="grupo__password">
+                        <div class="input-container">
+                            <input type="password" name="password" id="password" required><span class="barra"></span>
+                            <label class="label-input" for="">Contraseña</label>
+                            <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                        </div>
+                        <small class="error"><%= locals.errors && errors.password ? errors.password.msg  : "" %> </small>
+                    </div>
+                    
+                    <div class="input-form" id="grupo__password2">
+                        <div class="input-container">
+                            <input type="password" name="password2" id="password2" required><span class="barra"></span>
+                            <label class="label-input" for="">Confirmar contraseña</label>
+                            <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                        </div>
+                        <small class="error"><%= locals.errors && errors.password2 ? errors.password2.msg  : "" %> </small>
+                    </div>
+
+                    <div class="input-file">
+                        <div class="input-file-container">
+                            <label for="file-upload" class="up-file">
+                                <i class="fas fa-cloud-upload-alt"></i> Subir avatar
+                            </label>
+                            <input id="file-upload" onchange='cambiar()' type="file" style='display: none;'/>
+                            <small id="info-file"></small> 
+                        </div>
+                        <small id="error"></small> 
+                    </div>
+
+                    <div class="input-checkbox">
+                        <label for="notificaciones">
+                            <input type="checkbox" name="terms" id="notificaciones">Acepto los términos y condiciones.
+                        </label>
+                        <small class="error"><%= locals.errors && errors.terms ? errors.terms.msg : ""%></small>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">CREAR CUENTA</button>
+                    <p class="create-account">¿Ya tenes cuenta? <span>Iniciar sesión</span></p>
                 </div>
 
-                <div class="formulario__grupo" id="grupo__password2">
-                    <label for="password2" class="formulario__label"></label>
-                    <div class="formulario__grupo-input">
-                    <input type="password" class="input-registro" name="password2" id="password2"
-                        placeholder=" Confirmar contraseña"><i class="formulario__validacion-estado fas fa-times-circle"></i><br>
-                    <% if (locals.errors && errors.password2) { %> 
-                        <small class="error"><%= errors.password2.msg %></small><br>
-                    <% } %>
-                </div>
-                <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
-                </div>
-
-                    <input type="file" id="formFile" name="image"><br><br>
-    
-                    <input type="checkbox" class="notificaciones" name="terms" id="notificaciones"><label for="notificaciones"> Acepto los términos y condiciones</label><br>
-                    <% if (locals.errors && errors.terms) { %> 
-                        <small class="error"><%= errors.terms.msg %></small><br>
-                    <% } %>
-                    <button type="submit" class="new-account">CREAR CUENTA</button><br>
-                    <hr class="hr-registro">
-                    <p>¿Ya tenes cuenta?<a href="/users/login"> Iniciar sesión</a> </p>
-                </form>
-            </center>
+            </form>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 
-   
+
+
+    </div>
     <%- include('../partials/footer.ejs') %> 
 
-    <%- include('../partials/scripts.ejs') %> 
-    
+    <script src="/js/forms.js" defer></script>
+    <script src="/js/loginValidatorFront.js" defer></script>
 </body>
 </html>

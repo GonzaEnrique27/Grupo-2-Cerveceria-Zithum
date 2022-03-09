@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %> 
+
+<body>
+    <%- include('../partials/header.ejs') %> 
+
+    <div class="form-container">
+        <div class="form-login">
+            <form action="/users/login" method="POST" id="form-login">
+                <div class="form">
+                    <h1>Iniciar Sesión</h1>
+
+                    <div class="input-form" id="grupo__email">
+                        <div class="input-container" >
+                            <input type="text" name="email" id="email" required><span class="barra"></span>
+                            <label class="label-input" for="">Email</label>
+                            <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                        </div>
+                        <small class="error"><%= locals.errors && errors.pass ? errors.pass.msg  : "" %> </small>
+                    </div>
+
+                    <div class="input-form" id="grupo__pass">
+                        <div class="input-container" id="grupo__pass">
+                            <input type="password" name="pass" id="pass" required><span class="barra"></span>
+                            <label class="label-input" for="">Contraseña</label>
+                            <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                        </div>
+                        <small class="error"><%= locals.errors && errors.pass ? errors.pass.msg  : "" %> </small>
+                    </div>
+                    
+                    <div class="container-forget-pass">
+                        <span href="">Olvide mi contraseña</span> 
+                    </div>
+                    <div class="input-checkbox">
+                        <label for="recuerdame">
+                            <input type="checkbox" name="remember" id="recuerdame"> Recuérdame
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-login">INGRESAR</button>
+                    <p class="create-account">¿Nuevo? <span>CREAR CUENTA</span></p>
+                </div>
+
+            </form>
+        </div>
+
+
+
+    </div>
+    <%- include('../partials/footer.ejs') %> 
+
+    <script src="/js/forms.js" defer></script>
+    <script src="/js/loginValidatorFront.js" defer></script>
+</body>
+</html>

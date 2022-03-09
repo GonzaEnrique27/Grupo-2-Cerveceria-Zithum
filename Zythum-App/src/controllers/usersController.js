@@ -6,7 +6,7 @@ const Users = db.User;
 
 let controller = {
     login: function(req,res){
-        res.render('./users/login', {
+        res.render('./users/loginv2', {
             session: req.session //paso la session en todas las vistas, por si esta logueado
         })
     },

@@ -1,5 +1,13 @@
+/* .display-flex {
+    display: flex;
+}
+
+.display-none{
+    display: none;
+}
+ */
 body .form-container {
-    margin: 35px 0px;
+    margin: 10px 0px;
 }
 
 body .form-register,
@@ -93,7 +101,8 @@ input:focus~.barra::before{
     width: 100%;
 }
 
-.input-form .error{
+.input-form .error,
+.input-checkbox .error{
     display: block;
     font-size: 12px;
     color: red;
@@ -129,25 +138,24 @@ input:focus~.barra::before{
 }
 
 .input-checkbox {
-    margin: -10px 0px 0px 35px;
+    text-align: center;
     font-size: small;
 }
 
-.form .create-account,
-.create-account span {
+.form .create-account{
     text-align: center;
     margin-top: 10px;
     font-size: 12px;
 }
 
-.create-account span {
+.create-account a {
     color: var(--c2);
     cursor: pointer;
 }
 
 /*********Registro*********/
 /* .form-register{
-    margin: 30px;
+    display: none;
 } */
 
 .rgt-align{
@@ -222,8 +230,11 @@ input:focus~.barra::before{
 }
 
 @media (min-width: 990px) {
-    .form-container form{
-        max-width: 500px;
-        min-width: 350px;
+    .form-container .form-register form{
+        min-width: 450px;
+    }
+    
+    .form-container .form-login form{
+        min-width: 400px;
     }
 }

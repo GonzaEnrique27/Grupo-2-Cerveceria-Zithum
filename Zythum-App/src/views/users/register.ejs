@@ -32,7 +32,7 @@
 
                     <div class="input-form" id="grupo__email">
                         <div class="input-container" >
-                            <input type="text" lastname="email" id="email" value="<%= locals.old && old.email %>" required><span class="barra"></span>
+                            <input type="text" name="email" id="email" value="<%= locals.old && old.email %>" required><span class="barra"></span>
                             <label class="label-input" for="">Email</label>
                             <i class="formulario__validacion-estado fas fa-check-circle"></i>
                         </div>
@@ -70,13 +70,13 @@
 
                     <div class="input-checkbox">
                         <label for="notificaciones">
-                            <input type="checkbox" name="terms" id="notificaciones">Acepto los términos y condiciones.
-                        </label>
+                            <input type="checkbox" name="terms" id="notificaciones"> Acepto los términos y condiciones.
+                        </label><br>
                         <small class="error"><%= locals.errors && errors.terms ? errors.terms.msg : ""%></small>
                     </div>
                     
                     <button type="submit" class="btn-login">CREAR CUENTA</button>
-                    <p class="create-account">¿Ya tenes cuenta? <span>Iniciar sesión</span></p>
+                    <p class="create-account">¿Ya tenes cuenta? <a href="/users/login">Iniciar sesión</a></p>
                 </div>
 
             </form>
@@ -88,6 +88,6 @@
     <%- include('../partials/footer.ejs') %> 
 
     <script src="/js/forms.js" defer></script>
-    <script src="/js/loginValidatorFront.js" defer></script>
+    <script src="/js/registerValidatorFront.js" defer></script>
 </body>
 </html>

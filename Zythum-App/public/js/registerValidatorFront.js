@@ -115,7 +115,7 @@ formulario.addEventListener('submit', (e) => {
                                              
   const terminos = document.getElementById('notificaciones')
   if (campos.name && campos.lastname && campos.email && campos.password && terminos.checked){
-    console.log(campos.name)
+
     formulario.reset();
 
     document.querySelectorAll('formulario__grupo-correcto').forEach((icono)=>{
@@ -123,5 +123,5 @@ formulario.addEventListener('submit', (e) => {
      })
      
    }         
-                
+     console.log ("enviando...")           
 })

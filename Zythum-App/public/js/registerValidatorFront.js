@@ -63,7 +63,7 @@ const validarCampo = (expresion, input, campo) => {
 		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
 		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
 	  campos[campo]= true
-    console.log(campos)
+    
 
   } else {
 		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
@@ -72,7 +72,7 @@ const validarCampo = (expresion, input, campo) => {
 		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
 		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
     campos[campo]= false
-    console.log(campos)
+    
   }
 }
 
@@ -112,10 +112,21 @@ inputs.forEach((input)=>{
 
 formulario.addEventListener('submit', (e) => {
   e.preventDefault()
+  const elements = e.target.elements;
+  let error = false;
+
+for (let i = 0; i < elements.length -3; i++) {
+  if (elements[i].value === ""){
+    error = true
+    document.getElementById("grupo__" + elements[i].name).classList.add('formulario__grupo-incorrecto')
+    
+  }
+  
+}
                                              
   const terminos = document.getElementById('notificaciones')
   if (campos.name && campos.lastname && campos.email && campos.password && terminos.checked){
-    console.log(campos.name)
+    
     formulario.submit();
 
     document.querySelectorAll('formulario__grupo-correcto').forEach((icono)=>{
@@ -123,5 +134,5 @@ formulario.addEventListener('submit', (e) => {
      })
      
    }         
-     console.log ("enviando...")           
+          
 })

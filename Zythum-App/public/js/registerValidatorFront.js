@@ -118,6 +118,17 @@ inputs.forEach((input)=>{
 
 formulario.addEventListener('submit', (e) => {
   e.preventDefault()
+  const elements = e.target.elements;
+  let error = false;
+
+  for (let i = 0; i < elements.length -3; i++) {
+  if (elements[i].value === ""){
+    error = true
+    document.getElementById("grupo__" + elements[i].name).classList.add('formulario__grupo-incorrecto')
+    
+  }
+  
+}
 
   const terminos = document.getElementById('notificaciones');
 
@@ -127,3 +138,13 @@ formulario.addEventListener('submit', (e) => {
     formulario.submit();     
   }         
 })
+  /* const terminos = document.getElementById('notificaciones')
+  if (campos.name && campos.lastname && campos.email && campos.password && terminos.checked){
+    
+    formulario.submit();
+
+    document.querySelectorAll('formulario__grupo-correcto').forEach((icono)=>{
+       icono.classList.remove('formulario__grupo-correcto')
+     })
+     
+   }     */     

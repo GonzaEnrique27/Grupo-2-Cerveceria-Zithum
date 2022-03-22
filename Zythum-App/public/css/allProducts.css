@@ -1,0 +1,8 @@
+.dosCajitas_Productos{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 15px;
+    justify-content: space-around;
+    padding-top: 25px;
+}
+

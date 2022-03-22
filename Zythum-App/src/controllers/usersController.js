@@ -6,7 +6,7 @@ const Users = db.User;
 
 let controller = {
     login: function(req,res){
-        res.render('./users/loginv2', {
+        res.render('./users/login', {
             session: req.session //paso la session en todas las vistas, por si esta logueado
         })
     },
@@ -97,13 +97,13 @@ let controller = {
             include: [{association: 'addresses'}]
         })
         .then((user) => {
-            res.render('users/profile', {
+            res.render('users/profileV2', {
                 user, 
                 session: req.session
             })
         })
     },
-    editProfile:(req,res) => {
+    /* editProfile:(req,res) => {
         Users.findByPk(req.session.user.id, {
             include: [{association: 'addresses'}]
         })
@@ -113,7 +113,7 @@ let controller = {
                 session: req.session
             })
         })
-    },
+    }, */
     //este esta incompleto
     updateProfile:(req,res) => {
         let {name, last_name, email, phone} = req.body

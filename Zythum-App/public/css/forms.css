@@ -1,11 +1,11 @@
-/* .display-flex {
+.display-flex {
     display: flex;
 }
 
 .display-none{
     display: none;
 }
- */
+
 body .form-container {
     margin: 10px 0px;
 }
@@ -65,6 +65,7 @@ form .input-container {
 label.label-input{
     color: var(--c1);
     font-size: 16px;
+    font-weight: bold;
     position: absolute;
     left: 5px;
     top: 10px;
@@ -110,7 +111,8 @@ input:focus~.barra::before{
 }
 
 
-.form-container button{
+.form-container button,
+.btn-login{
     background: var(--c2);
     border-radius: 5px;
     display: block;

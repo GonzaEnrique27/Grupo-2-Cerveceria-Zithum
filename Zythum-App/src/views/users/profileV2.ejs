@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head.ejs') %> 
+
+<body>
+    <%- include('../partials/header.ejs') %> 
+
+    <div class="profile-container">
+        <div class="banner-profile">
+            <div class="avatar">
+                <img class = "avatar" src="/img/users/<%= user.avatar %>" alt="">
+            </div>
+        </div>
+        <div class="form-container">
+            <form action="/users/profile/edit/<%= user.id %>?_method=PUT" method="POST" class="form-profile">
+                <div class="input-form" id="grupo__name">
+                    <div class="input-container" >
+                        <input type="text" name="name" id="name" value="<%= locals.old ? old.name : user.name %>" disabled required><span class="barra"></span>
+                        <label class="label-input" for="">Nombre</label>
+                        <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                    </div>
+                    <small class="error"><%= locals.errors && errors.name ? errors.name.msg  : "" %> </small>
+                </div>
+                
+                <div class="input-form" id="grupo__lastname">
+                    <div class="input-container" >
+                        <input type="text" name="lastname" id="lastname" value="<%= locals.old ? old.lastname :user.last_name %>" disabled required><span class="barra"></span>
+                        <label class="label-input" for="">Apellido</label>
+                        <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                    </div>
+                    <small class="error"><%= locals.errors && errors.lastname ? errors.lastname.msg  : "" %> </small>
+                </div>
+
+                <div class="input-form" id="grupo__email">
+                    <div class="input-container" >
+                        <input type="text" name="email" id="email" value="<%= locals.old ? old.email : user.email %>" disabled required><span class="barra"></span>
+                        <label class="label-input" for="">Email</label>
+                        <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                    </div>
+                    <small class="error"><%= locals.errors && errors.email ? errors.email.msg  : "" %> </small>
+                </div>
+
+                <div class="input-form" id="grupo__phone">
+                    <div class="input-container" >
+                        <input type="text" name="phone" id="phone" value="<%= locals.old ? old.phone : user.phone ? user.phone : "---" %>" disabled required><span class="barra"></span>
+                        <label class="label-input" for="">Télefono</label>
+                        <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                    </div>
+                    <small class="error"><%= locals.errors && errors.phone ? errors.phone.msg  : "" %> </small>
+                </div>
+
+                <button type="" class="btn-login edit-info">EDITAR DATOS</button>
+                <button type="submit" class="btn-login save-info">GUARDAR</button>
+
+                <form action="/users/profile" method="GET">
+                    <button type="" class="btn-login cancel-info">CANCELAR</button>
+                </form>
+
+
+                <!-- <h2>Dirección de envio</h2>
+
+                <div class="input-form" id="grupo__phone">
+                    <div class="input-container" >
+                        <input type="text" name="phone" id="phone" value="<%= locals.old ? old.phone : user.phone ? user.phone : "---" %>" disabled required><span class="barra"></span>
+                        <label class="label-input" for="">Télefono</label>
+                        <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                    </div>
+                    <small class="error"><%= locals.errors && errors.phone ? errors.phone.msg  : "" %> </small>
+                </div>
+
+                <div class="input-form" id="grupo__phone">
+                    <div class="input-container" >
+                        <input type="text" name="phone" id="phone" value="<%= locals.old ? old.phone : user.phone ? user.phone : "---" %>" disabled required><span class="barra"></span>
+                        <label class="label-input" for="">Télefono</label>
+                        <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                    </div>
+                    <small class="error"><%= locals.errors && errors.phone ? errors.phone.msg  : "" %> </small>
+                </div>
+
+                <div class="input-form" id="grupo__phone">
+                    <div class="input-container" >
+                        <input type="text" name="phone" id="phone" value="<%= locals.old ? old.phone : user.phone ? user.phone : "---" %>" disabled required><span class="barra"></span>
+                        <label class="label-input" for="">Télefono</label>
+                        <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                    </div>
+                    <small class="error"><%= locals.errors && errors.phone ? errors.phone.msg  : "" %> </small>
+                </div>
+
+                <div class="input-form" id="grupo__phone">
+                    <div class="input-container" >
+                        <input type="text" name="phone" id="phone" value="<%= locals.old ? old.phone : user.phone ? user.phone : "---" %>" disabled required><span class="barra"></span>
+                        <label class="label-input" for="">Télefono</label>
+                        <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                    </div>
+                    <small class="error"><%= locals.errors && errors.phone ? errors.phone.msg  : "" %> </small>
+                </div>
+
+                <div class="input-form" id="grupo__phone">
+                    <div class="input-container" >
+                        <input type="text" name="phone" id="phone" value="<%= locals.old ? old.phone : user.phone ? user.phone : "---" %>" disabled required><span class="barra"></span>
+                        <label class="label-input" for="">Télefono</label>
+                        <i class="formulario__validacion-estado fas fa-check-circle"></i>
+                    </div>
+                    <small class="error"><%= locals.errors && errors.phone ? errors.phone.msg  : "" %> </small>
+                </div> -->
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="/js/profile.js"></script>
+    <%- include('../partials/footer.ejs') %> 
+</body>
+</html>

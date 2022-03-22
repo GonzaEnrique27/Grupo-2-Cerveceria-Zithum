@@ -21,7 +21,7 @@ router.post('/register',uploadAvatar.single('image'), registerValidator , proces
 //GET - User Profile
 router.get('/profile', isUser, profile);
 
-router.get('/profile/edit/:id', isUser, editProfile);
+/* router.get('/profile/edit/:id', isUser, editProfile); */
 
 router.put('/profile/edit/:id', isUser, updateProfile);
 

@@ -11,7 +11,7 @@
                     <li><a href="/" class="fss c1">Home</a></li>
                     <li><a href="/users/login" class="fss c1">Login</a></li>
                     <li><a href="/users/register" class="fss c1">Register</a></li>
-                    <li><a href="/products/cart" class="fss c1">Carrito</a></li>
+                    <li><a href="/products/cart" class="fss c1" id="carrito">Carrito</a></li>
                     <li><a href="/products/detail/1" class="fss c1">Detalle</a></li>
                 </ul>
             </nav>
@@ -25,8 +25,12 @@
             <div class="user">
                 <a href="/products/cart" class="chart"><i class="fas fa-shopping-cart fsl"></i></a>
                 <% if (typeof session.user != "undefined") { %>
-                    <a href="/users/profile" class="user-icon user-icon2"><img class = "avatar-mini" src="/img/users/perfil-generica.jpg" alt=""></a>
-                    <a href="/users/logout"><i class="fas fa-sign-out-alt"></i></a>
+                    <a href="/users/profile" class="user-icon user-icon2"><img class = "avatar-mini" src="/img/users/perfil-generi.jpcag" alt=""></a>
+                    <% if (session.user.rol === 1) { %>
+                        <a href="/admin/"><i class="fas fa-user-cog"></i></a>
+                    <% } %>
+
+                    <a href="/users/logout" class="admin"><i class="fas fa-sign-out-alt"></i></a>
                 <% } else{%>
                     <a href="/users/login" class="user-icon"><i class="fas fa-user fsl"></i></a>
                 <% } %>
@@ -51,6 +55,7 @@
     </div>
 </header>
 <script src="/js/searchValidator.js" defer></script>
+<script src="/js/adminJS.js"></script>
 
 <!-- ADMIN COMO GUIA -->
 <!-- <div class="user-icons-desktop">
@@ -59,11 +64,10 @@
             <i class="fas fa-user"></i><span class="session"></span>
             <div class="menu-user">
                 <a href="/users/profile">Mis datos</a>
-                <a href="/users/logout">Cerrar sesión</a>
+                <a href="/users/logout">Cerrar sesión</a> -->
                 <% if (session.user.rol === 1) { %>
-                    <a href="/admin/products">ADMIN</a>
                 <% } %>
-            </div>
+           <!-- </div>
         <% } else {%>
             <a href="/users/login"><i class="fas fa-user"></i></a>
         <% } %>

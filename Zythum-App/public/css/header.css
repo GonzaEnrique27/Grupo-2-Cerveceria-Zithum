@@ -290,4 +290,9 @@ header .menu2 nav .nav li{
 	}
 }
 
-
+.fa-solid{
+background: none;
+	border: none;
+	font-size: x-large;
+	color: var(--c2);
+}

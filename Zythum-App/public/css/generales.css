@@ -17,6 +17,12 @@ body{
     background-repeat: no-repeat;
 }
 
+main {
+    /* Subtract 80px from 100vh */
+    
+  }
+  
+
 .fsxs{
     font-size: var(--fsxs);
 }

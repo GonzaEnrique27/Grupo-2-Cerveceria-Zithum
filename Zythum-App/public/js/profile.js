@@ -15,7 +15,7 @@ window.addEventListener('load', ()=>{
         $buttonSave.style.display = 'block';
         $buttonCancel.style.display = 'block';
         for(let i = 0; i < $inputs.length; i++){
-            $inputs[i].disabled = false;
+            i != 2 ? $inputs[i].disabled = false : "";
         }
     })
 })

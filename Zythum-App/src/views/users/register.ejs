@@ -73,7 +73,7 @@
                             <input id="file-upload" onchange='cambiar()' type="file" style='display: none;'/>
                             <small id="info-file"></small> 
                         </div>
-                        <small id="error"></small> 
+                        <small class="error" id="error"><%= locals.errors && errors.image ? errors.image.msg  : "" %></small>
                     </div>
 
                     <div class="input-checkbox">

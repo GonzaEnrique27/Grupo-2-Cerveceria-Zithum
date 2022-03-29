@@ -19,7 +19,7 @@ module.exports = [
         })
         .then(user => {
             if(!user){
-                return Promise.reject("Email no registrado")
+                return Promise.reject("Credenciales inválidas")
             }
 
         })
@@ -42,7 +42,7 @@ module.exports = [
                 }
             })
             .catch(() => {
-                return Promise.reject("Email o contraseña incorrecta")
+                return Promise.reject("Credenciales inválidas")
             })
         })
 ]

@@ -19,7 +19,7 @@
                             <label class="label-input" for="">Email</label>
                             <i class="formulario__validacion-estado fas fa-check-circle"></i>
                         </div>
-                        <small class="error"><%= locals.errors && errors.pass ? errors.pass.msg  : "" %> </small>
+                        <small class="error"><%= locals.errors && errors.email ? errors.email.msg  : "" %> </small>
                     </div>
 
                     <div class="input-form" id="grupo__pass">
@@ -29,6 +29,7 @@
                             <i class="formulario__validacion-estado fas fa-check-circle"></i>
                         </div>
                         <small class="error"><%= locals.errors && errors.pass ? errors.pass.msg  : "" %> </small>
+                        <small class="error"><%= locals.errors && errors.custom ? errors.custom.msg  : "" %> </small>
                     </div>
                     
                     <div class="container-forget-pass">
